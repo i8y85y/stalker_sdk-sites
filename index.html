@@ -24,6 +24,18 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35; /* Цвет костра */
+            
+            /* Новые переменные для теней и свечения */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+            --shadow-xxl: 0 20px 40px rgba(0, 0, 0, 0.7);
+            --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+            --glow-color: rgba(231, 76, 60, 0.3); /* Цвет свечения акцента */
+            --glow-color-lg: rgba(231, 76, 60, 0.4); /* Цвет свечения акцента (большой) */
+            --shadow-accent: 0 4px 12px var(--glow-color);
+            --shadow-accent-lg: 0 8px 24px var(--glow-color-lg);
         }
         
         /* Переменные для различных цветовых схем */
@@ -44,6 +56,8 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(231, 76, 60, 0.3);
+            --glow-color-lg: rgba(231, 76, 60, 0.4);
         }
         
         .theme-blue {
@@ -63,6 +77,8 @@
             --table-alt-row: #1e2a38;
             --settings-panel-bg: rgba(15, 30, 45, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(41, 128, 185, 0.3);
+            --glow-color-lg: rgba(41, 128, 185, 0.4);
         }
         
         .theme-green {
@@ -82,6 +98,8 @@
             --table-alt-row: #1e2a1e;
             --settings-panel-bg: rgba(15, 35, 15, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(39, 174, 96, 0.3);
+            --glow-color-lg: rgba(39, 174, 96, 0.4);
         }
         
         .theme-purple {
@@ -101,6 +119,8 @@
             --table-alt-row: #2e1a38;
             --settings-panel-bg: rgba(35, 15, 45, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(142, 68, 173, 0.3);
+            --glow-color-lg: rgba(142, 68, 173, 0.4);
         }
         
         .theme-orange {
@@ -120,6 +140,8 @@
             --table-alt-row: #382e1e;
             --settings-panel-bg: rgba(45, 25, 15, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(230, 126, 34, 0.3);
+            --glow-color-lg: rgba(230, 126, 34, 0.4);
         }
         
         .theme-red {
@@ -139,6 +161,8 @@
             --table-alt-row: #381e1e;
             --settings-panel-bg: rgba(45, 15, 15, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(192, 57, 43, 0.3);
+            --glow-color-lg: rgba(192, 57, 43, 0.4);
         }
         
         .theme-cyan {
@@ -158,6 +182,8 @@
             --table-alt-row: #1e3838;
             --settings-panel-bg: rgba(15, 45, 45, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(22, 160, 133, 0.3);
+            --glow-color-lg: rgba(22, 160, 133, 0.4);
         }
         
         .theme-yellow {
@@ -177,6 +203,8 @@
             --table-alt-row: #38381e;
             --settings-panel-bg: rgba(45, 45, 15, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(241, 196, 15, 0.3);
+            --glow-color-lg: rgba(241, 196, 15, 0.4);
         }
         
         .theme-pink {
@@ -196,6 +224,8 @@
             --table-alt-row: #381e38;
             --settings-panel-bg: rgba(45, 15, 45, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(232, 67, 147, 0.3);
+            --glow-color-lg: rgba(232, 67, 147, 0.4);
         }
         
         .theme-gray {
@@ -215,6 +245,8 @@
             --table-alt-row: #2e2e2e;
             --settings-panel-bg: rgba(30, 30, 30, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(127, 140, 141, 0.3);
+            --glow-color-lg: rgba(127, 140, 141, 0.4);
         }
         
         .theme-custom {
@@ -235,6 +267,8 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35;
+            --glow-color: rgba(231, 76, 60, 0.3);
+            --glow-color-lg: rgba(231, 76, 60, 0.4);
         }
         
         * {
@@ -268,11 +302,11 @@
             background-color: var(--primary-color);
             color: white;
             padding: 1.2rem 0;
-            box-shadow: 0 4px 20px var(--shadow-color);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+            z-index: 1000;
+            backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--accent-color);
             transition: all 0.3s ease;
         }
@@ -290,12 +324,15 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .logo-icon {
             margin-right: 12px;
             font-size: 2.2rem;
             color: var(--accent-color);
+            text-shadow: 0 0 10px var(--glow-color-lg);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .logo-text {
@@ -304,6 +341,7 @@
             background-clip: text;
             color: transparent;
             font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .header-controls {
@@ -317,19 +355,22 @@
             border: 1px solid var(--border-color);
             color: var(--text-color);
             padding: 8px 15px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s;
             font-size: 0.9rem;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .settings-btn:hover {
             background-color: rgba(231, 76, 60, 0.2);
             border-color: var(--accent-color);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-accent);
         }
         
         nav ul {
@@ -348,21 +389,25 @@
             font-weight: 500;
             transition: all 0.3s;
             padding: 8px 15px;
-            border-radius: 6px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             font-size: 0.95rem;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         nav ul li a i {
             margin-right: 8px;
             font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         nav ul li a:hover {
             color: var(--accent-color);
             background-color: rgba(231, 76, 60, 0.15);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-accent);
         }
         
         /* Settings Panel */
@@ -373,12 +418,12 @@
             width: 380px;
             height: 100%;
             background-color: var(--settings-panel-bg);
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.4);
             z-index: 1000;
             padding: 2rem;
             overflow-y: auto;
             transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             border-left: 2px solid var(--accent-color);
         }
         
@@ -393,6 +438,7 @@
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .settings-header h2 {
@@ -409,15 +455,22 @@
             color: var(--text-secondary);
             font-size: 1.8rem;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .close-settings:hover {
             color: var(--accent-color);
+            transform: scale(1.1);
         }
         
         .settings-section {
             margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: var(--shadow-inner), 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .settings-section h3 {
@@ -427,10 +480,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .settings-section h3 i {
             color: var(--accent-color);
+            text-shadow: 0 0 8px var(--glow-color-lg);
         }
         
         .color-themes {
@@ -443,20 +498,23 @@
         .color-option {
             width: 50px;
             height: 50px;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             border: 3px solid transparent;
             transition: all 0.3s;
             position: relative;
+            box-shadow: var(--shadow-md);
         }
         
         .color-option:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: var(--shadow-lg), 0 0 15px rgba(255, 255, 255, 0.1);
         }
         
         .color-option.active {
             border-color: var(--light-color);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
         }
         
         .color-option .color-name {
@@ -467,11 +525,12 @@
             white-space: nowrap;
             font-size: 0.7rem;
             color: var(--text-color);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 2px 5px;
-            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 3px 8px;
+            border-radius: 4px;
             opacity: 0;
             transition: opacity 0.3s;
+            box-shadow: var(--shadow-sm);
         }
         
         .color-option:hover .color-name {
@@ -502,66 +561,86 @@
         .color-input label {
             font-size: 0.85rem;
             color: var(--text-secondary);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .color-input input {
             width: 100%;
-            padding: 8px;
-            border-radius: 4px;
+            padding: 10px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.4);
             color: var(--text-color);
             font-family: monospace;
+            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
         }
         
         .color-input input:focus {
             outline: none;
             border-color: var(--accent-color);
+            box-shadow: var(--shadow-inner), 0 0 0 2px rgba(231, 76, 60, 0.2), 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         .color-preview {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
             border: 2px solid var(--border-color);
-            margin: 10px auto;
+            margin: 15px auto;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 0, 0, 0.4);
         }
         
         .color-preview-shadow {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
             border: 2px solid var(--border-color);
-            margin: 10px auto;
+            margin: 15px auto;
             background-color: var(--shadow-color);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .color-preview-glow {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            margin: 15px auto;
+            background-color: var(--glow-color);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 0, 0, 0.4);
         }
         
         .apply-custom-color {
             width: 100%;
-            padding: 10px;
-            background-color: var(--accent-color);
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent-color), #c0392b);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s;
             margin-top: 10px;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
         
         .apply-custom-color:hover {
-            background-color: #c0392b;
+            background: linear-gradient(135deg, #c0392b, var(--accent-color));
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), var(--shadow-accent);
         }
         
         /* Кастомная иконка костра */
         .campfire-icon {
             position: relative;
             display: inline-block;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin-right: 10px;
+            filter: drop-shadow(0 0 10px var(--campfire-color)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
         
         .campfire-icon:before {
@@ -573,6 +652,7 @@
             height: 20px;
             background: #4a2c2a;
             border-radius: 5px 5px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         .campfire-icon:after {
@@ -585,7 +665,7 @@
             background: linear-gradient(to top, transparent 30%, var(--campfire-color) 100%);
             border-radius: 10px 10px 5px 5px;
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            box-shadow: 0 0 10px var(--campfire-color);
+            box-shadow: 0 0 15px var(--campfire-color);
             animation: flicker 1.5s infinite alternate;
         }
         
@@ -593,28 +673,32 @@
             0%, 100% {
                 opacity: 0.9;
                 transform: scale(1);
+                filter: drop-shadow(0 0 10px var(--campfire-color));
             }
             50% {
                 opacity: 1;
                 transform: scale(1.05);
+                filter: drop-shadow(0 0 20px var(--campfire-color));
             }
         }
         
         /* Version badge */
         .version-badge {
             display: inline-block;
-            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
             color: white;
-            padding: 5px 12px;
-            border-radius: 4px;
+            padding: 6px 14px;
+            border-radius: 6px;
             font-size: 0.8rem;
             font-weight: bold;
             margin-left: 10px;
             letter-spacing: 1px;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
         
         .version-badge.v01 {
-            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
         }
         
         /* Main content */
@@ -628,6 +712,7 @@
             color: var(--light-color);
             position: relative;
             padding-bottom: 25px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         
         .page-title:after {
@@ -640,11 +725,12 @@
             height: 4px;
             background: linear-gradient(90deg, transparent, var(--accent-color), var(--accent-secondary), transparent);
             border-radius: 2px;
+            box-shadow: 0 0 15px var(--glow-color-lg);
         }
         
         .title-accent {
             color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            text-shadow: 0 0 15px var(--glow-color-lg), 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         /* Content sections */
@@ -659,6 +745,7 @@
             padding-bottom: 1rem;
             border-bottom: 2px solid var(--accent-color);
             position: relative;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
         
         .section-title:after {
@@ -669,15 +756,16 @@
             width: 80px;
             height: 2px;
             background: var(--accent-secondary);
+            box-shadow: 0 0 10px var(--glow-color);
         }
         
         /* TOC */
         .toc-container {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 2.5rem;
             margin-bottom: 4rem;
-            box-shadow: 0 10px 25px var(--shadow-color);
+            box-shadow: var(--shadow-xxl);
             border: 1px solid var(--border-color);
             position: relative;
             transition: all 0.3s;
@@ -691,7 +779,8 @@
             right: 0;
             height: 5px;
             background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
-            border-radius: 12px 12px 0 0;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 0 20px var(--glow-color-lg);
         }
         
         .toc-title {
@@ -700,11 +789,14 @@
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
         }
         
         .toc-title i {
             margin-right: 12px;
             color: var(--accent-color);
+            text-shadow: 0 0 10px var(--glow-color-lg);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .toc-list {
@@ -722,21 +814,25 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 12px 18px;
+            border-radius: 10px;
             transition: all 0.3s;
             background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .toc-link:hover {
             background-color: rgba(231, 76, 60, 0.15);
             color: var(--accent-color);
-            transform: translateX(5px);
+            transform: translateX(5px) translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-accent);
         }
         
         .toc-link i {
             margin-right: 10px;
             font-size: 1.2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         /* Articles Grid */
@@ -749,9 +845,9 @@
         
         .article-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px var(--shadow-color);
+            box-shadow: var(--shadow-xl);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
             display: flex;
@@ -770,11 +866,12 @@
             height: 5px;
             background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
             z-index: 2;
+            box-shadow: 0 0 20px var(--glow-color-lg);
         }
         
         .article-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 40px var(--shadow-color);
+            box-shadow: var(--shadow-xxl), 0 0 30px var(--glow-color);
             border-color: var(--accent-color);
         }
         
@@ -787,6 +884,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
         }
         
         .article-icon-container:after {
@@ -796,14 +894,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(231, 76, 60, 0.1), transparent 70%);
+            background: radial-gradient(circle at center, var(--glow-color), transparent 70%);
         }
         
         .article-icon {
             font-size: 5rem;
             z-index: 1;
             color: var(--accent-color);
-            text-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+            text-shadow: 0 0 20px var(--glow-color-lg), 0 4px 8px rgba(0, 0, 0, 0.5);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
         
         .article-icon.campfire-icon-wrapper {
@@ -819,6 +918,7 @@
             position: relative;
             width: 60px;
             height: 70px;
+            filter: drop-shadow(0 0 15px var(--campfire-color)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
         
         .custom-campfire:before {
@@ -830,6 +930,7 @@
             height: 30px;
             background: #4a2c2a;
             border-radius: 5px 5px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         .custom-campfire:after {
@@ -842,7 +943,7 @@
             background: linear-gradient(to top, transparent 30%, var(--campfire-color) 100%);
             border-radius: 20px 20px 10px 10px;
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            box-shadow: 0 0 20px var(--campfire-color);
+            box-shadow: 0 0 25px var(--campfire-color);
             animation: flicker 1.5s infinite alternate;
         }
         
@@ -859,6 +960,7 @@
             font-size: 1.5rem;
             line-height: 1.3;
             font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .article-content p {
@@ -866,6 +968,7 @@
             margin-bottom: 2rem;
             flex-grow: 1;
             font-size: 1.05rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .article-meta {
@@ -877,6 +980,7 @@
             margin-bottom: 1.8rem;
             padding-bottom: 1.2rem;
             border-bottom: 1px solid var(--border-color);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .article-tag {
@@ -887,16 +991,18 @@
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .open-article-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(90deg, var(--accent-color), #c0392b);
+            background: linear-gradient(135deg, var(--accent-color), #c0392b);
             color: white;
             padding: 14px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.4s;
@@ -908,6 +1014,8 @@
             overflow: hidden;
             font-size: 1.05rem;
             letter-spacing: 0.5px;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
         
         .open-article-btn:after {
@@ -922,9 +1030,9 @@
         }
         
         .open-article-btn:hover {
-            background: linear-gradient(90deg, #c0392b, var(--accent-color));
+            background: linear-gradient(135deg, #c0392b, var(--accent-color));
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
+            box-shadow: var(--shadow-lg), var(--shadow-accent-lg);
         }
         
         .open-article-btn:hover:after {
@@ -935,6 +1043,7 @@
             margin-left: 10px;
             transition: transform 0.3s;
             font-size: 1.1rem;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
         }
         
         .open-article-btn:hover i {
@@ -950,16 +1059,16 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
+            z-index: 2000;
             overflow-y: auto;
             padding: 20px;
         }
         
         .modal-content {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 3.5rem;
-            box-shadow: 0 20px 60px var(--shadow-color);
+            box-shadow: var(--shadow-xxl), 0 0 50px rgba(0, 0, 0, 0.8);
             margin: 40px auto;
             max-width: 1000px;
             width: 90%;
@@ -987,7 +1096,8 @@
             right: 0;
             height: 6px;
             background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
-            border-radius: 12px 12px 0 0;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 0 25px var(--glow-color-lg);
         }
         
         .close-modal {
@@ -1005,12 +1115,15 @@
             justify-content: center;
             border-radius: 50%;
             z-index: 10;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .close-modal:hover {
             color: var(--accent-color);
-            transform: rotate(90deg);
+            transform: rotate(90deg) scale(1.1);
             background-color: rgba(231, 76, 60, 0.1);
+            text-shadow: 0 0 10px var(--glow-color);
         }
         
         .modal-header {
@@ -1025,6 +1138,7 @@
             font-size: 2.5rem;
             line-height: 1.2;
             padding-right: 40px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
         
         .modal-header .meta {
@@ -1033,11 +1147,13 @@
             align-items: center;
             color: var(--text-secondary);
             font-size: 1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body {
             line-height: 1.8;
             font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body h2 {
@@ -1046,18 +1162,21 @@
             padding-bottom: 0.8rem;
             border-bottom: 2px solid var(--accent-color);
             font-size: 1.8rem;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
         }
         
         .modal-body h3 {
             color: var(--accent-secondary);
             margin: 2rem 0 1.2rem;
             font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body h4 {
             color: #e67e22;
             margin: 1.5rem 0 1rem;
             font-size: 1.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body p {
@@ -1083,20 +1202,22 @@
             font-size: 1rem;
             color: #ffcc00;
             border: 1px solid #444;
+            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .modal-body pre {
             background-color: #111;
             color: #f0f0f0;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow-x: auto;
             margin: 1.8rem 0;
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.95rem;
             line-height: 1.6;
             border-left: 5px solid var(--accent-color);
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+            box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0, 0, 0, 0.7);
         }
         
         .modal-body pre code {
@@ -1111,8 +1232,9 @@
             border-collapse: collapse;
             margin: 1.8rem 0;
             background-color: var(--table-row);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: var(--shadow-md);
         }
         
         .modal-body table th {
@@ -1122,12 +1244,14 @@
             text-align: left;
             font-weight: 600;
             border-bottom: 2px solid var(--accent-color);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body table td {
             padding: 10px 15px;
             border-bottom: 1px solid var(--border-color);
             color: var(--text-color);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
         }
         
         .modal-body table tr:nth-child(even) {
@@ -1136,6 +1260,7 @@
         
         .modal-body table tr:hover {
             background-color: rgba(231, 76, 60, 0.1);
+            box-shadow: inset 0 0 10px var(--glow-color);
         }
         
         /* Footer */
@@ -1146,6 +1271,7 @@
             text-align: center;
             margin-top: 5rem;
             border-top: 1px solid var(--border-color);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
         .footer-content {
@@ -1155,11 +1281,12 @@
         }
         
         .footer-logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             margin-bottom: 1.8rem;
             color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            text-shadow: 0 0 15px var(--glow-color-lg), 0 4px 8px rgba(0, 0, 0, 0.5);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
         
         .footer-links {
@@ -1173,18 +1300,26 @@
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             font-size: 1.05rem;
+            padding: 8px 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .footer-links a i {
             margin-right: 8px;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
         }
         
         .footer-links a:hover {
             color: var(--accent-color);
+            background-color: rgba(231, 76, 60, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-accent);
         }
         
         .copyright {
@@ -1193,6 +1328,7 @@
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
             width: 100%;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         /* Responsive */
@@ -1334,16 +1470,19 @@
         
         ::-webkit-scrollbar-track {
             background: var(--dark-color);
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
         }
         
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, var(--accent-color), #c0392b);
             border-radius: 6px;
             border: 2px solid var(--dark-color);
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(to bottom, #c0392b, var(--accent-color));
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 0 10px var(--glow-color);
         }
         
         /* Article specific modal colors */
@@ -1355,6 +1494,8 @@
         #modal-article6 .modal-content:before { background: linear-gradient(90deg, #1abc9c, #3498db); }
         #modal-article7 .modal-content:before { background: linear-gradient(90deg, #d35400, #e74c3c); }
         #modal-article8 .modal-content:before { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+        #modal-article9 .modal-content:before { background: linear-gradient(90deg, #8e44ad, #3498db); }
+        #modal-article10 .modal-content:before { background: linear-gradient(90deg, #16a085, #1abc9c); }
         
         /* Overlay для настроек */
         .settings-overlay {
@@ -1363,9 +1504,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             z-index: 999;
             display: none;
+            backdrop-filter: blur(5px);
         }
         
         .settings-overlay.active {
@@ -1376,6 +1518,36 @@
         .toc-item:nth-child(7) .toc-link i,
         .article-card:nth-child(7) .article-icon {
             color: var(--campfire-color);
+        }
+        
+        /* Дополнительные тени для текста и элементов */
+        .sdk-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Тени для элементов форм */
+        input, select, textarea {
+            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        /* Тени для иконок */
+        i, .fas, .far, .fab {
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        }
+        
+        /* Эффект свечения для иконок при наведении */
+        .toc-link:hover i,
+        .footer-links a:hover i,
+        nav ul li a:hover i {
+            filter: drop-shadow(0 0 5px var(--glow-color)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
     </style>
 </head>
@@ -1389,7 +1561,7 @@
             <a href="#" class="logo">
                 <span class="logo-icon"><i class="fas fa-code"></i></span>
                 <span class="logo-text">LOGIC SDK 0.4</span>
-                <span class="version-badge v01">v0.1</span>
+                <span class="version-badge v01">v0.2</span>
             </a>
             
             <div class="header-controls">
@@ -1457,7 +1629,7 @@
                 </div>
             </div>
             
-            <!-- Секция кастомного цвета RGB -->
+            <!-- Секция кастомного цвета акцента -->
             <div class="custom-color-section" id="customColorSection" style="display: none;">
                 <h4><i class="fas fa-eye-dropper"></i> Кастомный цвет акцента</h4>
                 <p>Введите значения RGB для основного цвета (0-255)</p>
@@ -1514,6 +1686,55 @@
         </div>
         
         <div class="settings-section">
+            <h3><i class="fas fa-sun"></i> Настройка цвета свечения (Glow)</h3>
+            <p>Настройте цвет свечения и теней с акцентом для кнопок, карточек и иконок</p>
+            
+            <div class="custom-color-section">
+                <div class="custom-color-inputs">
+                    <div class="color-input">
+                        <label for="glowR">Красный (R)</label>
+                        <input type="number" id="glowR" min="0" max="255" value="231" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowG">Зеленый (G)</label>
+                        <input type="number" id="glowG" min="0" max="255" value="76" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowB">Синий (B)</label>
+                        <input type="number" id="glowB" min="0" max="255" value="60" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowA">Прозрачность (A)</label>
+                        <input type="number" id="glowA" min="0" max="100" value="30" placeholder="0-100%">
+                    </div>
+                </div>
+                
+                <div class="custom-color-inputs">
+                    <div class="color-input">
+                        <label for="glowLgR">Красный (Большой Glow)</label>
+                        <input type="number" id="glowLgR" min="0" max="255" value="231" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowLgG">Зеленый (Большой Glow)</label>
+                        <input type="number" id="glowLgG" min="0" max="255" value="76" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowLgB">Синий (Большой Glow)</label>
+                        <input type="number" id="glowLgB" min="0" max="255" value="60" placeholder="0-255">
+                    </div>
+                    <div class="color-input">
+                        <label for="glowLgA">Прозрачность (A)</label>
+                        <input type="number" id="glowLgA" min="0" max="100" value="40" placeholder="0-100%">
+                    </div>
+                </div>
+                
+                <div class="color-preview-glow" id="colorPreviewGlow"></div>
+                
+                <button class="apply-custom-color" id="applyGlowColor">Применить цвет свечения</button>
+            </div>
+        </div>
+        
+        <div class="settings-section">
             <h3><i class="fas fa-campfire"></i> Настройка цвета костра</h3>
             <p>Настройте цвет иконки костра для статьи "Байки из склепа"</p>
             
@@ -1544,7 +1765,7 @@
         <div class="settings-section">
             <h3><i class="fas fa-info-circle"></i> О приложении</h3>
             <div class="language-selector">
-                <p>LOGIC SDK 0.4 Версия 0.1</p>
+                <p>LOGIC SDK 0.4 Версия 0.2</p>
                 <p>Полное руководство по настройкам логики STALKER</p>
                 <p>Основано на материалах GSC Game World</p>
             </div>
@@ -1606,6 +1827,18 @@
                         <a href="#" class="toc-link open-article-link" data-article="8">
                             <i class="fas fa-code-branch"></i>
                             <span>8. Оверрайды и скрипт logic</span>
+                        </a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#" class="toc-link open-article-link" data-article="9">
+                            <i class="fas fa-terminal"></i>
+                            <span>9. Синтаксис скрипта Logic</span>
+                        </a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#" class="toc-link open-article-link" data-article="10">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>10. Схемы работы объектов и смарттеррейны</span>
                         </a>
                     </div>
                 </div>
@@ -1775,6 +2008,46 @@
                         </button>
                     </div>
                 </article>
+                
+                <!-- Article 9 -->
+                <article class="article-card">
+                    <div class="article-icon-container">
+                        <div class="article-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> Статья 9</span>
+                            <span class="article-tag"><i class="fas fa-code"></i> Синтаксис</span>
+                        </div>
+                        <h3>Синтаксис скрипта Logic</h3>
+                        <p>Подробное описание синтаксиса скриптов Logic в SDK 0.4: условия, эффекты, переключение секций, работа с инфопоршнами и сложные логические конструкции.</p>
+                        <button class="open-article-btn" data-article="9">
+                            Открыть статью <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Article 10 -->
+                <article class="article-card">
+                    <div class="article-icon-container">
+                        <div class="article-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> Статья 10</span>
+                            <span class="article-tag"><i class="fas fa-code"></i> Объекты</span>
+                        </div>
+                        <h3>Схемы работы объектов и смарттеррейны</h3>
+                        <p>Полное руководство по настройке прожекторов, кодовых замков, ворот, звуковых схем, смарттеррейнов, гулагов, вертолетов, встреч с NPC и других объектов в SDK 0.4.</p>
+                        <button class="open-article-btn" data-article="10">
+                            Открыть статью <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </article>
             </div>
         </div>
     </main>
@@ -1790,21 +2063,23 @@
                 <a href="#" class="open-article-link" data-article="6"><i class="fas fa-ghost"></i> Монстры</a>
                 <a href="#" class="open-article-link" data-article="7"><i class="fas fa-campfire"></i> Истории</a>
                 <a href="#" class="open-article-link" data-article="8"><i class="fas fa-code-branch"></i> Оверрайды</a>
+                <a href="#" class="open-article-link" data-article="9"><i class="fas fa-terminal"></i> Синтаксис</a>
+                <a href="#" class="open-article-link" data-article="10"><i class="fas fa-lightbulb"></i> Объекты</a>
             </div>
             <div class="copyright">
-                &copy; 2023 Полное руководство по настройкам логики STALKER. Основано на материалах GSC Game World. LOGIC SDK 0.4 v0.1
+                &copy; 2023 Полное руководство по настройкам логики STALKER. Основано на материалах GSC Game World. LOGIC SDK 0.4 v0.2
             </div>
         </div>
     </footer>
 
-    <!-- Modal windows for articles -->
+    <!-- Модальные окна для статей -->
     <!-- Article 1 Modal -->
     <div class="article-modal" id="modal-article1">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>3. Настройки логики: Система флагов (path_walk, path_look) - LOGIC SDK 0.4</h1>
+                <h1>1. Система флагов (path_walk, path_look) - LOGIC SDK 0.4</h1>
                 <div class="meta">
                     <span><i class="far fa-clock"></i> Статья 1 | Логика сталкеров</span>
                     <span class="sdk-badge">SDK 0.4</span>
@@ -1884,343 +2159,220 @@ sig = check_area</pre>
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Схемы поведения сталкеров - LOGIC SDK 0.4</h1>
+                <h1>2. Схемы поведения сталкеров - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 2 | Логика сталкеров</span>
+                    <span><i class="far fa-clock"></i> Статья 2 | Поведение NPC</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
-                <h2>2.1. Основные схемы поведения</h2>
-                <p>В SDK 0.4 существует множество схем поведения для сталкеров, каждая из которых определяет их действия в различных ситуациях.</p>
+                <h2>Основные схемы поведения сталкеров:</h2>
                 
                 <h3>walker</h3>
-                <p>Базовая схема перемещения по патрульным путям. Позволяет сталкеру ходить по заданному маршруту, останавливаться в определенных точках и смотреть в заданные направления.</p>
+                <p>Базовая схема перемещения по патрульным путям. Используется для патрулирования местности.</p>
                 
                 <h3>remark</h3>
-                <p>Схема для синхронизации и связки других схем. Используется для диалогов и взаимодействий между NPC.</p>
+                <p>Схема для синхронизации/связки других схем. Позволяет настроить диалоги и взаимодействия.</p>
                 
                 <h3>sleeper</h3>
-                <p>Схема для спящих NPC. Сталкер спит в определенном месте и просыпается при приближении игрока или других событиях.</p>
+                <p>Схема для NPC, которые спят или отдыхают. Просыпаются при приближении игрока или при сигнале.</p>
                 
                 <h3>kamp</h3>
-                <p>Схема для сталкеров, находящихся в лагере. Они могут сидеть у костра, готовить еду, чистить оружие и выполнять другие действия, характерные для отдыха.</p>
+                <p>Схема для обороны позиции. NPC остаются на месте и защищают территорию.</p>
                 
                 <h3>camper</h3>
-                <p>Схема для сталкеров в засаде. Они занимают позицию и ждут приближения цели.</p>
+                <p>Схема засады. NPC прячутся и ждут приближения врага.</p>
                 
                 <h3>sniper</h3>
-                <p>Схема для снайперов. Они занимают позицию на возвышенности и атакуют цели на дальних дистанциях.</p>
+                <p>Схема снайпера. NPC занимают позицию и ведут огонь с дальнего расстояния.</p>
                 
                 <h3>follower</h3>
-                <p>Схема для сталкеров, следующих за другими персонажами или игроком.</p>
+                <p>Схема следования. NPC следуют за другим персонажем или игроком.</p>
                 
                 <h3>zoneguard</h3>
-                <p>Схема для охраны определенной зоны. Сталкер патрулирует заданную область и реагирует на вторжение.</p>
+                <p>Схема охраны зоны. NPC патрулируют и охраняют определенную территорию.</p>
                 
                 <h3>wounded</h3>
-                <p>Схема для раненых сталкеров. Они ищут укрытие, оказывают себе первую помощь или просят о помощи.</p>
+                <p>Схема для раненых NPC. Персонажи с этой схемой ищут укрытие и пытаются выжить.</p>
                 
                 <h3>rest</h3>
-                <p>Схема для отдыха. Сталкер сидит или лежит, восстанавливая силы.</p>
+                <p>Схема отдыха. NPC отдыхают, едят или занимаются другими повседневными делами.</p>
                 
                 <h3>heli_hunter</h3>
-                <p>Специальная схема для сталкеров, охотящихся на вертолеты.</p>
+                <p>Специальная схема для охоты на вертолеты.</p>
                 
                 <h3>patrol</h3>
-                <p>Схема для патрулирования. Сталкер перемещается по заданному маршруту и осматривает территорию.</p>
-                
-                <h2>2.2. Настройка схем</h2>
-                <p>Каждая схема имеет свои параметры настройки. Например, для схемы walker:</p>
-                <pre>
-[walker]
-path_walk = patrol_path
-path_look = patrol_look
-team = default</pre>
-                
-                <p>Для схемы kamp:</p>
-                <pre>
-[kamp]
-center_point = camp_center
-radius = 10
-path_walk = camp_walk
-path_look = camp_look</pre>
+                <p>Схема патрулирования с расширенными настройками маршрутов.</p>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 3 Modal -->
     <div class="article-modal" id="modal-article3">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Схемы walker и remark - LOGIC SDK 0.4</h1>
+                <h1>3. Схемы walker и remark - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 3 | Логика сталкеров</span>
+                    <span><i class="far fa-clock"></i> Статья 3 | Основные схемы</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
                 <h2>3.1. Схема walker</h2>
-                <p>Walker - базовая схема перемещения NPC по патрульным путям. Она позволяет сталкерам:</p>
-                <ul>
-                    <li>Перемещаться между точками пути</li>
-                    <li>Останавливаться в заданных точках</li>
-                    <li>Смотреть в определенные направления</li>
-                    <li>Выполнять анимации в точках остановки</li>
-                    <li>Реагировать на сигналы и события</li>
-                </ul>
+                <p>Базовая схема перемещения NPC по патрульным путям. Настраивается через:</p>
                 
-                <h3>Основные параметры схемы walker:</h3>
                 <pre>
 [walker]
-path_walk = путь_перемещения
-path_look = путь_взгляда (опционально)
+path_walk = путь_патрулирования
+path_look = путь_обзора
 team = название_команды</pre>
                 
-                <h3>Пример использования:</h3>
-                <pre>
-[walker]
-path_walk = stalker_path_walk
-path_look = stalker_path_look
-team = stalker_team_1</pre>
-                
-                <h2>3.2. Схема remark</h2>
-                <p>Remark - схема для синхронизации и связки действий нескольких NPC. Используется для:</p>
+                <h3>Основные параметры:</h3>
                 <ul>
-                    <li>Диалогов между персонажами</li>
-                    <li>Совместных действий</li>
-                    <li>Синхронизации анимаций</li>
-                    <li>Взаимодействия с объектами</li>
+                    <li><strong>path_walk</strong> - обязательный параметр, путь перемещения</li>
+                    <li><strong>path_look</strong> - необязательный, точки обзора</li>
+                    <li><strong>team</strong> - название команды для синхронизации</li>
+                    <li><strong>def_state_moving</strong> - состояние при движении</li>
+                    <li><strong>def_state_standing</strong> - состояние при остановке</li>
                 </ul>
                 
-                <h3>Основные параметры схемы remark:</h3>
+                <h2>3.2. Схема remark</h2>
+                <p>Схема для диалогов и синхронизации действий NPC.</p>
+                
                 <pre>
 [remark]
-anim = анимация
-target = цель_взгляда
-snd = звук (опционально)
-snd_anim = синхронизация_звука_с_анимацией (опционально)</pre>
+anim = анимация_диалога
+target = цель_для_диалога
+sound = звук_диалога
+synch = true/false</pre>
                 
-                <h3>Пример использования:</h3>
+                <h3>Пример синхронизированного диалога:</h3>
                 <pre>
+[logic]
+active = remark
 [remark]
-anim = talk_about_map
-target = leader
-snd = dialogs\stalker_map
-snd_anim = sync</pre>
-                
-                <h2>3.3. Взаимодействие walker и remark</h2>
-                <p>Эти схемы часто используются вместе. Например, сталкер может:</p>
-                <ol>
-                    <li>Дойти до определенной точки по схеме walker</li>
-                    <li>Переключиться на схему remark для диалога</li>
-                    <li>Вернуться к схеме walker для продолжения патруля</li>
-                </ol>
-                
-                <p>Переключение между схемами осуществляется через логические условия или сигналы:</p>
-                <pre>
-on_info = {+stalker_talk_start} remark@talk
-on_info = {+stalker_talk_end} walker@patrol</pre>
+anim = hello
+target = actor
+sound = dialogs\hello.ogg
+synch = true
+on_signal = end_remark| следующая_схема</pre>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 4 Modal -->
     <div class="article-modal" id="modal-article4">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Секции combat, death, hit - LOGIC SDK 0.4</h1>
+                <h1>4. Секции combat, death, hit - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 4 | Логика сталкеров</span>
+                    <span><i class="far fa-clock"></i> Статья 4 | Боевые схемы</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
                 <h2>4.1. Секция combat</h2>
-                <p>Секция combat определяет поведение NPC в боевых ситуациях. Она содержит параметры для:</p>
-                <ul>
-                    <li>Выбора тактики боя</li>
-                    <li>Использования укрытий</li>
-                    <li>Перезарядки оружия</li>
-                    <li>Координации с другими NPC</li>
-                    <li>Реакции на различные типы угроз</li>
-                </ul>
+                <p>Определяет поведение NPC в бою.</p>
                 
-                <h3>Основные параметры секции combat:</h3>
                 <pre>
 [combat]
-enemy_type = тип_врага
-max_dist = максимальная_дистанция
-min_dist = минимальная_дистанция
-probability = вероятность_атаки</pre>
+enemy = цель_атаки
+action = тип_боевого_поведения
+on_info = {+инфопоршн} схема_активации</pre>
+                
+                <h3>Типы боевого поведения:</h3>
+                <ul>
+                    <li><strong>hide</strong> - укрытие и стрельба из укрытия</li>
+                    <li><strong>sniper</strong> - снайперская стрельба</li>
+                    <li><strong>assault</strong> - штурм с приближением к врагу</li>
+                    <li><strong>retreat</strong> - отступление при низком здоровье</li>
+                </ul>
                 
                 <h2>4.2. Секция death</h2>
-                <p>Секция death определяет поведение NPC при смерти. Она включает:</p>
-                <ul>
-                    <li>Анимации смерти</li>
-                    <li>Звуковые эффекты</li>
-                    <li>Создание лута</li>
-                    <li>Взаимодействие с физикой</li>
-                    <li>Специальные эффекты</li>
-                </ul>
+                <p>Реакция на смерть NPC.</p>
                 
-                <h3>Основные параметры секции death:</h3>
                 <pre>
 [death]
-cond = условие_смерти
-anim = анимация_смерти
-snd = звук_смерти
-items = выпадаемый_лут</pre>
+on_info = {+инфопоршн} схема_смерти
+cond = условие_смерти</pre>
                 
                 <h2>4.3. Секция hit</h2>
-                <p>Секция hit определяет реакцию NPC на получение повреждений:</p>
-                <ul>
-                    <li>Анимации получения урона</li>
-                    <li>Звуковые реакции</li>
-                    <li>Изменение поведения</li>
-                    <li>Критические попадания</li>
-                    <li>Реакция на разные типы повреждений</li>
-                </ul>
+                <p>Реакция на получение урона.</p>
                 
-                <h3>Основные параметры секции hit:</h3>
                 <pre>
 [hit]
-cond = условие_попадания
-anim = анимация_получения_урона
-snd = звуковая_реакция
-power = мощность_урона</pre>
-                
-                <h2>4.4. Взаимодействие секций</h2>
-                <p>Эти секции работают вместе для создания реалистичного поведения NPC:</p>
-                <ol>
-                    <li>При получении урона активируется секция hit</li>
-                    <li>При достижении критического уровня здоровья NPC переходит в режим combat</li>
-                    <li>При смерти активируется секция death</li>
-                </ol>
-                
-                <p>Пример комплексной настройки:</p>
-                <pre>
-[combat]
-enemy_type = monster, stalker
-max_dist = 50
-min_dist = 5
-
-[hit]
-cond = {=hitted} hit_animation
-anim = hit_front
-snd = actor\pain
-
-[death]
-cond = {=killed} death_animation
-anim = death_1
-items = ak74, bread</pre>
+on_info = {+инфопоршн} схема_реакции
+condlist = список_условий</pre>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 5 Modal -->
     <div class="article-modal" id="modal-article5">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Новые секции и danger - LOGIC SDK 0.4</h1>
+                <h1>5. Новые секции и danger - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 5 | Секции</span>
+                    <span><i class="far fa-clock"></i> Статья 5 | Дополнительные секции</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
-                <h2>5.1. Новые секции в SDK 0.4</h2>
+                <h2>5.1. Новые секции SDK 0.4</h2>
                 
                 <h3>dont_spawn_character_supplies</h3>
-                <p>Эта секция предотвращает спавн стандартных запасов у персонажа. Используется для уникальных NPC, которые должны иметь специальное снаряжение.</p>
-                <pre>
-[dont_spawn_character_supplies]</pre>
+                <p>Запрещает спавн стандартных припасов на персонаже:</p>
+                <pre>[dont_spawn_character_supplies]</pre>
                 
                 <h3>no_smart</h3>
-                <p>Отключает "умное" поведение NPC. Персонаж будет выполнять только явно заданные действия без дополнительной логики.</p>
-                <pre>
-[no_smart]</pre>
+                <p>Отключает "умное" поведение NPC:</p>
+                <pre>[no_smart]</pre>
                 
                 <h3>threshold</h3>
-                <p>Устанавливает пороговые значения для различных параметров (здоровье, мораль, усталость).</p>
+                <p>Устанавливает пороговые значения для смены состояний:</p>
                 <pre>
 [threshold]
-health = 0.3
-morale = 0.5</pre>
+min_health = минимальное_здоровье
+max_health = максимальное_здоровье</pre>
                 
-                <h2>5.2. Использование danger</h2>
-                <p>Секция danger определяет реакцию NPC на различные опасности:</p>
-                <ul>
-                    <li>Обнаружение врагов</li>
-                    <li>Реакция на аномалии</li>
-                    <li>Избегание опасных зон</li>
-                    <li>Предупреждение других NPC</li>
-                </ul>
+                <h2>5.2. Секция danger</h2>
+                <p>Реакция на опасности в окружающей среде.</p>
+                
+                <pre>
+[danger]
+ignore_distance = дистанция_игнорирования
+type = тип_опасности
+on_info = {+инфопоршн} схема_реакции</pre>
                 
                 <h3>Типы опасностей:</h3>
-                <pre>
-[danger]
-type = grenade   ; граната
-type = bullet     ; выстрел
-type = attack     ; атака врага
-type = sound      ; подозрительный звук
-type = anomaly    ; аномалия
-type = entity     ; подозрительный объект</pre>
-                
-                <h3>Параметры реакции на опасность:</h3>
-                <pre>
-[danger]
-ignore_distance = 10    ; игнорировать опасности ближе 10 метров
-inertion_time = 5000    ; время бездействия после реакции
-action = hide           ; действие: спрятаться
-action = attack         ; действие: атаковать
-action = ignore         ; действие: проигнорировать</pre>
-                
-                <h2>5.3. Примеры использования</h2>
-                <p>Пример NPC с отключенными стандартными запасами:</p>
-                <pre>
-[dont_spawn_character_supplies]
-[no_smart]
-threshold]
-health = 0.4</pre>
-                
-                <p>Пример настройки реакции на опасности:</p>
-                <pre>
-[danger]
-type = grenade
-ignore_distance = 5
-action = hide
-
-[danger]
-type = anomaly
-ignore_distance = 15
-action = avoid
-
-[danger]
-type = attack
-action = attack
-inertion_time = 3000</pre>
+                <ul>
+                    <li><strong>grenade</strong> - граната</li>
+                    <li><strong>sound</strong> - подозрительный звук</li>
+                    <li><strong>hit</strong> - попадание</li>
+                    <li><strong>attack</strong> - атака</li>
+                    <li><strong>corpse</strong> - труп</li>
+                </ul>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 6 Modal -->
     <div class="article-modal" id="modal-article6">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Схемы для монстров - LOGIC SDK 0.4</h1>
+                <h1>6. Схемы для монстров - LOGIC SDK 0.4</h1>
                 <div class="meta">
                     <span><i class="far fa-clock"></i> Статья 6 | Монстры</span>
                     <span class="sdk-badge">SDK 0.4</span>
@@ -2231,336 +2383,469 @@ inertion_time = 3000</pre>
                 <h2>6.1. Основные схемы поведения монстров</h2>
                 
                 <h3>mob_walker</h3>
-                <p>Схема перемещения монстров по заданным путям. Аналогична walker для сталкеров, но с учетом особенностей поведения монстров.</p>
+                <p>Перемещение монстра по точкам пути:</p>
                 <pre>
 [mob_walker]
-path_walk = monster_path
-path_look = monster_look</pre>
+path_walk = путь_движения
+path_look = путь_обзора
+home_min = минимальное_время_дома
+home_max = максимальное_время_дома</pre>
                 
                 <h3>mob_eluder</h3>
-                <p>Схема для монстров, которые уклоняются от опасностей и противников.</p>
-                <pre>
-[mob_eluder]
-min_radius = 10
-max_radius = 30
-home_position = монстр_дом</pre>
+                <p>Монстр уклоняется от противника:</p>
+                <pre>[mob_eluder]
+min_radius = минимальная_дистанция
+max_radius = максимальная_дистанция</pre>
                 
                 <h3>mob_remark</h3>
-                <p>Схема для специальных действий монстров (атаки, рычание, другие анимации).</p>
-                <pre>
-[mob_remark]
+                <p>Монстр делает паузу в определенной точке:</p>
+                <pre>[mob_remark]
 anim = анимация
-snd = звук</pre>
+time = время_паузы</pre>
                 
                 <h3>mob_combat</h3>
-                <p>Боевая схема для монстров. Определяет тактику атаки, использование способностей и поведение в бою.</p>
+                <p>Боевое поведение монстра:</p>
                 <pre>
 [mob_combat]
-enemy = тип_врага
-max_dist = 20
-min_dist = 2</pre>
+min_attack_distance = минимальная_дистанция_атаки
+max_attack_distance = максимальная_дистанция_атаки
+home_path = путь_к_дому</pre>
                 
                 <h3>mob_death</h3>
-                <p>Схема смерти монстров. Определяет анимации смерти и посмертное поведение.</p>
-                <pre>
-[mob_death]
-anim = death_anim
-cond = условие_смерти</pre>
+                <p>Реакция на смерть монстра:</p>
+                <pre>[mob_death]
+on_info = {+инфопоршн} схема_смерти</pre>
                 
                 <h3>mob_jump</h3>
-                <p>Схема для прыжков монстров. Используется для таких монстров, как кровососы и псевдогиганты.</p>
+                <p>Прыжок монстра:</p>
                 <pre>
 [mob_jump]
-jump_point = точка_прыжка
-power = сила_прыжка</pre>
+offset = смещение_прыжка
+velocity = скорость_прыжка
+anim = анимация_прыжка</pre>
                 
                 <h3>mob_camp</h3>
-                <p>Схема для монстров, находящихся в лагере или логове.</p>
+                <p>Монстр стоит на месте и охраняет территорию:</p>
                 <pre>
 [mob_camp]
-center_point = центр_лагеря
-radius = радиус</pre>
+path_look = точки_обзора
+home_path = путь_к_дому</pre>
                 
                 <h3>mob_home</h3>
-                <p>Схема возвращения монстра в свое логово или на территорию.</p>
-                <pre>
-[mob_home]
-home_point = точка_дома
-radius = 15</pre>
+                <p>Монстр возвращается домой:</p>
+                <pre>[mob_home]
+home_min = минимальное_время_дома
+home_max = максимальное_время_дома</pre>
                 
                 <h3>mob_fake_death</h3>
-                <p>Схема для монстров, которые притворяются мертвыми (например, слепые псы).</p>
+                <p>Монстр притворяется мертвым:</p>
                 <pre>
 [mob_fake_death]
-anim = fake_death
-cond = условие_притворства</pre>
-                
-                <h2>6.2. Особенности настройки монстров</h2>
-                <p>Монстры имеют свои особенности поведения:</p>
-                <ul>
-                    <li>Инстинктивные реакции</li>
-                    <li>Территориальное поведение</li>
-                    <li>Особые способности и атаки</li>
-                    <li>Реакции на разные типы угроз</li>
-                    <li>Поведение в стае</li>
-                </ul>
-                
-                <h2>6.3. Пример комплексной настройки</h2>
-                <pre>
-; Кровосос
-[mob_walker]
-path_walk = bloodsucker_path
-path_look = bloodsucker_look
-
-[mob_combat]
-enemy = stalker
-max_dist = 15
-min_dist = 0
-
-[mob_jump]
-jump_point = ambush_point
-power = 1.5
-
-[mob_home]
-home_point = bloodsucker_nest
-radius = 20</pre>
+anim = анимация_смерти
+on_info = {+инфопоршн} схема_оживления</pre>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 7 Modal -->
     <div class="article-modal" id="modal-article7">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Байки из склепа и спавнеры - LOGIC SDK 0.4</h1>
+                <h1>7. Байки из склепа и спавнеры - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 7 | История</span>
+                    <span><i class="far fa-clock"></i> Статья 7 | Истории и спавн</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
-                <h2>7.1. Истории у костра (байки из склепа)</h2>
-                <p>В SDK 0.4 реализована система историй у костра, которая позволяет сталкерам рассказывать различные истории в определенных условиях.</p>
+                <h2>7.1. Истории у костра</h2>
+                <p>Настройка диалогов у костра с использованием схемы remark:</p>
                 
-                <h3>Настройка историй:</h3>
                 <pre>
+[logic]
+active = campfire_story
 [campfire_story]
-story_id = уникальный_ид_истории
-condition = условие_рассказа
-participants = участники_диалога
-duration = длительность_истории</pre>
+path_look = campfire_look
+path_walk = campfire_walk
+story = название_истории
+team = storytelling</pre>
                 
                 <h3>Пример истории:</h3>
                 <pre>
 [campfire_story]
-story_id = story_bloodsucker_encounter
-condition = {=time_night} true
-participants = 3
-duration = 120000</pre>
+anim = sit_ass
+sound = stories\campfire\story_1.ogg
+on_signal = end_story| следующая_схема</pre>
                 
                 <h2>7.2. Секция dont_spawn_loot</h2>
-                <p>Эта секция предотвращает спавн стандартного лута у NPC или монстров. Используется для уникальных персонажей или специальных ситуаций.</p>
-                <pre>
-[dont_spawn_loot]</pre>
+                <p>Запрещает спавн лута на NPC после смерти:</p>
+                <pre>[dont_spawn_loot]</pre>
                 
                 <h2>7.3. Секция spawner</h2>
-                <p>Секция spawner позволяет создавать NPC и монстров по условиям. Это мощный инструмент для управления населением локаций.</p>
+                <p>Спавн NPC и монстров по условиям:</p>
                 
-                <h3>Основные параметры spawner:</h3>
                 <pre>
 [spawner]
-npc = тип_NPC_или_монстра
 cond = условие_спавна
+npc = тип_NPC
 max_count = максимальное_количество
-min_count = минимальное_количество
-probability = вероятность_спавна
-time = время_спавна</pre>
+spawn_radius = радиус_спавна</pre>
                 
-                <h3>Пример спавна сталкеров:</h3>
+                <h3>Пример дневных монстров:</h3>
                 <pre>
 [spawner]
-npc = stalker
-cond = {=time_day} true
-max_count = 5
-min_count = 2
-probability = 0.8</pre>
-                
-                <h3>Пример спавна монстров:</h3>
-                <pre>
-[spawner]
-npc = pseudodog
-cond = {=time_night} true
+cond = {=time_of_day day}
+npc = boar
 max_count = 3
-min_count = 1
-probability = 0.6</pre>
+spawn_radius = 50</pre>
                 
-                <h2>7.4. Настройка дневных и ночных монстров</h2>
-                <p>Используя секцию spawner с условиями времени, можно создавать разных монстров для дня и ночи:</p>
-                
-                <h3>Дневные монстры:</h3>
+                <h3>Пример ночных монстров:</h3>
                 <pre>
 [spawner]
-npc = flesh
-cond = {=time_day} true
-max_count = 4
-probability = 0.7</pre>
-                
-                <h3>Ночные монстры:</h3>
-                <pre>
-[spawner]
+cond = {=time_of_day night}
 npc = bloodsucker
-cond = {=time_night} true
 max_count = 2
-probability = 0.5</pre>
-                
-                <h2>7.5. Комплексный пример</h2>
-                <pre>
-; Лагерь сталкеров с историями у костра
-[campfire_story]
-story_id = campfire_story_1
-condition = {=time_night} true
-participants = 4
-duration = 180000
-
-; Спавн охраны
-[spawner]
-npc = stalker_guard
-cond = {!=is_clear} true
-max_count = 3
-min_count = 1
-
-; Ночные монстры вокруг лагеря
-[spawner]
-npc = pseudodog
-cond = {=time_night} true
-max_count = 2
-probability = 0.4</pre>
+spawn_radius = 30</pre>
             </div>
         </div>
     </div>
-    
+
     <!-- Article 8 Modal -->
     <div class="article-modal" id="modal-article8">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>Оверрайды и скрипт logic - LOGIC SDK 0.4</h1>
+                <h1>8. Оверрайды и скрипт logic - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 8 | Система</span>
+                    <span><i class="far fa-clock"></i> Статья 8 | Системные настройки</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
                 <h2>8.1. Оверрайды для сталкеров</h2>
-                <p>Оверрайды позволяют переопределять стандартное поведение сталкеров в определенных условиях.</p>
+                <p>Переопределение стандартного поведения NPC:</p>
                 
-                <h3>Основные типы оверрайдов:</h3>
                 <pre>
 [overrides]
-combat = боевой_оверрайд
-death = оверрайд_смерти
-hit = оверрайд_получения_урона
-anim = оверрайд_анимаций</pre>
+combat_ignore = всегда_игнорировать_бой
+combat_ignore_keep_when_attacked = игнорировать_даже_при_атаке</pre>
                 
                 <h3>Пример оверрайда:</h3>
                 <pre>
 [overrides]
-combat = custom_combat_behavior
-death = unique_death_animation
-hit = {=is_leader} leader_hit_reaction</pre>
+combat_ignore = {=fighting_dist_ge(20)} true, false
+combat_type = {=best_enemy} monolith</pre>
                 
                 <h2>8.2. Оверрайды для монстров</h2>
-                <p>Монстры также поддерживают систему оверрайдов для кастомизации поведения.</p>
-                
-                <h3>Пример для монстра:</h3>
                 <pre>
 [overrides]
-combat = aggressive_combat
-death = dissolve_death
-anim = {=is_alpha} alpha_animations</pre>
+active = всегда_активный
+predator = режим_хищника</pre>
                 
                 <h2>8.3. Скрипт logic</h2>
-                <p>Скрипт logic - центральный механизм управления переключением схем и поведением NPC.</p>
+                <p>Основной скрипт для управления переключением схем:</p>
                 
-                <h3>Основные функции logic:</h3>
+                <pre>
+[logic]
+active = начальная_схема
+on_actor_dist_le = дистанция_актора| схема_активации
+on_info = {+инфопоршн} схема_активации</pre>
+                
+                <h3>Пример логики с условиями:</h3>
+                <pre>
+[logic]
+active = walker
+on_actor_dist_le = 10| remark@hello
+on_info = {+alarm} combat
+on_info = {-alarm} walker</pre>
+                
+                <h3>Условия переключения схем:</h3>
                 <ul>
-                    <li>Управление переключением между схемами</li>
-                    <li>Обработка условий и сигналов</li>
-                    <li>Управление состоянием NPC</li>
-                    <li>Координация действий группы</li>
-                    <li>Работа с кастомными данными</li>
+                    <li><strong>on_actor_dist_le</strong> - дистанция до актора меньше или равна</li>
+                    <li><strong>on_actor_dist_ge</strong> - дистанция до актора больше или равна</li>
+                    <li><strong>on_signal</strong> - при получении сигнала</li>
+                    <li><strong>on_info</strong> - при изменении инфопоршна</li>
+                    <li><strong>on_timer</strong> - по таймеру</li>
                 </ul>
                 
-                <h3>Структура скрипта logic:</h3>
-                <pre>
-[logic]
-active = активная_схема
-on_info = условие_переключения
-on_signal = сигнал_переключения
-combat_ignore = игнорировать_бой</pre>
-                
-                <h2>8.4. Условия переключения</h2>
-                <p>Скрипт logic использует различные условия для переключения между схемами:</p>
-                
-                <h3>on_info условия:</h3>
-                <pre>
-[logic]
-active = walker
-on_info = {+quest_started} remark@talk
-on_info = {+enemy_spotted} combat@attack
-on_info = {-health_good} wounded@escape</pre>
-                
-                <h3>on_signal условия:</h3>
-                <pre>
-[logic]
-active = walker@patrol
-on_signal = reached_camp | kamp@rest
-on_signal = enemy_detected | combat@alert</pre>
-                
-                <h2>8.5. Работа с кастомными данными</h2>
-                <p>Скрипт logic может работать с кастомными данными NPC:</p>
-                
-                <h3>Определение кастомных данных:</h3>
+                <h2>8.4. Работа с кастомными данными</h2>
                 <pre>
 [custom_data]
-faction = duty
-rank = veteran
-quest_giver = true</pre>
-                
-                <h3>Использование в logic:</h3>
-                <pre>
-[logic]
-active = walker
-on_info = {=custom_data.faction == duty} duty_dialogs
-on_info = {=custom_data.quest_giver == true} quest_giver_behavior</pre>
-                
-                <h2>8.6. Пример комплексной настройки</h2>
-                <pre>
-; Сталкер-лидер отряда
-[custom_data]
-faction = freedom
-rank = leader
-squad = alpha
-
-[overrides]
-combat = leader_combat
-death = leader_death
-
-[logic]
-active = walker@patrol
-on_info = {=time_night} kamp@rest
-on_info = {+enemy_detected} combat@defend
-on_signal = squad_attack | combat@attack
-combat_ignore = {=is_diplomat} true</pre>
+key1 = значение1
+key2 = значение2
+on_info = {+ключ} действие</pre>
             </div>
         </div>
     </div>
 
+    <!-- Article 9 Modal -->
+    <div class="article-modal" id="modal-article9">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-header">
+                <h1>9. Синтаксис скрипта Logic - LOGIC SDK 0.4</h1>
+                <div class="meta">
+                    <span><i class="far fa-clock"></i> Статья 9 | Синтаксис</span>
+                    <span class="sdk-badge">SDK 0.4</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2>9.1. Основные элементы синтаксиса</h2>
+                
+                <h3>Секции и параметры:</h3>
+                <pre>
+[section_name]
+parameter1 = value1
+parameter2 = value2</pre>
+                
+                <h3>Комментарии:</h3>
+                <pre>
+; Это комментарий
+parameter = value ; комментарий после значения</pre>
+                
+                <h2>9.2. Условия</h2>
+                
+                <h3>Простые условия:</h3>
+                <pre>{=condition} value_if_true, value_if_false</pre>
+                
+                <h3>Сложные условия:</h3>
+                <pre>{=condition1 =condition2} value</pre>
+                
+                <h3>Логические операторы:</h3>
+                <ul>
+                    <li><strong>=</strong> - равно</li>
+                    <li><strong>!=</strong> - не равно</li>
+                    <li><strong>&lt;</strong> - меньше</li>
+                    <li><strong>&gt;</strong> - больше</li>
+                    <li><strong>&lt;=</strong> - меньше или равно</li>
+                    <li><strong>&gt;=</strong> - больше или равно</li>
+                    <li><strong>!</strong> - отрицание</li>
+                    <li><strong>&</strong> - И</li>
+                    <li><strong>|</strong> - ИЛИ</li>
+                </ul>
+                
+                <h2>9.3. Эффекты</h2>
+                
+                <h3>Установка инфопоршнов:</h3>
+                <pre>
+[logic]
+on_info = {+info_portshion} next_scheme</pre>
+                
+                <h3>Вызов функций:</h3>
+                <pre>
+[logic]
+on_signal = signal_name| function_call</pre>
+                
+                <h2>9.4. Переключение секций</h2>
+                
+                <h3>Простое переключение:</h3>
+                <pre>
+[logic]
+active = first_scheme
+on_info = {+trigger} second_scheme</pre>
+                
+                <h3>Переключение с параметрами:</h3>
+                <pre>
+[logic]
+active = walker@path1
+on_info = {+alarm} combat@aggressive</pre>
+                
+                <h2>9.5. Работа с инфопоршнами</h2>
+                
+                <h3>Проверка инфопоршнов:</h3>
+                <pre>
+{+info_portshion_1 -info_portshion_2} scheme_name</pre>
+                
+                <h3>Установка/снятие инфопоршнов:</h3>
+                <pre>
+[scheme]
+on_info = {+set_info_portshion} next_scheme
+on_info = {-clear_info_portshion} another_scheme</pre>
+                
+                <h2>9.6. Сложные логические конструкции</h2>
+                
+                <h3>Вложенные условия:</h3>
+                <pre>
+{=check_dist_le(10) =has_enemy} combat
+{=check_dist_le(10) !has_enemy} remark@hello</pre>
+                
+                <h3>Цепочки условий:</h3>
+                <pre>
+[logic]
+active = walker
+on_actor_dist_le = 5| {=time_of_day day} remark@day_greeting, remark@night_greeting
+on_info = {+quest_started} follower</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 10 Modal -->
+    <div class="article-modal" id="modal-article10">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-header">
+                <h1>10. Схемы работы объектов и смарттеррейны - LOGIC SDK 0.4</h1>
+                <div class="meta">
+                    <span><i class="far fa-clock"></i> Статья 10 | Объекты и смарттеррейны</span>
+                    <span class="sdk-badge">SDK 0.4</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2>10.1. Прожекторы (searchlights)</h2>
+                
+                <h3>Базовые настройки:</h3>
+                <pre>
+[searchlight]
+path = путь_движения
+color = цвет_луча
+range = дальность_освещения</pre>
+                
+                <h3>Пример прожектора с трекингом:</h3>
+                <pre>
+[searchlight]
+path = patrol_path
+color = yellow
+range = 100
+target = actor ; слежение за игроком</pre>
+                
+                <h2>10.2. Кодовые замки (code_lock)</h2>
+                
+                <pre>
+[code_lock]
+code = код_доступа
+on_unlock = схема_при_открытии
+on_lock = схема_при_закрытии</pre>
+                
+                <h2>10.3. Ворота (gates)</h2>
+                
+                <pre>
+[gates]
+open_cond = условие_открытия
+close_cond = условие_закрытия
+auto_close = время_автозакрытия</pre>
+                
+                <h2>10.4. Звуковые схемы (sound_scheme)</h2>
+                
+                <pre>
+[sound_scheme]
+type = тип_звука
+path = путь_к_файлам
+volume = громкость</pre>
+                
+                <h3>Типы звуковых схем:</h3>
+                <ul>
+                    <li><strong>ambient</strong> - фоновая музыка</li>
+                    <li><strong>action</strong> - звуки действий</li>
+                    <li><strong>monster</strong> - звуки монстров</li>
+                    <li><strong>anomaly</strong> - звуки аномалий</li>
+                </ul>
+                
+                <h2>10.5. Смарттеррейны (smart_terrain)</h2>
+                
+                <h3>Базовые настройки:</h3>
+                <pre>
+[smart_terrain]
+max_population = максимальное_население
+enter_distance = дистанция_входа
+exit_distance = дистанция_выхода</pre>
+                
+                <h3>Пример смарттеррейна:</h3>
+                <pre>
+[smart_terrain]
+terrain_name = army_warehouses
+max_population = 10
+enter_distance = 50
+exit_distance = 100
+arrive_dist = 150</pre>
+                
+                <h3>Настройка NPC на смарттеррейне:</h3>
+                <pre>
+[smart_terrain]
+npc = stalker
+population = 5
+jobs = job1, job2, job3</pre>
+                
+                <h2>10.6. Гулаги (gulag)</h2>
+                
+                <pre>
+[gulag]
+type = тип_гулага
+capacity = вместимость
+population = текущее_население</pre>
+                
+                <h3>Типы гулагов:</h3>
+                <ul>
+                    <li><strong>labor</strong> - трудовой лагерь</li>
+                    <li><strong>prison</strong> - тюрьма</li>
+                    <li><strong>camp</strong> - лагерь</li>
+                </ul>
+                
+                <h2>10.7. Вертолеты (helicopter)</h2>
+                
+                <pre>
+[helicopter]
+path = путь_полета
+speed = скорость
+altitude = высота_полета</pre>
+                
+                <h3>Пример вертолета с атакой:</h3>
+                <pre>
+[helicopter]
+path = patrol_path
+speed = 50
+altitude = 100
+combat = true
+target = actor</pre>
+                
+                <h2>10.8. Встречи с NPC (meet)</h2>
+                
+                <pre>
+[meet]
+meet_state = состояние_встречи
+use = использование_диалога
+trade = торговля</pre>
+                
+                <h3>Пример встречи:</h3>
+                <pre>
+[meet]
+meet_state = 30| hello@wait
+use = true
+trade = trader_generic</pre>
+                
+                <h2>10.9. Другие объекты</h2>
+                
+                <h3>Аномалии (anomaly):</h3>
+                <pre>
+[anomaly]
+type = тип_аномалии
+radius = радиус
+power = мощность</pre>
+                
+                <h3>Артефакты (artifact):</h3>
+                <pre>
+[artifact]
+condition = условие_появления
+spawn_mode = режим_спавна</pre>
+                
+                <h3>Триггеры (trigger):</h3>
+                <pre>
+[trigger]
+on_enter = схема_при_входе
+on_exit = схема_при_выходе
+condition = условие_активации</pre>
+            </div>
+        </div>
+    </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Элементы управления
@@ -2589,6 +2874,18 @@ combat_ignore = {=is_diplomat} true</pre>
             const shadowB = document.getElementById('shadowB');
             const shadowA = document.getElementById('shadowA');
             
+            // Элементы для цвета свечения (glow)
+            const applyGlowColorBtn = document.getElementById('applyGlowColor');
+            const colorPreviewGlow = document.getElementById('colorPreviewGlow');
+            const glowR = document.getElementById('glowR');
+            const glowG = document.getElementById('glowG');
+            const glowB = document.getElementById('glowB');
+            const glowA = document.getElementById('glowA');
+            const glowLgR = document.getElementById('glowLgR');
+            const glowLgG = document.getElementById('glowLgG');
+            const glowLgB = document.getElementById('glowLgB');
+            const glowLgA = document.getElementById('glowLgA');
+            
             // Элементы для цвета костра
             const applyCampfireColorBtn = document.getElementById('applyCampfireColor');
             const campfireR = document.getElementById('campfireR');
@@ -2599,6 +2896,8 @@ combat_ignore = {=is_diplomat} true</pre>
             const savedTheme = localStorage.getItem('logicSdkTheme') || 'default';
             const savedCustomColor = localStorage.getItem('logicSdkCustomColor');
             const savedShadowColor = localStorage.getItem('logicSdkShadowColor');
+            const savedGlowColor = localStorage.getItem('logicSdkGlowColor');
+            const savedGlowColorLg = localStorage.getItem('logicSdkGlowColorLg');
             const savedCampfireColor = localStorage.getItem('logicSdkCampfireColor');
             
             // Применяем сохраненную тему
@@ -2652,6 +2951,29 @@ combat_ignore = {=is_diplomat} true</pre>
                     updateShadowPreview();
                 } catch (e) {
                     console.error('Ошибка загрузки цвета теней:', e);
+                }
+            }
+            
+            // Применяем сохраненный цвет свечения
+            if (savedGlowColor && savedGlowColorLg) {
+                try {
+                    const glow = JSON.parse(savedGlowColor);
+                    const glowLg = JSON.parse(savedGlowColorLg);
+                    
+                    glowR.value = glow.r;
+                    glowG.value = glow.g;
+                    glowB.value = glow.b;
+                    glowA.value = glow.a;
+                    
+                    glowLgR.value = glowLg.r;
+                    glowLgG.value = glowLg.g;
+                    glowLgB.value = glowLg.b;
+                    glowLgA.value = glowLg.a;
+                    
+                    applyGlowColor(glow.r, glow.g, glow.b, glow.a, glowLg.r, glowLg.g, glowLg.b, glowLg.a);
+                    updateGlowPreview();
+                } catch (e) {
+                    console.error('Ошибка загрузки цвета свечения:', e);
                 }
             }
             
@@ -2716,6 +3038,29 @@ combat_ignore = {=is_diplomat} true</pre>
                 colorPreviewShadow.style.backgroundColor = `rgba(${validR}, ${validG}, ${validB}, ${validA/100})`;
             }
             
+            // Функция для обновления предпросмотра цвета свечения
+            function updateGlowPreview() {
+                const r = parseInt(glowR.value) || 0;
+                const g = parseInt(glowG.value) || 0;
+                const b = parseInt(glowB.value) || 0;
+                const a = parseInt(glowA.value) || 0;
+                
+                // Ограничиваем значения
+                const validR = Math.min(255, Math.max(0, r));
+                const validG = Math.min(255, Math.max(0, g));
+                const validB = Math.min(255, Math.max(0, b));
+                const validA = Math.min(100, Math.max(0, a));
+                
+                // Обновляем инпуты если значения были скорректированы
+                if (r !== validR) glowR.value = validR;
+                if (g !== validG) glowG.value = validG;
+                if (b !== validB) glowB.value = validB;
+                if (a !== validA) glowA.value = validA;
+                
+                // Обновляем предпросмотр
+                colorPreviewGlow.style.backgroundColor = `rgba(${validR}, ${validG}, ${validB}, ${validA/100})`;
+            }
+            
             // Функция применения кастомного цвета акцента
             function applyCustomColor(r, g, b) {
                 // Ограничиваем значения
@@ -2750,6 +3095,8 @@ combat_ignore = {=is_diplomat} true</pre>
                         --table-alt-row: #1e1e1e;
                         --settings-panel-bg: rgba(20, 20, 20, 0.95);
                         --campfire-color: #ff6b35;
+                        --glow-color: rgba(${validR}, ${validG}, ${validB}, 0.3);
+                        --glow-color-lg: rgba(${validR}, ${validG}, ${validB}, 0.4);
                     }
                 `;
                 
@@ -2787,6 +3134,43 @@ combat_ignore = {=is_diplomat} true</pre>
                     g: validG,
                     b: validB,
                     a: validA
+                }));
+            }
+            
+            // Функция применения цвета свечения
+            function applyGlowColor(r, g, b, a, rLg, gLg, bLg, aLg) {
+                // Ограничиваем значения для обычного свечения
+                const validR = Math.min(255, Math.max(0, r));
+                const validG = Math.min(255, Math.max(0, g));
+                const validB = Math.min(255, Math.max(0, b));
+                const validA = Math.min(100, Math.max(0, a));
+                
+                // Ограничиваем значения для большого свечения
+                const validRLg = Math.min(255, Math.max(0, rLg));
+                const validGLg = Math.min(255, Math.max(0, gLg));
+                const validBLg = Math.min(255, Math.max(0, bLg));
+                const validALg = Math.min(100, Math.max(0, aLg));
+                
+                // Применяем цвета свечения ко всей странице
+                document.documentElement.style.setProperty('--glow-color', `rgba(${validR}, ${validG}, ${validB}, ${validA/100})`);
+                document.documentElement.style.setProperty('--glow-color-lg', `rgba(${validRLg}, ${validGLg}, ${validBLg}, ${validALg/100})`);
+                
+                // Обновляем предпросмотр
+                updateGlowPreview();
+                
+                // Сохраняем в localStorage
+                localStorage.setItem('logicSdkGlowColor', JSON.stringify({
+                    r: validR,
+                    g: validG,
+                    b: validB,
+                    a: validA
+                }));
+                
+                localStorage.setItem('logicSdkGlowColorLg', JSON.stringify({
+                    r: validRLg,
+                    g: validGLg,
+                    b: validBLg,
+                    a: validALg
                 }));
             }
             
@@ -2855,6 +3239,30 @@ combat_ignore = {=is_diplomat} true</pre>
                 applyShadowColor(r, g, b, a);
             });
             
+            // Обработчики для цвета свечения
+            glowR.addEventListener('input', updateGlowPreview);
+            glowG.addEventListener('input', updateGlowPreview);
+            glowB.addEventListener('input', updateGlowPreview);
+            glowA.addEventListener('input', updateGlowPreview);
+            glowLgR.addEventListener('input', updateGlowPreview);
+            glowLgG.addEventListener('input', updateGlowPreview);
+            glowLgB.addEventListener('input', updateGlowPreview);
+            glowLgA.addEventListener('input', updateGlowPreview);
+            
+            applyGlowColorBtn.addEventListener('click', function() {
+                const r = parseInt(glowR.value) || 0;
+                const g = parseInt(glowG.value) || 0;
+                const b = parseInt(glowB.value) || 0;
+                const a = parseInt(glowA.value) || 0;
+                
+                const rLg = parseInt(glowLgR.value) || 0;
+                const gLg = parseInt(glowLgG.value) || 0;
+                const bLg = parseInt(glowLgB.value) || 0;
+                const aLg = parseInt(glowLgA.value) || 0;
+                
+                applyGlowColor(r, g, b, a, rLg, gLg, bLg, aLg);
+            });
+            
             // Обработчики для цвета костра
             applyCampfireColorBtn.addEventListener('click', function() {
                 const r = parseInt(campfireR.value) || 0;
@@ -2867,6 +3275,7 @@ combat_ignore = {=is_diplomat} true</pre>
             // Инициализация предпросмотра цветов
             updateColorPreview();
             updateShadowPreview();
+            updateGlowPreview();
             
             // Обработчики для переключения темы
             colorOptions.forEach(option => {
