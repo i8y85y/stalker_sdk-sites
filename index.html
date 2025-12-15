@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIC SDK 0.4 - Полное руководство по настройкам логики</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Добавлен стиль Highlight.js с темой Atom One Dark -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <style>
         :root {
             /* Основные цвета темы - По умолчанию Темная тема */
@@ -1230,37 +1232,101 @@
             color: var(--text-color);
         }
         
+        /* Стили для кода с подсветкой Lua */
         .modal-body code {
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1rem;
-            color: #ffcc00;
-            border: 1px solid #444;
-            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            background-color: rgba(40, 44, 52, 0.8) !important;
+            padding: 3px 8px !important;
+            border-radius: 4px !important;
+            font-family: 'Fira Code', 'Courier New', monospace !important;
+            font-size: 1rem !important;
+            color: #e06c75 !important;
+            border: 1px solid #444 !important;
+            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
         }
         
         .modal-body pre {
-            background-color: #111;
-            color: #f0f0f0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 1.8rem 0;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            border-left: 5px solid var(--accent-color);
-            box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0, 0, 0, 0.7);
+            background-color: #282c34 !important;
+            color: #abb2bf !important;
+            padding: 1.5rem !important;
+            border-radius: 10px !important;
+            overflow-x: auto !important;
+            margin: 1.8rem 0 !important;
+            font-family: 'Fira Code', 'Courier New', monospace !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            border-left: 5px solid var(--accent-color) !important;
+            box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0, 0, 0, 0.7) !important;
         }
         
         .modal-body pre code {
-            background-color: transparent;
-            padding: 0;
-            border: none;
-            color: inherit;
+            background-color: transparent !important;
+            padding: 0 !important;
+            border: none !important;
+            color: inherit !important;
+        }
+        
+        /* Стили для подсветки синтаксиса Highlight.js */
+        .hljs {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+        
+        .hljs-keyword {
+            color: #c678dd !important;
+        }
+        
+        .hljs-string {
+            color: #98c379 !important;
+        }
+        
+        .hljs-number {
+            color: #d19a66 !important;
+        }
+        
+        .hljs-literal {
+            color: #56b6c2 !important;
+        }
+        
+        .hljs-comment {
+            color: #5c6370 !important;
+            font-style: italic !important;
+        }
+        
+        .hljs-function {
+            color: #61afef !important;
+        }
+        
+        .hljs-title {
+            color: #e5c07b !important;
+        }
+        
+        .hljs-params {
+            color: #abb2bf !important;
+        }
+        
+        .hljs-built_in {
+            color: #56b6c2 !important;
+        }
+        
+        .hljs-meta {
+            color: #c678dd !important;
+        }
+        
+        .hljs-attr {
+            color: #d19a66 !important;
+        }
+        
+        .hljs-variable {
+            color: #e06c75 !important;
+        }
+        
+        .hljs-name {
+            color: #e5c07b !important;
+        }
+        
+        .hljs-section {
+            color: #61afef !important;
         }
         
         .modal-body table {
@@ -2046,7 +2112,7 @@
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #c0392b, var(--accent-color));
+            background: linear-gradient(to bottom, #c0392b, var(--accent-color);
             box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 0 10px var(--glow-color);
         }
         
@@ -2443,11 +2509,11 @@
                             </ul>
                             
                             <h3>Пример кода SDK 0.4:</h3>
-                            <pre>[logic]
+                            <pre><code class="language-lua">[logic]
 active = walker
 [walker]
 path_walk = patrol_path
-team = stalkers</pre>
+team = stalkers</code></pre>
                         </div>
                     </div>
                     
@@ -2878,17 +2944,15 @@ team = stalkers</pre>
                 
                 <p>Walker'ов может быть от одного или больше. Они могут действовать независимо, или взаимодействовать друг с другом.</p>
                 
-                <pre>
-[walker]
+                <pre><code class="language-lua">[walker]
 team = ... - имя команды, произвольная текстовая строка
 path_walk = ... - имя пути
-path_look = ... - (не обязательно) имя пути</pre>
+path_look = ... - (не обязательно) имя пути</code></pre>
                 
                 <p>Если персонаж должен только ходить по маршруту, path_look можно не задавать. Если персонаж должен стоять на месте, то ему задается одна точка пути path_walk и как минимум одна точка пути path_look.</p>
                 
                 <h3>Пример настройки пути в LOGIC SDK 0.4:</h3>
-                <pre>
-; Пример waypoint с флагами в LOGIC SDK 0.4
+                <pre><code class="language-lua">; Пример waypoint с флагами в LOGIC SDK 0.4
 [wp00]:walker_path
 a = patrol
 p = 100
@@ -2897,7 +2961,7 @@ sig = reached_point
 [wp01]:walker_path  
 a = raid
 p = 50
-sig = check_area</pre>
+sig = check_area</code></pre>
             </div>
         </div>
     </div>
@@ -2974,11 +3038,10 @@ sig = check_area</pre>
                 <h2>3.1. Схема walker</h2>
                 <p>Базовая схема перемещения NPC по патрульным путям. Настраивается через:</p>
                 
-                <pre>
-[walker]
+                <pre><code class="language-lua">[walker]
 path_walk = путь_патрулирования
 path_look = путь_обзора
-team = название_команды</pre>
+team = название_команды</code></pre>
                 
                 <h3>Основные параметры:</h3>
                 <ul>
@@ -2992,23 +3055,21 @@ team = название_команды</pre>
                 <h2>3.2. Схема remark</h2>
                 <p>Схема для диалогов и синхронизации действий NPC.</p>
                 
-                <pre>
-[remark]
+                <pre><code class="language-lua">[remark]
 anim = анимация_диалога
 target = цель_для_диалога
 sound = звук_диалога
-synch = true/false</pre>
+synch = true/false</code></pre>
                 
                 <h3>Пример синхронизированного диалога:</h3>
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = remark
 [remark]
 anim = hello
 target = actor
 sound = dialogs\hello.ogg
 synch = true
-on_signal = end_remark| следующая_схема</pre>
+on_signal = end_remark| следующая_схема</code></pre>
             </div>
         </div>
     </div>
@@ -3030,11 +3091,10 @@ on_signal = end_remark| следующая_схема</pre>
                 <h2>4.1. Секция combat</h2>
                 <p>Определяет поведение NPC в бою.</p>
                 
-                <pre>
-[combat]
+                <pre><code class="language-lua">[combat]
 enemy = цель_атаки
 action = тип_боевого_поведения
-on_info = {+инфопоршн} схема_активации</pre>
+on_info = {+инфопоршн} схема_активации</code></pre>
                 
                 <h3>Типы боевого поведения:</h3>
                 <ul>
@@ -3047,18 +3107,16 @@ on_info = {+инфопоршн} схема_активации</pre>
                 <h2>4.2. Секция death</h2>
                 <p>Реакция на смерть NPC.</p>
                 
-                <pre>
-[death]
+                <pre><code class="language-lua">[death]
 on_info = {+инфопоршн} схема_смерти
-cond = условие_смерти</pre>
+cond = условие_смерти</code></pre>
                 
                 <h2>4.3. Секция hit</h2>
                 <p>Реакция на получение урона.</p>
                 
-                <pre>
-[hit]
+                <pre><code class="language-lua">[hit]
 on_info = {+инфопоршн} схема_реакции
-condlist = список_условий</pre>
+condlist = список_условий</code></pre>
             </div>
         </div>
     </div>
@@ -3081,27 +3139,25 @@ condlist = список_условий</pre>
                 
                 <h3>dont_spawn_character_supplies</h3>
                 <p>Запрещает спавн стандартных припасов на персонаже:</p>
-                <pre>[dont_spawn_character_supplies]</pre>
+                <pre><code class="language-lua">[dont_spawn_character_supplies]</code></pre>
                 
                 <h3>no_smart</h3>
                 <p>Отключает "умное" поведение NPC:</p>
-                <pre>[no_smart]</pre>
+                <pre><code class="language-lua">[no_smart]</code></pre>
                 
                 <h3>threshold</h3>
                 <p>Устанавливает пороговые значения для смены состояний:</p>
-                <pre>
-[threshold]
+                <pre><code class="language-lua">[threshold]
 min_health = минимальное_здоровье
-max_health = максимальное_здоровье</pre>
+max_health = максимальное_здоровье</code></pre>
                 
                 <h2>5.2. Секция danger</h2>
                 <p>Реакция на опасности в окружающей среде.</p>
                 
-                <pre>
-[danger]
+                <pre><code class="language-lua">[danger]
 ignore_distance = дистанция_игнорирования
 type = тип_опасности
-on_info = {+инфопоршн} схема_реакции</pre>
+on_info = {+инфопоршн} схема_реакции</code></pre>
                 
                 <h3>Типы опасностей:</h3>
                 <ul>
@@ -3133,65 +3189,60 @@ on_info = {+инфопоршн} схема_реакции</pre>
                 
                 <h3>mob_walker</h3>
                 <p>Перемещение монстра по точкам пути:</p>
-                <pre>
-[mob_walker]
+                <pre><code class="language-lua">[mob_walker]
 path_walk = путь_движения
 path_look = путь_обзора
 home_min = минимальное_время_дома
-home_max = максимальное_время_дома</pre>
+home_max = максимальное_время_дома</code></pre>
                 
                 <h3>mob_eluder</h3>
                 <p>Монстр уклоняется от противника:</p>
-                <pre>[mob_eluder]
+                <pre><code class="language-lua">[mob_eluder]
 min_radius = минимальная_дистанция
-max_radius = максимальная_дистанция</pre>
+max_radius = максимальная_дистанция</code></pre>
                 
                 <h3>mob_remark</h3>
                 <p>Монстр делает паузу в определенной точке:</p>
-                <pre>[mob_remark]
+                <pre><code class="language-lua">[mob_remark]
 anim = анимация
-time = время_паузы</pre>
+time = время_паузы</code></pre>
                 
                 <h3>mob_combat</h3>
                 <p>Боевое поведение монстра:</p>
-                <pre>
-[mob_combat]
+                <pre><code class="language-lua">[mob_combat]
 min_attack_distance = минимальная_дистанция_атаки
 max_attack_distance = максимальная_дистанция_атаки
-home_path = путь_к_дому</pre>
+home_path = путь_к_дому</code></pre>
                 
                 <h3>mob_death</h3>
                 <p>Реакция на смерть монстра:</p>
-                <pre>[mob_death]
-on_info = {+инфопоршн} схема_смерти</pre>
+                <pre><code class="language-lua">[mob_death]
+on_info = {+инфопоршн} схема_смерти</code></pre>
                 
                 <h3>mob_jump</h3>
                 <p>Прыжок монстра:</p>
-                <pre>
-[mob_jump]
+                <pre><code class="language-lua">[mob_jump]
 offset = смещение_прыжка
 velocity = скорость_прыжка
-anim = анимация_прыжка</pre>
+anim = анимация_прыжка</code></pre>
                 
                 <h3>mob_camp</h3>
                 <p>Монстр стоит на месте и охраняет территорию:</p>
-                <pre>
-[mob_camp]
+                <pre><code class="language-lua">[mob_camp]
 path_look = точки_обзора
-home_path = путь_к_дому</pre>
+home_path = путь_к_дому</code></pre>
                 
                 <h3>mob_home</h3>
                 <p>Монстр возвращается домой:</p>
-                <pre>[mob_home]
+                <pre><code class="language-lua">[mob_home]
 home_min = минимальное_время_дома
-home_max = максимальное_время_дома</pre>
+home_max = максимальное_время_дома</code></pre>
                 
                 <h3>mob_fake_death</h3>
                 <p>Монстр притворяется мертвым:</p>
-                <pre>
-[mob_fake_death]
+                <pre><code class="language-lua">[mob_fake_death]
 anim = анимация_смерти
-on_info = {+инфопоршн} схема_оживления</pre>
+on_info = {+инфопоршн} схема_оживления</code></pre>
             </div>
         </div>
     </div>
@@ -3213,51 +3264,46 @@ on_info = {+инфопоршн} схема_оживления</pre>
                 <h2>7.1. Истории у костра</h2>
                 <p>Настройка диалогов у костра с использованием схемы remark:</p>
                 
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = campfire_story
 [campfire_story]
 path_look = campfire_look
 path_walk = campfire_walk
 story = название_истории
-team = storytelling</pre>
+team = storytelling</code></pre>
                 
                 <h3>Пример истории:</h3>
-                <pre>
-[campfire_story]
+                <pre><code class="language-lua">[campfire_story]
 anim = sit_ass
 sound = stories\campfire\story_1.ogg
-on_signal = end_story| следующая_схема</pre>
+on_signal = end_story| следующая_схема</code></pre>
                 
                 <h2>7.2. Секция dont_spawn_loot</h2>
                 <p>Запрещает спавн лута на NPC после смерти:</p>
-                <pre>[dont_spawn_loot]</pre>
+                <pre><code class="language-lua">[dont_spawn_loot]</code></pre>
                 
                 <h2>7.3. Секция spawner</h2>
                 <p>Спавн NPC и монстров по условиям:</p>
                 
-                <pre>
-[spawner]
+                <pre><code class="language-lua">[spawner]
 cond = условие_спавна
 npc = тип_NPC
 max_count = максимальное_количество
-spawn_radius = радиус_спавна</pre>
+spawn_radius = радиус_спавна</code></pre>
                 
                 <h3>Пример дневных монстров:</h3>
-                <pre>
-[spawner]
+                <pre><code class="language-lua">[spawner]
 cond = {=time_of_day day}
 npc = boar
 max_count = 3
-spawn_radius = 50</pre>
+spawn_radius = 50</code></pre>
                 
                 <h3>Пример ночных монстров:</h3>
-                <pre>
-[spawner]
+                <pre><code class="language-lua">[spawner]
 cond = {=time_of_day night}
 npc = bloodsucker
 max_count = 2
-spawn_radius = 30</pre>
+spawn_radius = 30</code></pre>
             </div>
         </div>
     </div>
@@ -3279,39 +3325,34 @@ spawn_radius = 30</pre>
                 <h2>8.1. Оверрайды для сталкеров</h2>
                 <p>Переопределение стандартного поведения NPC:</p>
                 
-                <pre>
-[overrides]
+                <pre><code class="language-lua">[overrides]
 combat_ignore = всегда_игнорировать_бой
-combat_ignore_keep_when_attacked = игнорировать_даже_при_атаке</pre>
+combat_ignore_keep_when_attacked = игнорировать_даже_при_атаке</code></pre>
                 
                 <h3>Пример оверрайда:</h3>
-                <pre>
-[overrides]
+                <pre><code class="language-lua">[overrides]
 combat_ignore = {=fighting_dist_ge(20)} true, false
-combat_type = {=best_enemy} monolith</pre>
+combat_type = {=best_enemy} monolith</code></pre>
                 
                 <h2>8.2. Оверрайды для монстров</h2>
-                <pre>
-[overrides]
+                <pre><code class="language-lua">[overrides]
 active = всегда_активный
-predator = режим_хищника</pre>
+predator = режим_хищника</code></pre>
                 
                 <h2>8.3. Скрипт logic</h2>
                 <p>Основной скрипт для управления переключением схем:</p>
                 
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = начальная_схема
 on_actor_dist_le = дистанция_актора| схема_активации
-on_info = {+инфопоршн} схема_активации</pre>
+on_info = {+инфопоршн} схема_активации</code></pre>
                 
                 <h3>Пример логики с условиями:</h3>
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = walker
 on_actor_dist_le = 10| remark@hello
 on_info = {+alarm} combat
-on_info = {-alarm} walker</pre>
+on_info = {-alarm} walker</code></pre>
                 
                 <h3>Условия переключения схем:</h3>
                 <ul>
@@ -3323,11 +3364,10 @@ on_info = {-alarm} walker</pre>
                 </ul>
                 
                 <h2>8.4. Работа с кастомными данными</h2>
-                <pre>
-[custom_data]
+                <pre><code class="language-lua">[custom_data]
 key1 = значение1
 key2 = значение2
-on_info = {+ключ} действие</pre>
+on_info = {+ключ} действие</code></pre>
             </div>
         </div>
     </div>
@@ -3349,23 +3389,21 @@ on_info = {+ключ} действие</pre>
                 <h2>9.1. Основные элементы синтаксиса</h2>
                 
                 <h3>Секции и параметры:</h3>
-                <pre>
-[section_name]
+                <pre><code class="language-lua">[section_name]
 parameter1 = value1
-parameter2 = value2</pre>
+parameter2 = value2</code></pre>
                 
                 <h3>Комментарии:</h3>
-                <pre>
-; Это комментарий
-parameter = value ; комментарий после значения</pre>
+                <pre><code class="language-lua">; Это комментарий
+parameter = value ; комментарий после значения</code></pre>
                 
                 <h2>9.2. Условия</h2>
                 
                 <h3>Простые условия:</h3>
-                <pre>{=condition} value_if_true, value_if_false</pre>
+                <pre><code class="language-lua">{=condition} value_if_true, value_if_false</code></pre>
                 
                 <h3>Сложные условия:</h3>
-                <pre>{=condition1 =condition2} value</pre>
+                <pre><code class="language-lua">{=condition1 =condition2} value</code></pre>
                 
                 <h3>Логические операторы:</h3>
                 <ul>
@@ -3383,54 +3421,46 @@ parameter = value ; комментарий после значения</pre>
                 <h2>9.3. Эффекты</h2>
                 
                 <h3>Установка инфопоршнов:</h3>
-                <pre>
-[logic]
-on_info = {+info_portshion} next_scheme</pre>
+                <pre><code class="language-lua">[logic]
+on_info = {+info_portshion} next_scheme</code></pre>
                 
                 <h3>Вызов функций:</h3>
-                <pre>
-[logic]
-on_signal = signal_name| function_call</pre>
+                <pre><code class="language-lua">[logic]
+on_signal = signal_name| function_call</code></pre>
                 
                 <h2>9.4. Переключение секций</h2>
                 
                 <h3>Простое переключение:</h3>
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = first_scheme
-on_info = {+trigger} second_scheme</pre>
+on_info = {+trigger} second_scheme</code></pre>
                 
                 <h3>Переключение с параметрами:</h3>
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = walker@path1
-on_info = {+alarm} combat@aggressive</pre>
+on_info = {+alarm} combat@aggressive</code></pre>
                 
                 <h2>9.5. Работа с инфопоршнами</h2>
                 
                 <h3>Проверка инфопоршнов:</h3>
-                <pre>
-{+info_portshion_1 -info_portshion_2} scheme_name</pre>
+                <pre><code class="language-lua">{+info_portshion_1 -info_portshion_2} scheme_name</code></pre>
                 
                 <h3>Установка/снятие инфопоршнов:</h3>
-                <pre>
-[scheme]
+                <pre><code class="language-lua">[scheme]
 on_info = {+set_info_portshion} next_scheme
-on_info = {-clear_info_portshion} another_scheme</pre>
+on_info = {-clear_info_portshion} another_scheme</code></pre>
                 
                 <h2>9.6. Сложные логические конструкции</h2>
                 
                 <h3>Вложенные условия:</h3>
-                <pre>
-{=check_dist_le(10) =has_enemy} combat
-{=check_dist_le(10) !has_enemy} remark@hello</pre>
+                <pre><code class="language-lua">{=check_dist_le(10) =has_enemy} combat
+{=check_dist_le(10) !has_enemy} remark@hello</code></pre>
                 
                 <h3>Цепочки условий:</h3>
-                <pre>
-[logic]
+                <pre><code class="language-lua">[logic]
 active = walker
 on_actor_dist_le = 5| {=time_of_day day} remark@day_greeting, remark@night_greeting
-on_info = {+quest_started} follower</pre>
+on_info = {+quest_started} follower</code></pre>
             </div>
         </div>
     </div>
@@ -3452,43 +3482,38 @@ on_info = {+quest_started} follower</pre>
                 <h2>10.1. Прожекторы (searchlights)</h2>
                 
                 <h3>Базовые настройки:</h3>
-                <pre>
-[searchlight]
+                <pre><code class="language-lua">[searchlight]
 path = путь_движения
 color = цвет_луча
-range = дальность_освещения</pre>
+range = дальность_освещения</code></pre>
                 
                 <h3>Пример прожектора с трекингом:</h3>
-                <pre>
-[searchlight]
+                <pre><code class="language-lua">[searchlight]
 path = patrol_path
 color = yellow
 range = 100
-target = actor ; слежение за игроком</pre>
+target = actor ; слежение за игроком</code></pre>
                 
                 <h2>10.2. Кодовые замки (code_lock)</h2>
                 
-                <pre>
-[code_lock]
+                <pre><code class="language-lua">[code_lock]
 code = код_доступа
 on_unlock = схема_при_открытии
-on_lock = схема_при_закрытии</pre>
+on_lock = схема_при_закрытии</code></pre>
                 
                 <h2>10.3. Ворота (gates)</h2>
                 
-                <pre>
-[gates]
+                <pre><code class="language-lua">[gates]
 open_cond = условие_открытия
 close_cond = условие_закрытия
-auto_close = время_автозакрытия</pre>
+auto_close = время_автозакрытия</code></pre>
                 
                 <h2>10.4. Звуковые схемы (sound_scheme)</h2>
                 
-                <pre>
-[sound_scheme]
+                <pre><code class="language-lua">[sound_scheme]
 type = тип_звука
 path = путь_к_файлам
-volume = громкость</pre>
+volume = громкость</code></pre>
                 
                 <h3>Типы звуковых схем:</h3>
                 <ul>
@@ -3501,35 +3526,31 @@ volume = громкость</pre>
                 <h2>10.5. Смарттеррейны (smart_terrain)</h2>
                 
                 <h3>Базовые настройки:</h3>
-                <pre>
-[smart_terrain]
+                <pre><code class="language-lua">[smart_terrain]
 max_population = максимальное_население
 enter_distance = дистанция_входа
-exit_distance = дистанция_выхода</pre>
+exit_distance = дистанция_выхода</code></pre>
                 
                 <h3>Пример смарттеррейна:</h3>
-                <pre>
-[smart_terrain]
+                <pre><code class="language-lua">[smart_terrain]
 terrain_name = army_warehouses
 max_population = 10
 enter_distance = 50
 exit_distance = 100
-arrive_dist = 150</pre>
+arrive_dist = 150</code></pre>
                 
                 <h3>Настройка NPC на смарттеррейне:</h3>
-                <pre>
-[smart_terrain]
+                <pre><code class="language-lua">[smart_terrain]
 npc = stalker
 population = 5
-jobs = job1, job2, job3</pre>
+jobs = job1, job2, job3</code></pre>
                 
                 <h2>10.6. Гулаги (gulag)</h2>
                 
-                <pre>
-[gulag]
+                <pre><code class="language-lua">[gulag]
 type = тип_гулага
 capacity = вместимость
-population = текущее_население</pre>
+population = текущее_население</code></pre>
                 
                 <h3>Типы гулагов:</h3>
                 <ul>
@@ -3540,57 +3561,50 @@ population = текущее_население</pre>
                 
                 <h2>10.7. Вертолеты (helicopter)</h2>
                 
-                <pre>
-[helicopter]
+                <pre><code class="language-lua">[helicopter]
 path = путь_полета
 speed = скорость
-altitude = высота_полета</pre>
+altitude = высота_полета</code></pre>
                 
                 <h3>Пример вертолета с атакой:</h3>
-                <pre>
-[helicopter]
+                <pre><code class="language-lua">[helicopter]
 path = patrol_path
 speed = 50
 altitude = 100
 combat = true
-target = actor</pre>
+target = actor</code></pre>
                 
                 <h2>10.8. Встречи с NPC (meet)</h2>
                 
-                <pre>
-[meet]
+                <pre><code class="language-lua">[meet]
 meet_state = состояние_встречи
 use = использование_диалога
-trade = торговля</pre>
+trade = торговля</code></pre>
                 
                 <h3>Пример встречи:</h3>
-                <pre>
-[meet]
+                <pre><code class="language-lua">[meet]
 meet_state = 30| hello@wait
 use = true
-trade = trader_generic</pre>
+trade = trader_generic</code></pre>
                 
                 <h2>10.9. Другие объекты</h2>
                 
                 <h3>Аномалии (anomaly):</h3>
-                <pre>
-[anomaly]
+                <pre><code class="language-lua">[anomaly]
 type = тип_аномалии
 radius = радиус
-power = мощность</pre>
+power = мощность</code></pre>
                 
                 <h3>Артефакты (artifact):</h3>
-                <pre>
-[artifact]
+                <pre><code class="language-lua">[artifact]
 condition = условие_появления
-spawn_mode = режим_спавна</pre>
+spawn_mode = режим_спавна</code></pre>
                 
                 <h3>Триггеры (trigger):</h3>
-                <pre>
-[trigger]
+                <pre><code class="language-lua">[trigger]
 on_enter = схема_при_входе
 on_exit = схема_при_выходе
-condition = условие_активации</pre>
+condition = условие_активации</code></pre>
             </div>
         </div>
     </div>
@@ -3612,19 +3626,19 @@ condition = условие_активации</pre>
                 <p>Вы можете использовать следующие теги для форматирования вашей статьи:</p>
                 
                 <h3>Заголовки:</h3>
-                <pre>&lt;h2&gt;Заголовок 2 уровня&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Заголовок 2 уровня&lt;/h2&gt;
 &lt;h3&gt;Заголовок 3 уровня&lt;/h3&gt;
-&lt;h4&gt;Заголовок 4 уровня&lt;/h4&gt;</pre>
+&lt;h4&gt;Заголовок 4 уровня&lt;/h4&gt;</code></pre>
                 
                 <h3>Абзацы и текст:</h3>
-                <pre>&lt;p&gt;Это абзац текста.&lt;/p&gt;
+                <pre><code class="language-html">&lt;p&gt;Это абзац текста.&lt;/p&gt;
 &lt;strong&gt;Жирный текст&lt;/strong&gt;
 &lt;em&gt;Курсив&lt;/em&gt;
 &lt;u&gt;Подчеркнутый&lt;/u&gt;
-&lt;br&gt; - перенос строки</pre>
+&lt;br&gt; - перенос строки</code></pre>
                 
                 <h3>Списки:</h3>
-                <pre>&lt;ul&gt;
+                <pre><code class="language-html">&lt;ul&gt;
   &lt;li&gt;Элемент ненумерованного списка&lt;/li&gt;
   &lt;li&gt;Еще один элемент&lt;/li&gt;
 &lt;/ul&gt;
@@ -3632,20 +3646,20 @@ condition = условие_активации</pre>
 &lt;ol&gt;
   &lt;li&gt;Элемент нумерованного списка&lt;/li&gt;
   &lt;li&gt;Еще один элемент&lt;/li&gt;
-&lt;/ol&gt;</pre>
+&lt;/ol&gt;</code></pre>
                 
                 <h3>Код и предформатированный текст:</h3>
-                <pre>&lt;code&gt;Встроенный код&lt;/code&gt;
+                <pre><code class="language-html">&lt;code&gt;Встроенный код&lt;/code&gt;
 
 &lt;pre&gt;
 // Блок кода
 function example() {
   return "Hello World!";
 }
-&lt;/pre&gt;</pre>
+&lt;/pre&gt;</code></pre>
                 
                 <h3>Таблицы:</h3>
-                <pre>&lt;table&gt;
+                <pre><code class="language-html">&lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;Заголовок 1&lt;/th&gt;
     &lt;th&gt;Заголовок 2&lt;/th&gt;
@@ -3654,12 +3668,12 @@ function example() {
     &lt;td&gt;Данные 1&lt;/td&gt;
     &lt;td&gt;Данные 2&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;</pre>
+&lt;/table&gt;</code></pre>
                 
                 <h2>Примеры статей для LOGIC SDK 0.4:</h2>
                 
                 <h3>Пример 1: Статья о системе флагов</h3>
-                <pre>&lt;h2&gt;Система флагов path_walk и path_look&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Система флагов path_walk и path_look&lt;/h2&gt;
 &lt;p&gt;В SDK 0.4 система флагов позволяет тонко настраивать поведение NPC при движении по точкам пути. Флаги указываются прямо в имени waypoint-а через символ |.&lt;/p&gt;
 
 &lt;h3&gt;Основные флаги path_walk:&lt;/h3&gt;
@@ -3670,7 +3684,7 @@ function example() {
 &lt;/ul&gt;
 
 &lt;h3&gt;Пример waypoint в SDK:&lt;/h3&gt;
-&lt;pre&gt;[walker]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[walker]
 path_walk = patrol_path
 path_look = patrol_look
 team = stalker_team
@@ -3679,17 +3693,17 @@ team = stalker_team
 [wp00]:walker_path
 a = patrol
 p = 100
-sig = point_reached&lt;/pre&gt;</pre>
+sig = point_reached&lt;/code&gt;&lt;/pre&gt;</code></pre>
                 
                 <h3>Пример 2: Статья о боевых схемах</h3>
-                <pre>&lt;h2&gt;Схемы combat, death и hit&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Схемы combat, death и hit&lt;/h2&gt;
 &lt;p&gt;Эти схемы определяют поведение NPC в боевых ситуациях, при получении урона и смерти.&lt;/p&gt;
 
 &lt;h3&gt;Секция combat:&lt;/h3&gt;
-&lt;pre&gt;[combat]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[combat]
 enemy = actor
 action = assault
-on_info = {+enemy_spotted} combat@aggressive&lt;/pre&gt;
+on_info = {+enemy_spotted} combat@aggressive&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Типы боевого поведения:&lt;/h3&gt;
 &lt;table&gt;
@@ -3712,42 +3726,42 @@ on_info = {+enemy_spotted} combat@aggressive&lt;/pre&gt;
 &lt;/table&gt;
 
 &lt;h3&gt;Секция hit:&lt;/h3&gt;
-&lt;pre&gt;[hit]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[hit]
 on_info = {+hit_by_sniper} cover
-on_info = {+hit_normal} fight_back&lt;/pre&gt;</pre>
+on_info = {+hit_normal} fight_back&lt;/code&gt;&lt;/pre&gt;</code></pre>
                 
                 <h3>Пример 3: Статья о монстрах</h3>
-                <pre>&lt;h2&gt;Схемы поведения монстров&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Схемы поведения монстров&lt;/h2&gt;
 &lt;p&gt;Монстры в SDK 0.4 используют специальные схемы с префиксом mob_.&lt;/p&gt;
 
 &lt;h3&gt;mob_walker - перемещение монстра:&lt;/h3&gt;
-&lt;pre&gt;[mob_walker]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_walker]
 path_walk = monster_path
 path_look = monster_look
 home_min = 5000
-home_max = 10000&lt;/pre&gt;
+home_max = 10000&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;mob_combat - боевое поведение:&lt;/h3&gt;
-&lt;pre&gt;[mob_combat]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_combat]
 min_attack_distance = 2
 max_attack_distance = 10
-home_path = home_point&lt;/pre&gt;
+home_path = home_point&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;mob_fake_death - притворная смерть:&lt;/h3&gt;
-&lt;pre&gt;[mob_fake_death]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_fake_death]
 anim = fake_death
 on_info = {+player_near} mob_attack
-on_info = {+player_far} mob_walker&lt;/pre&gt;
+on_info = {+player_far} mob_walker&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4&gt;Важно:&lt;/h4&gt;
-&lt;p&gt;Монстры не используют команды как сталкеры, их поведение более инстинктивное.&lt;/p&gt;</pre>
+&lt;p&gt;Монстры не используют команды как сталкеры, их поведение более инстинктивное.&lt;/p&gt;</code></pre>
                 
                 <h3>Пример 4: Статья о смарттеррейнах</h3>
-                <pre>&lt;h2&gt;Настройка смарттеррейнов&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Настройка смарттеррейнов&lt;/h2&gt;
 &lt;p&gt;Смарттеррейны - это зоны, где NPC живут своей жизнью, работают и отдыхают.&lt;/p&gt;
 
 &lt;h3&gt;Базовая конфигурация:&lt;/h3&gt;
-&lt;pre&gt;[smart_terrain]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[smart_terrain]
 terrain_name = bar_smart
 max_population = 8
 enter_distance = 50
@@ -3762,20 +3776,20 @@ path_look = bar_look1
 [job2]
 type = remark
 anim = sit
-sound = dialogs\bar_talk.ogg&lt;/pre&gt;
+sound = dialogs\bar_talk.ogg&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Особенности:&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;NPC автоматически выбирают свободные рабочие места&lt;/li&gt;
   &lt;li&gt;При атаке смарттеррейн переходит в режим обороны&lt;/li&gt;
   &lt;li&gt;Можно настраивать дневной/ночной режимы работы&lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;</code></pre>
                 
                 <h2>Советы по оформлению:</h2>
                 <ul>
                     <li>Используйте <code>&lt;h2&gt;</code> для основных разделов статьи</li>
                     <li><code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code> - для подразделов</li>
-                    <li>Код SDK всегда оформляйте в тегах <code>&lt;pre&gt;</code></li>
+                    <li>Код SDK всегда оформляйте в тегах <code>&lt;pre&gt;&lt;code class="language-lua"&gt;</code></li>
                     <li>Для встроенного кода используйте <code>&lt;code&gt;</code></li>
                     <li>Таблицы хорошо подходят для сравнения параметров</li>
                     <li>Списки используйте для перечисления свойств или возможностей</li>
@@ -3786,33 +3800,37 @@ sound = dialogs\bar_talk.ogg&lt;/pre&gt;
                 <p>Скопируйте и измените под свою статью:</p>
                 
                 <h4>Шаблон для схемы поведения:</h4>
-                <pre>&lt;h2&gt;Название схемы&lt;/h2&gt;
+                <pre><code class="language-html">&lt;h2&gt;Название схемы&lt;/h2&gt;
 &lt;p&gt;Краткое описание назначения схемы.&lt;/p&gt;
 
 &lt;h3&gt;Основные параметры:&lt;/h3&gt;
-&lt;pre&gt;[scheme_name]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[scheme_name]
 param1 = value1
 param2 = value2
-on_info = {+condition} next_scheme&lt;/pre&gt;
+on_info = {+condition} next_scheme&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Пример использования:&lt;/h3&gt;
-&lt;pre&gt;[logic]
+&lt;pre&gt;&lt;code class="language-lua"&gt;[logic]
 active = scheme_name
 [scheme_name]
 path_walk = custom_path
-team = my_team&lt;/pre&gt;
+team = my_team&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Дополнительные настройки:&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Особенность 1:&lt;/strong&gt; Описание&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Особенность 2:&lt;/strong&gt; Описание&lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;</code></pre>
             </div>
         </div>
     </div>
     
     <!-- Контейнер для кастомных модальных окон -->
     <div id="customModalsContainer"></div>
+    
+    <!-- Добавлены скрипты Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/lua.min.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -3894,6 +3912,38 @@ team = my_team&lt;/pre&gt;
             // Массив кастомных статей
             let customArticles = [];
             let nextArticleId = 100; // Начинаем с 100, чтобы не пересекаться с базовыми статьями
+            
+            // Функция для обертывания блоков кода в теги для подсветки
+            function wrapCodeBlocks(container) {
+                container = container || document;
+                
+                // Обрабатываем блоки <pre> без внутреннего <code>
+                container.querySelectorAll('pre:not(.hljs)').forEach(function(pre) {
+                    let code = pre.querySelector('code');
+                    if (!code) {
+                        code = document.createElement('code');
+                        code.className = 'language-lua';
+                        code.innerHTML = pre.innerHTML;
+                        pre.innerHTML = '';
+                        pre.appendChild(code);
+                    } else if (!code.classList.contains('language-lua')) {
+                        code.classList.add('language-lua');
+                    }
+                });
+                
+                // Обрабатываем встроенный код <code>
+                container.querySelectorAll('code:not(.hljs)').forEach(function(code) {
+                    if (!code.classList.contains('language-lua')) {
+                        code.classList.add('language-lua');
+                    }
+                });
+            }
+            
+            // Функция для подсветки всех блоков кода
+            function highlightAllCode() {
+                wrapCodeBlocks();
+                hljs.highlightAll();
+            }
             
             // Загружаем сохраненные настройки
             const savedTheme = localStorage.getItem('logicSdkTheme') || 'default';
@@ -3981,6 +4031,9 @@ team = my_team&lt;/pre&gt;
                     console.error('Ошибка загрузки цвета свечения:', e);
                 }
             }
+            
+            // Инициализация подсветки кода при загрузке страницы
+            highlightAllCode();
             
             // Функция для обновления предпросмотра цвета акцента
             function updateColorPreview() {
@@ -4283,6 +4336,12 @@ team = my_team&lt;/pre&gt;
                     
                     customModalsContainer.appendChild(modal);
                 });
+                
+                // Обертываем блоки кода в новых модальных окнах
+                setTimeout(() => {
+                    wrapCodeBlocks(customModalsContainer);
+                    hljs.highlightAll();
+                }, 100);
             }
             
             // Функция обновления списка статей в панели управления
@@ -4548,11 +4607,11 @@ team = my_team&lt;/pre&gt;
                     </ul>
                     
                     <h3>Пример кода SDK 0.4:</h3>
-                    <pre>[logic]
+                    <pre><code class="language-lua">[logic]
 active = walker
 [walker]
 path_walk = patrol_path
-team = stalkers</pre>
+team = stalkers</code></pre>
                 `;
                 
                 // Обновляем предпросмотр HTML
@@ -4603,6 +4662,8 @@ team = stalkers</pre>
             // Функция обновления предпросмотра HTML
             function updateHtmlPreview() {
                 htmlPreview.innerHTML = articleContent.value;
+                wrapCodeBlocks(htmlPreview);
+                hljs.highlightAll();
             }
             
             // Функция вставки тега в визуальный редактор
@@ -4630,7 +4691,7 @@ team = stalkers</pre>
             function insertCode() {
                 const code = prompt('Введите код:', '[logic]\nactive = walker');
                 if (code) {
-                    insertTag('insertHTML', `<code>${code}</code>`);
+                    insertTag('insertHTML', `<code class="language-lua">${code}</code>`);
                 }
             }
             
@@ -4638,7 +4699,7 @@ team = stalkers</pre>
             function insertPre() {
                 const code = prompt('Введите код для блока:', '[logic]\nactive = walker\n[walker]\npath_walk = patrol_path');
                 if (code) {
-                    insertTag('insertHTML', `<pre>${code}</pre>`);
+                    insertTag('insertHTML', `<pre><code class="language-lua">${code}</code></pre>`);
                 }
             }
             
@@ -4679,19 +4740,19 @@ team = stalkers</pre>
 <p>Краткое описание назначения схемы и её особенностей.</p>
 
 <h3>Основные параметры:</h3>
-<pre>[scheme_name]
+<pre><code class="language-lua">[scheme_name]
 parameter1 = value1
 parameter2 = value2
-on_info = {+condition} next_scheme</pre>
+on_info = {+condition} next_scheme</code></pre>
 
 <h3>Пример использования:</h3>
-<pre>[logic]
+<pre><code class="language-lua">[logic]
 active = scheme_name
 
 [scheme_name]
 path_walk = custom_path
 team = my_team
-sound = sound_scheme</pre>
+sound = sound_scheme</code></pre>
 
 <h3>Особенности:</h3>
 <ul>
@@ -4706,19 +4767,19 @@ sound = sound_scheme</pre>
 <p>Описание поведения монстра и его особенностей.</p>
 
 <h3>Базовые параметры mob_walker:</h3>
-<pre>[mob_walker]
+<pre><code class="language-lua">[mob_walker]
 path_walk = monster_path
 path_look = monster_look
 home_min = 5000
-home_max = 10000</pre>
+home_max = 10000</code></pre>
 
 <h3>Пример настройки монстра:</h3>
-<pre>[logic]
+<pre><code class="language-lua">[logic]
 active = mob_walker
 
 [mob_walker]
 path_walk = bloodsucker_path
-home_path = bloodsucker_home</pre>
+home_path = bloodsucker_home</code></pre>
 
 <h3>Типы поведения монстров:</h3>
 <table>
@@ -4746,17 +4807,17 @@ home_path = bloodsucker_home</pre>
 <p>Описание объекта и его функциональности.</p>
 
 <h3>Базовые параметры:</h3>
-<pre>[object_type]
+<pre><code class="language-lua">[object_type]
 parameter1 = value1
 parameter2 = value2
-on_info = {+condition} action</pre>
+on_info = {+condition} action</code></pre>
 
 <h3>Пример настройки прожектора:</h3>
-<pre>[searchlight]
+<pre><code class="language-lua">[searchlight]
 path = patrol_path
 color = yellow
 range = 100
-target = actor</pre>
+target = actor</code></pre>
 
 <h3>Важные замечания:</h3>
 <ol>
@@ -4917,19 +4978,19 @@ target = actor</pre>
 <p>Краткое введение в тему статьи. Опишите основные концепции и назначение.</p>
 
 <h3>Основные параметры:</h3>
-<pre>[scheme_name]
+<pre><code class="language-lua">[scheme_name]
 parameter1 = value1
 parameter2 = value2
-on_info = {+condition} next_scheme</pre>
+on_info = {+condition} next_scheme</code></pre>
 
 <h3>Пример использования в SDK 0.4:</h3>
-<pre>[logic]
+<pre><code class="language-lua">[logic]
 active = scheme_name
 
 [scheme_name]
 path_walk = custom_path
 team = my_team
-sound = sound_scheme</pre>
+sound = sound_scheme</code></pre>
 
 <h3>Особенности:</h3>
 <ul>
@@ -5095,6 +5156,12 @@ sound = sound_scheme</pre>
                 if (modal) {
                     modal.style.display = 'block';
                     document.body.style.overflow = 'hidden';
+                    
+                    // Обновляем подсветку кода в модальном окне
+                    setTimeout(() => {
+                        wrapCodeBlocks(modal);
+                        hljs.highlightAll();
+                    }, 10);
                     
                     // Прокручиваем модальное окно к началу
                     setTimeout(() => {
