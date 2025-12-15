@@ -24,6 +24,9 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35; /* Цвет костра */
+            --success-color: #27ae60; /* Цвет успеха */
+            --warning-color: #f39c12; /* Цвет предупреждения */
+            --danger-color: #e74c3c; /* Цвет опасности */
             
             /* Новые переменные для теней и свечения */
             --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -56,6 +59,9 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
             --glow-color: rgba(231, 76, 60, 0.3);
             --glow-color-lg: rgba(231, 76, 60, 0.4);
         }
@@ -77,6 +83,9 @@
             --table-alt-row: #1e2a38;
             --settings-panel-bg: rgba(15, 30, 45, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #2980b9;
             --glow-color: rgba(41, 128, 185, 0.3);
             --glow-color-lg: rgba(41, 128, 185, 0.4);
         }
@@ -98,6 +107,9 @@
             --table-alt-row: #1e2a1e;
             --settings-panel-bg: rgba(15, 35, 15, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #c0392b;
             --glow-color: rgba(39, 174, 96, 0.3);
             --glow-color-lg: rgba(39, 174, 96, 0.4);
         }
@@ -119,6 +131,9 @@
             --table-alt-row: #2e1a38;
             --settings-panel-bg: rgba(35, 15, 45, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #8e44ad;
             --glow-color: rgba(142, 68, 173, 0.3);
             --glow-color-lg: rgba(142, 68, 173, 0.4);
         }
@@ -140,6 +155,9 @@
             --table-alt-row: #382e1e;
             --settings-panel-bg: rgba(45, 25, 15, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e67e22;
             --glow-color: rgba(230, 126, 34, 0.3);
             --glow-color-lg: rgba(230, 126, 34, 0.4);
         }
@@ -161,6 +179,9 @@
             --table-alt-row: #381e1e;
             --settings-panel-bg: rgba(45, 15, 15, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #c0392b;
             --glow-color: rgba(192, 57, 43, 0.3);
             --glow-color-lg: rgba(192, 57, 43, 0.4);
         }
@@ -182,6 +203,9 @@
             --table-alt-row: #1e3838;
             --settings-panel-bg: rgba(15, 45, 45, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #16a085;
             --glow-color: rgba(22, 160, 133, 0.3);
             --glow-color-lg: rgba(22, 160, 133, 0.4);
         }
@@ -203,6 +227,9 @@
             --table-alt-row: #38381e;
             --settings-panel-bg: rgba(45, 45, 15, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f1c40f;
+            --danger-color: #d35400;
             --glow-color: rgba(241, 196, 15, 0.3);
             --glow-color-lg: rgba(241, 196, 15, 0.4);
         }
@@ -224,6 +251,9 @@
             --table-alt-row: #381e38;
             --settings-panel-bg: rgba(45, 15, 45, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e84393;
             --glow-color: rgba(232, 67, 147, 0.3);
             --glow-color-lg: rgba(232, 67, 147, 0.4);
         }
@@ -245,6 +275,9 @@
             --table-alt-row: #2e2e2e;
             --settings-panel-bg: rgba(30, 30, 30, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #7f8c8d;
             --glow-color: rgba(127, 140, 141, 0.3);
             --glow-color-lg: rgba(127, 140, 141, 0.4);
         }
@@ -267,6 +300,9 @@
             --table-alt-row: #1e1e1e;
             --settings-panel-bg: rgba(20, 20, 20, 0.95);
             --campfire-color: #ff6b35;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
             --glow-color: rgba(231, 76, 60, 0.3);
             --glow-color-lg: rgba(231, 76, 60, 0.4);
         }
@@ -1331,6 +1367,296 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
+        /* Форма создания статьи */
+        .article-form {
+            margin-top: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-inner), 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-inner), 0 0 0 2px rgba(231, 76, 60, 0.2), 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e74c3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), #c0392b);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            flex: 1;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c0392b, var(--accent-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), var(--shadow-accent);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            flex: 1;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, var(--success-color), #219653);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            flex: 1;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-success:hover {
+            background: linear-gradient(135deg, #219653, var(--success-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger-color), #c0392b);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            flex: 1;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(135deg, #c0392b, var(--danger-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Стили для кастомных статей */
+        .custom-article-badge {
+            background-color: rgba(52, 152, 219, 0.2);
+            color: var(--accent-secondary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            margin-left: 8px;
+        }
+        
+        .delete-article-btn {
+            background: rgba(231, 76, 60, 0.2);
+            color: var(--danger-color);
+            border: 1px solid var(--danger-color);
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 10px;
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .delete-article-btn:hover {
+            background: rgba(231, 76, 60, 0.4);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Модальное окно управления статьями */
+        .manage-articles-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .articles-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: var(--shadow-inner);
+        }
+        
+        .article-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .article-list-item:hover {
+            background-color: rgba(231, 76, 60, 0.1);
+            transform: translateX(3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .article-list-item .article-title {
+            font-weight: 500;
+            color: var(--text-color);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .article-list-item .article-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .article-list-item .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .article-list-item .btn-edit {
+            background: linear-gradient(135deg, var(--warning-color), #e67e22);
+            color: white;
+        }
+        
+        .article-list-item .btn-edit:hover {
+            background: linear-gradient(135deg, #e67e22, var(--warning-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .article-list-item .btn-delete {
+            background: linear-gradient(135deg, var(--danger-color), #c0392b);
+            color: white;
+        }
+        
+        .article-list-item .btn-delete:hover {
+            background: linear-gradient(135deg, #c0392b, var(--danger-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Сообщения */
+        .message {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+        
+        .message.success {
+            background-color: rgba(39, 174, 96, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+            display: block;
+        }
+        
+        .message.error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: var(--danger-color);
+            border: 1px solid var(--danger-color);
+            display: block;
+        }
+        
+        .message.warning {
+            background-color: rgba(243, 156, 18, 0.2);
+            color: var(--warning-color);
+            border: 1px solid var(--warning-color);
+            display: block;
+        }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .articles-grid {
@@ -1435,6 +1761,10 @@
             .custom-color-inputs {
                 flex-direction: column;
             }
+            
+            .form-actions {
+                flex-direction: column;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1460,6 +1790,20 @@
             
             .color-themes {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .article-list-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .article-list-item .article-actions {
+                width: 100%;
+            }
+            
+            .article-list-item .btn-small {
+                flex: 1;
             }
         }
         
@@ -1496,6 +1840,9 @@
         #modal-article8 .modal-content:before { background: linear-gradient(90deg, #27ae60, #2ecc71); }
         #modal-article9 .modal-content:before { background: linear-gradient(90deg, #8e44ad, #3498db); }
         #modal-article10 .modal-content:before { background: linear-gradient(90deg, #16a085, #1abc9c); }
+        
+        /* Для кастомных статей */
+        .custom-modal .modal-content:before { background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary)); }
         
         /* Overlay для настроек */
         .settings-overlay {
@@ -1549,6 +1896,23 @@
         nav ul li a:hover i {
             filter: drop-shadow(0 0 5px var(--glow-color)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
+        
+        /* Стили для кнопки помощи по HTML */
+        .html-help-btn {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .html-help-btn:hover {
+            color: var(--accent-secondary);
+            text-shadow: 0 0 5px var(--glow-color);
+        }
     </style>
 </head>
 <body class="theme-default">
@@ -1561,7 +1925,7 @@
             <a href="#" class="logo">
                 <span class="logo-icon"><i class="fas fa-code"></i></span>
                 <span class="logo-text">LOGIC SDK 0.4</span>
-                <span class="version-badge v01">v0.2</span>
+                <span class="version-badge v01">v0.3</span>
             </a>
             
             <div class="header-controls">
@@ -1577,6 +1941,7 @@
                     <li><a href="#toc"><i class="fas fa-list"></i> <span class="nav-text">Содержание</span></a></li>
                     <li><a href="#" class="open-article-link" data-article="5"><i class="fas fa-slash"></i> <span class="nav-text">Новые секции</span></a></li>
                     <li><a href="#" class="open-article-link" data-article="6"><i class="fas fa-ghost"></i> <span class="nav-text">Монстры</span></a></li>
+                    <li><a href="#" id="createArticleBtn"><i class="fas fa-plus-circle"></i> <span class="nav-text">Создать статью</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -1735,38 +2100,92 @@
         </div>
         
         <div class="settings-section">
-            <h3><i class="fas fa-campfire"></i> Настройка цвета костра</h3>
-            <p>Настройте цвет иконки костра для статьи "Байки из склепа"</p>
+            <h3><i class="fas fa-edit"></i> Создание статьи</h3>
+            <p>Создайте новую статью для руководства LOGIC SDK 0.4</p>
             
-            <div class="custom-color-section">
-                <div class="custom-color-inputs">
-                    <div class="color-input">
-                        <label for="campfireR">Красный (R)</label>
-                        <input type="number" id="campfireR" min="0" max="255" value="255" placeholder="0-255">
-                    </div>
-                    <div class="color-input">
-                        <label for="campfireG">Зеленый (G)</label>
-                        <input type="number" id="campfireG" min="0" max="255" value="107" placeholder="0-255">
-                    </div>
-                    <div class="color-input">
-                        <label for="campfireB">Синий (B)</label>
-                        <input type="number" id="campfireB" min="0" max="255" value="53" placeholder="0-255">
-                    </div>
+            <div class="article-form" id="articleForm">
+                <div id="formMessage" class="message"></div>
+                
+                <div class="form-group">
+                    <label for="articleTitle">Название статьи *</label>
+                    <input type="text" id="articleTitle" placeholder="Введите название статьи">
                 </div>
                 
-                <div style="display: flex; justify-content: center; margin: 20px 0;">
-                    <div class="campfire-icon"></div>
+                <div class="form-group">
+                    <label for="articleDescription">Описание статьи *</label>
+                    <textarea id="articleDescription" placeholder="Введите краткое описание статьи"></textarea>
                 </div>
                 
-                <button class="apply-custom-color" id="applyCampfireColor">Применить цвет костра</button>
+                <div class="form-group">
+                    <label for="articleIcon">Иконка статьи</label>
+                    <select id="articleIcon">
+                        <option value="fas fa-code">Код</option>
+                        <option value="fas fa-cogs">Настройки</option>
+                        <option value="fas fa-route">Маршрут</option>
+                        <option value="fas fa-user-friends">Персонажи</option>
+                        <option value="fas fa-skull-crossbones">Бой</option>
+                        <option value="fas fa-slash">Секции</option>
+                        <option value="fas fa-ghost">Монстры</option>
+                        <option value="fas fa-campfire">Истории</option>
+                        <option value="fas fa-code-branch">Оверрайды</option>
+                        <option value="fas fa-terminal">Синтаксис</option>
+                        <option value="fas fa-lightbulb">Объекты</option>
+                        <option value="fas fa-book">Книга</option>
+                        <option value="fas fa-wrench">Инструменты</option>
+                        <option value="fas fa-gamepad">Геймплей</option>
+                        <option value="fas fa-map">Карта</option>
+                        <option value="fas fa-database">База данных</option>
+                        <option value="fas fa-bug">Отладка</option>
+                        <option value="fas fa-tools">Инструменты</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleTag">Тег статьи *</label>
+                    <input type="text" id="articleTag" placeholder="Например: Логика, Монстры, Секции">
+                </div>
+                
+                <div class="form-group">
+                    <label for="articleContent">
+                        Содержание статьи (HTML) * 
+                        <a href="#" id="htmlHelpBtn" class="html-help-btn">
+                            <i class="fas fa-question-circle"></i> Помощь по HTML
+                        </a>
+                        <a href="#" id="insertTemplateBtn" class="html-help-btn" style="margin-left: 10px;">
+                            <i class="fas fa-magic"></i> Вставить шаблон
+                        </a>
+                    </label>
+                    <textarea id="articleContent" placeholder="Введите содержимое статьи в формате HTML. Вы можете использовать &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;code&gt;, &lt;pre&gt; и другие HTML-теги." rows="8"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button class="btn-primary" id="saveArticleBtn">Сохранить статью</button>
+                    <button class="btn-secondary" id="clearFormBtn">Очистить форму</button>
+                </div>
+                
+                <input type="hidden" id="editArticleId" value="">
+            </div>
+        </div>
+        
+        <div class="settings-section manage-articles-section">
+            <h3><i class="fas fa-tasks"></i> Управление статьями</h3>
+            <p>Просмотр, редактирование и удаление созданных статей</p>
+            
+            <div class="articles-list" id="articlesList">
+                <!-- Список статей будет загружен здесь -->
+            </div>
+            
+            <div class="form-actions">
+                <button class="btn-success" id="exportArticlesBtn">Экспорт статей</button>
+                <button class="btn-danger" id="importArticlesBtn">Импорт статей</button>
             </div>
         </div>
         
         <div class="settings-section">
             <h3><i class="fas fa-info-circle"></i> О приложении</h3>
             <div class="language-selector">
-                <p>LOGIC SDK 0.4 Версия 0.2</p>
-                <p>Полное руководство по настройкам логики STALKER</p>
+                <p>LOGIC SDK 0.4 Версия 0.3</p>
+                <p>Полное руководство по настройкам логики STALKER с возможностью создания статей</p>
                 <p>Основано на материалах GSC Game World</p>
             </div>
         </div>
@@ -1780,7 +2199,8 @@
         <div class="content-section" id="toc">
             <div class="toc-container">
                 <h2 class="toc-title"><i class="fas fa-book"></i> Содержание</h2>
-                <div class="toc-list">
+                <div class="toc-list" id="tocList">
+                    <!-- Содержание будет динамически обновляться -->
                     <div class="toc-item">
                         <a href="#" class="toc-link open-article-link" data-article="1">
                             <i class="fas fa-route"></i>
@@ -1848,7 +2268,8 @@
         <!-- Articles Grid -->
         <div class="content-section" id="articles-grid">
             <h2 class="section-title">Все статьи</h2>
-            <div class="articles-grid">
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Статьи будут динамически загружены здесь -->
                 <!-- Article 1 -->
                 <article class="article-card">
                     <div class="article-icon-container">
@@ -2065,9 +2486,10 @@
                 <a href="#" class="open-article-link" data-article="8"><i class="fas fa-code-branch"></i> Оверрайды</a>
                 <a href="#" class="open-article-link" data-article="9"><i class="fas fa-terminal"></i> Синтаксис</a>
                 <a href="#" class="open-article-link" data-article="10"><i class="fas fa-lightbulb"></i> Объекты</a>
+                <a href="#" id="createArticleBtnFooter"><i class="fas fa-plus-circle"></i> Создать статью</a>
             </div>
             <div class="copyright">
-                &copy; 2023 Полное руководство по настройкам логики STALKER. Основано на материалах GSC Game World. LOGIC SDK 0.4 v0.2
+                &copy; 2023 Полное руководство по настройкам логики STALKER. Основано на материалах GSC Game World. LOGIC SDK 0.4 v0.3
             </div>
         </div>
     </footer>
@@ -2846,6 +3268,225 @@ condition = условие_активации</pre>
         </div>
     </div>
     
+    <!-- Модальное окно помощи по HTML -->
+    <div class="article-modal" id="htmlHelpModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-header">
+                <h1>Помощь по HTML для статей</h1>
+                <div class="meta">
+                    <span><i class="far fa-clock"></i> Справочная информация</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2>Допустимые HTML-теги:</h2>
+                <p>Вы можете использовать следующие теги для форматирования вашей статьи:</p>
+                
+                <h3>Заголовки:</h3>
+                <pre>&lt;h2&gt;Заголовок 2 уровня&lt;/h2&gt;
+&lt;h3&gt;Заголовок 3 уровня&lt;/h3&gt;
+&lt;h4&gt;Заголовок 4 уровня&lt;/h4&gt;</pre>
+                
+                <h3>Абзацы и текст:</h3>
+                <pre>&lt;p&gt;Это абзац текста.&lt;/p&gt;
+&lt;strong&gt;Жирный текст&lt;/strong&gt;
+&lt;em&gt;Курсив&lt;/em&gt;
+&lt;u&gt;Подчеркнутый&lt;/u&gt;
+&lt;br&gt; - перенос строки</pre>
+                
+                <h3>Списки:</h3>
+                <pre>&lt;ul&gt;
+  &lt;li&gt;Элемент ненумерованного списка&lt;/li&gt;
+  &lt;li&gt;Еще один элемент&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Элемент нумерованного списка&lt;/li&gt;
+  &lt;li&gt;Еще один элемент&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                
+                <h3>Код и предформатированный текст:</h3>
+                <pre>&lt;code&gt;Встроенный код&lt;/code&gt;
+
+&lt;pre&gt;
+// Блок кода
+function example() {
+  return "Hello World!";
+}
+&lt;/pre&gt;</pre>
+                
+                <h3>Таблицы:</h3>
+                <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Заголовок 1&lt;/th&gt;
+    &lt;th&gt;Заголовок 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Данные 1&lt;/td&gt;
+    &lt;td&gt;Данные 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                
+                <h2>Примеры статей для LOGIC SDK 0.4:</h2>
+                
+                <h3>Пример 1: Статья о системе флагов</h3>
+                <pre>&lt;h2&gt;Система флагов path_walk и path_look&lt;/h2&gt;
+&lt;p&gt;В SDK 0.4 система флагов позволяет тонко настраивать поведение NPC при движении по точкам пути. Флаги указываются прямо в имени waypoint-а через символ |.&lt;/p&gt;
+
+&lt;h3&gt;Основные флаги path_walk:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;a=state&lt;/code&gt; - выбор состояния тела при движении&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;p=percent&lt;/code&gt; - вероятность остановки в точке (0-100)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;sig=name&lt;/code&gt; - установка сигнала при достижении точки&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Пример waypoint в SDK:&lt;/h3&gt;
+&lt;pre&gt;[walker]
+path_walk = patrol_path
+path_look = patrol_look
+team = stalker_team
+
+; Пример точки пути с флагами
+[wp00]:walker_path
+a = patrol
+p = 100
+sig = point_reached&lt;/pre&gt;</pre>
+                
+                <h3>Пример 2: Статья о боевых схемах</h3>
+                <pre>&lt;h2&gt;Схемы combat, death и hit&lt;/h2&gt;
+&lt;p&gt;Эти схемы определяют поведение NPC в боевых ситуациях, при получении урона и смерти.&lt;/p&gt;
+
+&lt;h3&gt;Секция combat:&lt;/h3&gt;
+&lt;pre&gt;[combat]
+enemy = actor
+action = assault
+on_info = {+enemy_spotted} combat@aggressive&lt;/pre&gt;
+
+&lt;h3&gt;Типы боевого поведения:&lt;/h3&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Тип&lt;/th&gt;
+    &lt;th&gt;Описание&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;hide&lt;/td&gt;
+    &lt;td&gt;Укрытие и стрельба из укрытия&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;sniper&lt;/td&gt;
+    &lt;td&gt;Снайперская стрельба с дальних позиций&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;assault&lt;/td&gt;
+    &lt;td&gt;Активный штурм с приближением&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h3&gt;Секция hit:&lt;/h3&gt;
+&lt;pre&gt;[hit]
+on_info = {+hit_by_sniper} cover
+on_info = {+hit_normal} fight_back&lt;/pre&gt;</pre>
+                
+                <h3>Пример 3: Статья о монстрах</h3>
+                <pre>&lt;h2&gt;Схемы поведения монстров&lt;/h2&gt;
+&lt;p&gt;Монстры в SDK 0.4 используют специальные схемы с префиксом mob_.&lt;/p&gt;
+
+&lt;h3&gt;mob_walker - перемещение монстра:&lt;/h3&gt;
+&lt;pre&gt;[mob_walker]
+path_walk = monster_path
+path_look = monster_look
+home_min = 5000
+home_max = 10000&lt;/pre&gt;
+
+&lt;h3&gt;mob_combat - боевое поведение:&lt;/h3&gt;
+&lt;pre&gt;[mob_combat]
+min_attack_distance = 2
+max_attack_distance = 10
+home_path = home_point&lt;/pre&gt;
+
+&lt;h3&gt;mob_fake_death - притворная смерть:&lt;/h3&gt;
+&lt;pre&gt;[mob_fake_death]
+anim = fake_death
+on_info = {+player_near} mob_attack
+on_info = {+player_far} mob_walker&lt;/pre&gt;
+
+&lt;h4&gt;Важно:&lt;/h4&gt;
+&lt;p&gt;Монстры не используют команды как сталкеры, их поведение более инстинктивное.&lt;/p&gt;</pre>
+                
+                <h3>Пример 4: Статья о смарттеррейнах</h3>
+                <pre>&lt;h2&gt;Настройка смарттеррейнов&lt;/h2&gt;
+&lt;p&gt;Смарттеррейны - это зоны, где NPC живут своей жизнью, работают и отдыхают.&lt;/p&gt;
+
+&lt;h3&gt;Базовая конфигурация:&lt;/h3&gt;
+&lt;pre&gt;[smart_terrain]
+terrain_name = bar_smart
+max_population = 8
+enter_distance = 50
+exit_distance = 100
+
+; Рабочие места
+[job1]
+type = walker
+path_walk = bar_work1
+path_look = bar_look1
+
+[job2]
+type = remark
+anim = sit
+sound = dialogs\bar_talk.ogg&lt;/pre&gt;
+
+&lt;h3&gt;Особенности:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;NPC автоматически выбирают свободные рабочие места&lt;/li&gt;
+  &lt;li&gt;При атаке смарттеррейн переходит в режим обороны&lt;/li&gt;
+  &lt;li&gt;Можно настраивать дневной/ночной режимы работы&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                
+                <h2>Советы по оформлению:</h2>
+                <ul>
+                    <li>Используйте <code>&lt;h2&gt;</code> для основных разделов статьи</li>
+                    <li><code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code> - для подразделов</li>
+                    <li>Код SDK всегда оформляйте в тегах <code>&lt;pre&gt;</code></li>
+                    <li>Для встроенного кода используйте <code>&lt;code&gt;</code></li>
+                    <li>Таблицы хорошо подходят для сравнения параметров</li>
+                    <li>Списки используйте для перечисления свойств или возможностей</li>
+                    <li>Не используйте теги <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;iframe&gt;</code> - они будут удалены</li>
+                </ul>
+                
+                <h3>Быстрые шаблоны:</h3>
+                <p>Скопируйте и измените под свою статью:</p>
+                
+                <h4>Шаблон для схемы поведения:</h4>
+                <pre>&lt;h2&gt;Название схемы&lt;/h2&gt;
+&lt;p&gt;Краткое описание назначения схемы.&lt;/p&gt;
+
+&lt;h3&gt;Основные параметры:&lt;/h3&gt;
+&lt;pre&gt;[scheme_name]
+param1 = value1
+param2 = value2
+on_info = {+condition} next_scheme&lt;/pre&gt;
+
+&lt;h3&gt;Пример использования:&lt;/h3&gt;
+&lt;pre&gt;[logic]
+active = scheme_name
+[scheme_name]
+path_walk = custom_path
+team = my_team&lt;/pre&gt;
+
+&lt;h3&gt;Дополнительные настройки:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Особенность 1:&lt;/strong&gt; Описание&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Особенность 2:&lt;/strong&gt; Описание&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Контейнер для кастомных модальных окон -->
+    <div id="customModalsContainer"></div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Элементы управления
@@ -2858,6 +3499,10 @@ condition = условие_активации</pre>
             const settingsPanel = document.getElementById('settingsPanel');
             const settingsOverlay = document.getElementById('settingsOverlay');
             const customColorSection = document.getElementById('customColorSection');
+            const createArticleBtn = document.getElementById('createArticleBtn');
+            const createArticleBtnFooter = document.getElementById('createArticleBtnFooter');
+            const htmlHelpBtn = document.getElementById('htmlHelpBtn');
+            const insertTemplateBtn = document.getElementById('insertTemplateBtn');
             
             // Элементы для кастомного цвета акцента
             const applyCustomColorBtn = document.getElementById('applyCustomColor');
@@ -2886,11 +3531,33 @@ condition = условие_активации</pre>
             const glowLgB = document.getElementById('glowLgB');
             const glowLgA = document.getElementById('glowLgA');
             
-            // Элементы для цвета костра
-            const applyCampfireColorBtn = document.getElementById('applyCampfireColor');
-            const campfireR = document.getElementById('campfireR');
-            const campfireG = document.getElementById('campfireG');
-            const campfireB = document.getElementById('campfireB');
+            // Элементы для создания статьи
+            const articleForm = document.getElementById('articleForm');
+            const articleTitle = document.getElementById('articleTitle');
+            const articleDescription = document.getElementById('articleDescription');
+            const articleIcon = document.getElementById('articleIcon');
+            const articleTag = document.getElementById('articleTag');
+            const articleContent = document.getElementById('articleContent');
+            const editArticleId = document.getElementById('editArticleId');
+            const saveArticleBtn = document.getElementById('saveArticleBtn');
+            const clearFormBtn = document.getElementById('clearFormBtn');
+            const formMessage = document.getElementById('formMessage');
+            const articlesList = document.getElementById('articlesList');
+            const exportArticlesBtn = document.getElementById('exportArticlesBtn');
+            const importArticlesBtn = document.getElementById('importArticlesBtn');
+            
+            // Элементы для отображения статей
+            const articlesGrid = document.getElementById('articlesGrid');
+            const tocList = document.getElementById('tocList');
+            const customModalsContainer = document.getElementById('customModalsContainer');
+            
+            // Ключ для localStorage
+            const CUSTOM_ARTICLES_KEY = 'logicSdkCustomArticles';
+            const NEXT_ARTICLE_ID_KEY = 'logicSdkNextArticleId';
+            
+            // Массив кастомных статей
+            let customArticles = [];
+            let nextArticleId = 100; // Начинаем с 100, чтобы не пересекаться с базовыми статьями
             
             // Загружаем сохраненные настройки
             const savedTheme = localStorage.getItem('logicSdkTheme') || 'default';
@@ -2898,7 +3565,9 @@ condition = условие_активации</pre>
             const savedShadowColor = localStorage.getItem('logicSdkShadowColor');
             const savedGlowColor = localStorage.getItem('logicSdkGlowColor');
             const savedGlowColorLg = localStorage.getItem('logicSdkGlowColorLg');
-            const savedCampfireColor = localStorage.getItem('logicSdkCampfireColor');
+            
+            // Загружаем кастомные статьи
+            loadCustomArticles();
             
             // Применяем сохраненную тему
             if (savedTheme === 'custom' && savedCustomColor) {
@@ -2974,19 +3643,6 @@ condition = условие_активации</pre>
                     updateGlowPreview();
                 } catch (e) {
                     console.error('Ошибка загрузки цвета свечения:', e);
-                }
-            }
-            
-            // Применяем сохраненный цвет костра
-            if (savedCampfireColor) {
-                try {
-                    const campfire = JSON.parse(savedCampfireColor);
-                    campfireR.value = campfire.r;
-                    campfireG.value = campfire.g;
-                    campfireB.value = campfire.b;
-                    applyCampfireColor(campfire.r, campfire.g, campfire.b);
-                } catch (e) {
-                    console.error('Ошибка загрузки цвета костра:', e);
                 }
             }
             
@@ -3095,6 +3751,9 @@ condition = условие_активации</pre>
                         --table-alt-row: #1e1e1e;
                         --settings-panel-bg: rgba(20, 20, 20, 0.95);
                         --campfire-color: #ff6b35;
+                        --success-color: #27ae60;
+                        --warning-color: #f39c12;
+                        --danger-color: rgb(${validR}, ${validG}, ${validB});
                         --glow-color: rgba(${validR}, ${validG}, ${validB}, 0.3);
                         --glow-color-lg: rgba(${validR}, ${validG}, ${validB}, 0.4);
                     }
@@ -3174,30 +3833,354 @@ condition = условие_активации</pre>
                 }));
             }
             
-            // Функция применения цвета костра
-            function applyCampfireColor(r, g, b) {
-                // Ограничиваем значения
-                const validR = Math.min(255, Math.max(0, r));
-                const validG = Math.min(255, Math.max(0, g));
-                const validB = Math.min(255, Math.max(0, b));
+            // Функция загрузки кастомных статей
+            function loadCustomArticles() {
+                const savedArticles = localStorage.getItem(CUSTOM_ARTICLES_KEY);
+                const savedNextId = localStorage.getItem(NEXT_ARTICLE_ID_KEY);
                 
-                // Применяем цвет костра ко всей странице
-                document.documentElement.style.setProperty('--campfire-color', `rgb(${validR}, ${validG}, ${validB})`);
+                if (savedArticles) {
+                    try {
+                        customArticles = JSON.parse(savedArticles);
+                        nextArticleId = savedNextId ? parseInt(savedNextId) : 100;
+                        
+                        // Отображаем статьи
+                        renderCustomArticles();
+                        updateArticlesList();
+                    } catch (e) {
+                        console.error('Ошибка загрузки кастомных статей:', e);
+                        customArticles = [];
+                        nextArticleId = 100;
+                    }
+                }
+            }
+            
+            // Функция сохранения кастомных статей
+            function saveCustomArticles() {
+                localStorage.setItem(CUSTOM_ARTICLES_KEY, JSON.stringify(customArticles));
+                localStorage.setItem(NEXT_ARTICLE_ID_KEY, nextArticleId.toString());
+            }
+            
+            // Функция отображения кастомных статей
+            function renderCustomArticles() {
+                // Очищаем контейнер для кастомных статей (удаляем только кастомные)
+                const existingCustomArticles = articlesGrid.querySelectorAll('.custom-article');
+                existingCustomArticles.forEach(article => article.remove());
                 
-                // Обновляем иконку костра в статье
-                const campfireIcon = document.querySelector('.custom-campfire');
-                if (campfireIcon) {
-                    // Применяем новый цвет через инлайновый стиль
-                    campfireIcon.style.setProperty('--campfire-color', `rgb(${validR}, ${validG}, ${validB})`);
+                const existingCustomTocItems = tocList.querySelectorAll('.custom-toc-item');
+                existingCustomTocItems.forEach(item => item.remove());
+                
+                const existingCustomModals = document.querySelectorAll('.custom-modal');
+                existingCustomModals.forEach(modal => modal.remove());
+                
+                // Добавляем кастомные статьи
+                customArticles.forEach((article, index) => {
+                    const articleNumber = 10 + index + 1; // Начинаем с 11
+                    
+                    // Создаем карточку статьи
+                    const articleCard = document.createElement('article');
+                    articleCard.className = 'article-card custom-article';
+                    articleCard.dataset.articleId = article.id;
+                    
+                    articleCard.innerHTML = `
+                        <div class="article-icon-container">
+                            <div class="article-icon">
+                                <i class="${article.icon}"></i>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> Статья ${articleNumber}</span>
+                                <span class="article-tag"><i class="fas fa-code"></i> ${article.tag}</span>
+                                <span class="custom-article-badge">Пользовательская</span>
+                            </div>
+                            <h3>${article.title}</h3>
+                            <p>${article.description}</p>
+                            <button class="open-article-btn open-custom-article" data-article-id="${article.id}">
+                                Открыть статью <i class="fas fa-external-link-alt"></i>
+                            </button>
+                            <button class="delete-article-btn delete-custom-article" data-article-id="${article.id}">
+                                <i class="fas fa-trash"></i> Удалить статью
+                            </button>
+                        </div>
+                    `;
+                    
+                    articlesGrid.appendChild(articleCard);
+                    
+                    // Добавляем в содержание
+                    const tocItem = document.createElement('div');
+                    tocItem.className = 'toc-item custom-toc-item';
+                    
+                    const iconClass = article.icon.split(' ')[1] || 'fa-code';
+                    
+                    tocItem.innerHTML = `
+                        <a href="#" class="toc-link open-custom-article" data-article-id="${article.id}">
+                            <i class="${article.icon}"></i>
+                            <span>${articleNumber}. ${article.title}</span>
+                            <span class="custom-article-badge">Пользовательская</span>
+                        </a>
+                    `;
+                    
+                    tocList.appendChild(tocItem);
+                    
+                    // Создаем модальное окно для статьи
+                    const modal = document.createElement('div');
+                    modal.className = 'article-modal custom-modal';
+                    modal.id = `modal-custom-article-${article.id}`;
+                    
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            
+                            <div class="modal-header">
+                                <h1>${articleNumber}. ${article.title} - LOGIC SDK 0.4</h1>
+                                <div class="meta">
+                                    <span><i class="far fa-clock"></i> Статья ${articleNumber} | ${article.tag}</span>
+                                    <span class="sdk-badge">Пользовательская</span>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                ${article.content}
+                            </div>
+                        </div>
+                    `;
+                    
+                    customModalsContainer.appendChild(modal);
+                });
+            }
+            
+            // Функция обновления списка статей в панели управления
+            function updateArticlesList() {
+                articlesList.innerHTML = '';
+                
+                if (customArticles.length === 0) {
+                    articlesList.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 20px;">Нет созданных статей</p>';
+                    return;
+                }
+                
+                customArticles.forEach(article => {
+                    const listItem = document.createElement('div');
+                    listItem.className = 'article-list-item';
+                    listItem.dataset.articleId = article.id;
+                    
+                    const articleNumber = customArticles.findIndex(a => a.id === article.id) + 11;
+                    
+                    listItem.innerHTML = `
+                        <div class="article-title">${articleNumber}. ${article.title}</div>
+                        <div class="article-actions">
+                            <button class="btn-small btn-edit edit-article" data-article-id="${article.id}">
+                                <i class="fas fa-edit"></i> Редактировать
+                            </button>
+                            <button class="btn-small btn-delete delete-article-from-list" data-article-id="${article.id}">
+                                <i class="fas fa-trash"></i> Удалить
+                            </button>
+                        </div>
+                    `;
+                    
+                    articlesList.appendChild(listItem);
+                });
+            }
+            
+            // Функция создания новой статьи
+            function createArticle() {
+                const title = articleTitle.value.trim();
+                const description = articleDescription.value.trim();
+                const icon = articleIcon.value;
+                const tag = articleTag.value.trim();
+                const content = articleContent.value.trim();
+                const id = editArticleId.value || `custom-${nextArticleId++}`;
+                
+                // Валидация
+                if (!title || !description || !tag || !content) {
+                    showMessage('Пожалуйста, заполните все обязательные поля', 'error');
+                    return;
+                }
+                
+                const article = {
+                    id: id,
+                    title: title,
+                    description: description,
+                    icon: icon,
+                    tag: tag,
+                    content: content,
+                    createdAt: new Date().toISOString()
+                };
+                
+                // Если редактируем существующую статью
+                if (editArticleId.value) {
+                    const index = customArticles.findIndex(a => a.id === editArticleId.value);
+                    if (index !== -1) {
+                        customArticles[index] = article;
+                        showMessage('Статья успешно обновлена', 'success');
+                    }
+                } else {
+                    // Создаем новую статью
+                    customArticles.push(article);
+                    showMessage('Статья успешно создана', 'success');
                 }
                 
                 // Сохраняем в localStorage
-                localStorage.setItem('logicSdkCampfireColor', JSON.stringify({
-                    r: validR,
-                    g: validG,
-                    b: validB
-                }));
+                saveCustomArticles();
+                
+                // Обновляем отображение
+                renderCustomArticles();
+                updateArticlesList();
+                
+                // Очищаем форму
+                clearForm();
+                
+                // Прокручиваем к новой статье
+                setTimeout(() => {
+                    const newArticle = document.querySelector(`.custom-article[data-article-id="${id}"]`);
+                    if (newArticle) {
+                        newArticle.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 300);
             }
+            
+            // Функция редактирования статьи
+            function editArticle(articleId) {
+                const article = customArticles.find(a => a.id === articleId);
+                if (!article) return;
+                
+                // Заполняем форму
+                articleTitle.value = article.title;
+                articleDescription.value = article.description;
+                articleIcon.value = article.icon;
+                articleTag.value = article.tag;
+                articleContent.value = article.content;
+                editArticleId.value = article.id;
+                
+                // Меняем текст кнопки
+                saveArticleBtn.textContent = 'Обновить статью';
+                
+                // Показываем сообщение
+                showMessage('Редактирование статьи. Внесите изменения и нажмите "Обновить статью"', 'warning');
+                
+                // Открываем панель настроек
+                openSettings();
+                
+                // Прокручиваем к форме
+                setTimeout(() => {
+                    articleForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+            
+            // Функция удаления статьи
+            function deleteArticle(articleId) {
+                if (!confirm('Вы уверены, что хотите удалить эту статью?')) {
+                    return;
+                }
+                
+                const index = customArticles.findIndex(a => a.id === articleId);
+                if (index !== -1) {
+                    customArticles.splice(index, 1);
+                    saveCustomArticles();
+                    renderCustomArticles();
+                    updateArticlesList();
+                    showMessage('Статья успешно удалена', 'success');
+                }
+            }
+            
+            // Функция экспорта статей
+            function exportArticles() {
+                if (customArticles.length === 0) {
+                    showMessage('Нет статей для экспорта', 'error');
+                    return;
+                }
+                
+                const exportData = {
+                    version: '1.0',
+                    exportDate: new Date().toISOString(),
+                    articles: customArticles
+                };
+                
+                const dataStr = JSON.stringify(exportData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = `logic-sdk-articles-${new Date().toISOString().slice(0,10)}.json`;
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+                
+                showMessage('Статьи успешно экспортированы', 'success');
+            }
+            
+            // Функция импорта статей
+            function importArticles() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.json';
+                
+                input.onchange = function(e) {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const importData = JSON.parse(e.target.result);
+                            
+                            if (!importData.articles || !Array.isArray(importData.articles)) {
+                                throw new Error('Некорректный формат файла');
+                            }
+                            
+                            // Проверяем, есть ли уже статьи с такими ID
+                            const existingIds = customArticles.map(a => a.id);
+                            const newArticles = importData.articles.filter(article => !existingIds.includes(article.id));
+                            
+                            if (newArticles.length === 0) {
+                                showMessage('Все статьи из файла уже существуют', 'warning');
+                                return;
+                            }
+                            
+                            // Добавляем новые статьи
+                            customArticles.push(...newArticles);
+                            saveCustomArticles();
+                            renderCustomArticles();
+                            updateArticlesList();
+                            
+                            showMessage(`Импортировано ${newArticles.length} статей`, 'success');
+                        } catch (error) {
+                            console.error('Ошибка импорта:', error);
+                            showMessage('Ошибка импорта: некорректный формат файла', 'error');
+                        }
+                    };
+                    
+                    reader.readAsText(file);
+                };
+                
+                input.click();
+            }
+            
+            // Функция отображения сообщения
+            function showMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.className = `message ${type}`;
+                
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Функция очистки формы
+            function clearForm() {
+                articleTitle.value = '';
+                articleDescription.value = '';
+                articleIcon.value = 'fas fa-code';
+                articleTag.value = '';
+                articleContent.value = '';
+                editArticleId.value = '';
+                saveArticleBtn.textContent = 'Сохранить статью';
+                formMessage.style.display = 'none';
+            }
+            
+            // Инициализация предпросмотра цветов
+            updateColorPreview();
+            updateShadowPreview();
+            updateGlowPreview();
             
             // Обработчики для кастомного цвета акцента
             customR.addEventListener('input', updateColorPreview);
@@ -3263,19 +4246,52 @@ condition = условие_активации</pre>
                 applyGlowColor(r, g, b, a, rLg, gLg, bLg, aLg);
             });
             
-            // Обработчики для цвета костра
-            applyCampfireColorBtn.addEventListener('click', function() {
-                const r = parseInt(campfireR.value) || 0;
-                const g = parseInt(campfireG.value) || 0;
-                const b = parseInt(campfireB.value) || 0;
-                
-                applyCampfireColor(r, g, b);
+            // Обработчики для создания статей
+            saveArticleBtn.addEventListener('click', createArticle);
+            
+            clearFormBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearForm();
             });
             
-            // Инициализация предпросмотра цветов
-            updateColorPreview();
-            updateShadowPreview();
-            updateGlowPreview();
+            exportArticlesBtn.addEventListener('click', exportArticles);
+            importArticlesBtn.addEventListener('click', importArticles);
+            
+            // Обработчик для кнопки вставки шаблона
+            insertTemplateBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const template = `<h2>Название статьи</h2>
+<p>Краткое введение в тему статьи. Опишите основные концепции и назначение.</p>
+
+<h3>Основные параметры:</h3>
+<pre>[scheme_name]
+parameter1 = value1
+parameter2 = value2
+on_info = {+condition} next_scheme</pre>
+
+<h3>Пример использования в SDK 0.4:</h3>
+<pre>[logic]
+active = scheme_name
+
+[scheme_name]
+path_walk = custom_path
+team = my_team
+sound = sound_scheme</pre>
+
+<h3>Особенности:</h3>
+<ul>
+  <li><strong>Особенность 1:</strong> Подробное описание</li>
+  <li><strong>Особенность 2:</strong> Подробное описание</li>
+  <li><strong>Особенность 3:</strong> Подробное описание</li>
+</ul>
+
+<h4>Примечание:</h4>
+<p>Дополнительная информация или важные замечания по использованию.</p>`;
+                
+                articleContent.value = template;
+                showMessage('Шаблон вставлен. Отредактируйте его под свою статью.', 'success');
+            });
             
             // Обработчики для переключения темы
             colorOptions.forEach(option => {
@@ -3305,10 +4321,41 @@ condition = условие_активации</pre>
             });
             
             // Открытие панели настроек
-            settingsBtn.addEventListener('click', function() {
-                settingsPanel.classList.add('active');
-                settingsOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            settingsBtn.addEventListener('click', openSettings);
+            
+            // Кнопка создания статьи в навигации
+            createArticleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openSettings();
+                clearForm();
+                
+                // Прокручиваем к форме создания статьи
+                setTimeout(() => {
+                    const articleFormSection = document.querySelector('.settings-section:nth-child(4)');
+                    if (articleFormSection) {
+                        articleFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 300);
+            });
+            
+            createArticleBtnFooter.addEventListener('click', function(e) {
+                e.preventDefault();
+                openSettings();
+                clearForm();
+                
+                // Прокручиваем к форме создания статьи
+                setTimeout(() => {
+                    const articleFormSection = document.querySelector('.settings-section:nth-child(4)');
+                    if (articleFormSection) {
+                        articleFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 300);
+            });
+            
+            // Кнопка помощи по HTML
+            htmlHelpBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('htmlHelpModal');
             });
             
             // Закрытие панели настроек
@@ -3318,32 +4365,64 @@ condition = условие_активации</pre>
                 document.body.style.overflow = 'auto';
             }
             
+            function openSettings() {
+                settingsPanel.classList.add('active');
+                settingsOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
             closeSettingsBtn.addEventListener('click', closeSettings);
             settingsOverlay.addEventListener('click', closeSettings);
             
-            // Открытие модального окна при нажатии на кнопку
+            // Исправление: Делегирование событий для динамически созданных элементов
+            document.addEventListener('click', function(e) {
+                // Закрытие модальных окон при клике на крестик (работает для всех)
+                if (e.target.classList.contains('close-modal')) {
+                    closeAllModals();
+                }
+                
+                // Закрытие модальных окон при клике вне контента
+                if (e.target.classList.contains('article-modal')) {
+                    closeAllModals();
+                }
+                
+                // Открытие кастомных статей
+                if (e.target.closest('.open-custom-article')) {
+                    e.preventDefault();
+                    const articleId = e.target.closest('.open-custom-article').dataset.articleId;
+                    openModal(`modal-custom-article-${articleId}`);
+                }
+                
+                // Удаление кастомных статей из карточек
+                if (e.target.closest('.delete-custom-article')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const articleId = e.target.closest('.delete-custom-article').dataset.articleId;
+                    deleteArticle(articleId);
+                }
+                
+                // Редактирование статьи из списка
+                if (e.target.closest('.edit-article')) {
+                    e.preventDefault();
+                    const articleId = e.target.closest('.edit-article').dataset.articleId;
+                    editArticle(articleId);
+                }
+                
+                // Удаление статьи из списка
+                if (e.target.closest('.delete-article-from-list')) {
+                    e.preventDefault();
+                    const articleId = e.target.closest('.delete-article-from-list').dataset.articleId;
+                    deleteArticle(articleId);
+                }
+            });
+            
+            // Открытие модального окна при нажатии на кнопку (для статических элементов)
             openButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
                     const articleId = this.getAttribute('data-article');
                     if (articleId) {
                         openModal('modal-article' + articleId);
-                    }
-                });
-            });
-            
-            // Закрытие модального окна при нажатии на крестик
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    closeAllModals();
-                });
-            });
-            
-            // Закрытие модального окна при клике вне его
-            modals.forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeAllModals();
                     }
                 });
             });
@@ -3373,35 +4452,12 @@ condition = условие_активации</pre>
             
             // Функция закрытия всех модальных окон
             function closeAllModals() {
-                modals.forEach(modal => {
+                const allModals = document.querySelectorAll('.article-modal');
+                allModals.forEach(modal => {
                     modal.style.display = 'none';
                 });
                 document.body.style.overflow = 'auto';
             }
-            
-            // Обработка навигационных ссылок
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.classList.contains('open-article-link')) {
-                        e.preventDefault();
-                        const articleId = this.getAttribute('data-article');
-                        openModal('modal-article' + articleId);
-                    }
-                });
-            });
-            
-            // Обработка ссылок в футере
-            const footerLinks = document.querySelectorAll('.footer-links a');
-            footerLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.classList.contains('open-article-link')) {
-                        e.preventDefault();
-                        const articleId = this.getAttribute('data-article');
-                        openModal('modal-article' + articleId);
-                    }
-                });
-            });
         });
     </script>
 </body>
