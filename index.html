@@ -1657,6 +1657,213 @@
             display: block;
         }
         
+        /* Визуальный редактор */
+        .visual-editor-container {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-inner);
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .editor-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .editor-btn:hover {
+            background-color: rgba(231, 76, 60, 0.2);
+            border-color: var(--accent-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .editor-btn i {
+            font-size: 0.9rem;
+        }
+        
+        .editor-btn-group {
+            display: flex;
+            border-right: 1px solid var(--border-color);
+            padding-right: 5px;
+            margin-right: 5px;
+        }
+        
+        .editor-content {
+            min-height: 200px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.6;
+            outline: none;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+        
+        .editor-content:focus {
+            outline: none;
+        }
+        
+        .editor-content h2 {
+            color: var(--light-color);
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--accent-color);
+            font-size: 1.6rem;
+        }
+        
+        .editor-content h3 {
+            color: var(--accent-secondary);
+            margin: 1.2rem 0 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .editor-content h4 {
+            color: #e67e22;
+            margin: 1rem 0 0.6rem;
+            font-size: 1.1rem;
+        }
+        
+        .editor-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .editor-content ul, .editor-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .editor-content code {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffcc00;
+        }
+        
+        .editor-content pre {
+            background-color: #111;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .editor-content blockquote {
+            border-left: 3px solid var(--accent-secondary);
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        /* Переключатель редактора */
+        .editor-switch {
+            display: flex;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .editor-tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .editor-tab.active {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .editor-tab:first-child {
+            border-right: none;
+        }
+        
+        .editor-mode {
+            display: none;
+        }
+        
+        .editor-mode.active {
+            display: block;
+        }
+        
+        /* Предпросмотр редактора */
+        .editor-preview {
+            min-height: 200px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Шаблоны для статей */
+        .template-selector {
+            margin-top: 1rem;
+        }
+        
+        .template-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .template-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 120px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .template-btn:hover {
+            background-color: rgba(231, 76, 60, 0.2);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .articles-grid {
@@ -1688,6 +1895,16 @@
             
             .color-themes {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .editor-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .editor-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
         
@@ -1763,6 +1980,10 @@
             }
             
             .form-actions {
+                flex-direction: column;
+            }
+            
+            .template-buttons {
                 flex-direction: column;
             }
         }
@@ -2145,17 +2366,123 @@
                     <input type="text" id="articleTag" placeholder="Например: Логика, Монстры, Секции">
                 </div>
                 
-                <div class="form-group">
-                    <label for="articleContent">
-                        Содержание статьи (HTML) * 
-                        <a href="#" id="htmlHelpBtn" class="html-help-btn">
-                            <i class="fas fa-question-circle"></i> Помощь по HTML
-                        </a>
-                        <a href="#" id="insertTemplateBtn" class="html-help-btn" style="margin-left: 10px;">
-                            <i class="fas fa-magic"></i> Вставить шаблон
-                        </a>
-                    </label>
-                    <textarea id="articleContent" placeholder="Введите содержимое статьи в формате HTML. Вы можете использовать &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;code&gt;, &lt;pre&gt; и другие HTML-теги." rows="8"></textarea>
+                <!-- Переключатель редактора -->
+                <div class="editor-switch">
+                    <div class="editor-tab active" data-editor="visual">Визуальный редактор</div>
+                    <div class="editor-tab" data-editor="html">HTML редактор</div>
+                </div>
+                
+                <!-- Визуальный редактор -->
+                <div class="editor-mode active" id="visualEditor">
+                    <div class="visual-editor-container">
+                        <div class="editor-toolbar">
+                            <div class="editor-btn-group">
+                                <button type="button" class="editor-btn" data-command="formatBlock" data-value="h2">
+                                    <i class="fas fa-heading"></i> Заголовок
+                                </button>
+                                <button type="button" class="editor-btn" data-command="formatBlock" data-value="h3">
+                                    <i class="fas fa-heading"></i> Подзаголовок
+                                </button>
+                                <button type="button" class="editor-btn" data-command="formatBlock" data-value="p">
+                                    <i class="fas fa-paragraph"></i> Абзац
+                                </button>
+                            </div>
+                            
+                            <div class="editor-btn-group">
+                                <button type="button" class="editor-btn" data-command="bold">
+                                    <i class="fas fa-bold"></i> Жирный
+                                </button>
+                                <button type="button" class="editor-btn" data-command="italic">
+                                    <i class="fas fa-italic"></i> Курсив
+                                </button>
+                                <button type="button" class="editor-btn" data-command="underline">
+                                    <i class="fas fa-underline"></i> Подчеркнуть
+                                </button>
+                            </div>
+                            
+                            <div class="editor-btn-group">
+                                <button type="button" class="editor-btn" data-command="insertUnorderedList">
+                                    <i class="fas fa-list-ul"></i> Список
+                                </button>
+                                <button type="button" class="editor-btn" data-command="insertOrderedList">
+                                    <i class="fas fa-list-ol"></i> Нумерованный
+                                </button>
+                            </div>
+                            
+                            <div class="editor-btn-group">
+                                <button type="button" class="editor-btn insert-code">
+                                    <i class="fas fa-code"></i> Код
+                                </button>
+                                <button type="button" class="editor-btn insert-blockquote">
+                                    <i class="fas fa-quote-right"></i> Цитата
+                                </button>
+                            </div>
+                            
+                            <div class="editor-btn-group">
+                                <button type="button" class="editor-btn insert-table">
+                                    <i class="fas fa-table"></i> Таблица
+                                </button>
+                                <button type="button" class="editor-btn insert-pre">
+                                    <i class="fas fa-terminal"></i> Блок кода
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-content" id="visualEditorContent" contenteditable="true">
+                            <h2>Заголовок статьи</h2>
+                            <p>Это пример содержимого статьи. Вы можете редактировать этот текст, используя кнопки выше.</p>
+                            
+                            <h3>Подзаголовок</h3>
+                            <p>Напишите здесь содержание вашей статьи. Вы можете использовать различные стили форматирования:</p>
+                            
+                            <ul>
+                                <li>Маркированные списки</li>
+                                <li>Нумерованные списки</li>
+                                <li><strong>Жирный текст</strong></li>
+                                <li><em>Курсивный текст</em></li>
+                            </ul>
+                            
+                            <h3>Пример кода SDK 0.4:</h3>
+                            <pre>[logic]
+active = walker
+[walker]
+path_walk = patrol_path
+team = stalkers</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="template-selector">
+                        <p><strong>Быстрые шаблоны:</strong></p>
+                        <div class="template-buttons">
+                            <button type="button" class="template-btn" data-template="sdk">Шаблон SDK</button>
+                            <button type="button" class="template-btn" data-template="monster">Шаблон монстра</button>
+                            <button type="button" class="template-btn" data-template="object">Шаблон объекта</button>
+                            <button type="button" class="template-btn" data-template="empty">Пустой шаблон</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML редактор -->
+                <div class="editor-mode" id="htmlEditor">
+                    <div class="form-group">
+                        <label for="articleContent">
+                            Содержание статьи (HTML) * 
+                            <a href="#" id="htmlHelpBtn" class="html-help-btn">
+                                <i class="fas fa-question-circle"></i> Помощь по HTML
+                            </a>
+                            <a href="#" id="insertTemplateBtn" class="html-help-btn" style="margin-left: 10px;">
+                                <i class="fas fa-magic"></i> Вставить шаблон
+                            </a>
+                        </label>
+                        <textarea id="articleContent" placeholder="Введите содержимое статьи в формате HTML. Вы можете использовать &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;code&gt;, &lt;pre&gt; и другие HTML-теги." rows="8"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Предпросмотр HTML:</label>
+                        <div class="editor-preview" id="htmlPreview">
+                            Здесь будет отображаться предпросмотр HTML-кода...
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="form-actions">
@@ -3546,6 +3873,15 @@ team = my_team&lt;/pre&gt;
             const exportArticlesBtn = document.getElementById('exportArticlesBtn');
             const importArticlesBtn = document.getElementById('importArticlesBtn');
             
+            // Элементы визуального редактора
+            const visualEditor = document.getElementById('visualEditor');
+            const htmlEditor = document.getElementById('htmlEditor');
+            const visualEditorContent = document.getElementById('visualEditorContent');
+            const htmlPreview = document.getElementById('htmlPreview');
+            const editorTabs = document.querySelectorAll('.editor-tab');
+            const editorBtns = document.querySelectorAll('.editor-btn');
+            const templateBtns = document.querySelectorAll('.template-btn');
+            
             // Элементы для отображения статей
             const articlesGrid = document.getElementById('articlesGrid');
             const tocList = document.getElementById('tocList');
@@ -3987,8 +4323,19 @@ team = my_team&lt;/pre&gt;
                 const description = articleDescription.value.trim();
                 const icon = articleIcon.value;
                 const tag = articleTag.value.trim();
-                const content = articleContent.value.trim();
                 const id = editArticleId.value || `custom-${nextArticleId++}`;
+                
+                // Определяем, какой редактор активен
+                let content = '';
+                const activeEditorTab = document.querySelector('.editor-tab.active');
+                
+                if (activeEditorTab && activeEditorTab.dataset.editor === 'visual') {
+                    // Используем содержимое визуального редактора
+                    content = visualEditorContent.innerHTML;
+                } else {
+                    // Используем содержимое HTML редактора
+                    content = articleContent.value.trim();
+                }
                 
                 // Валидация
                 if (!title || !description || !tag || !content) {
@@ -4050,6 +4397,15 @@ team = my_team&lt;/pre&gt;
                 articleTag.value = article.tag;
                 articleContent.value = article.content;
                 editArticleId.value = article.id;
+                
+                // Загружаем содержимое в визуальный редактор
+                visualEditorContent.innerHTML = article.content;
+                
+                // Обновляем предпросмотр HTML
+                updateHtmlPreview();
+                
+                // Переключаемся на визуальный редактор
+                switchToVisualEditor();
                 
                 // Меняем текст кнопки
                 saveArticleBtn.textContent = 'Обновить статью';
@@ -4175,12 +4531,308 @@ team = my_team&lt;/pre&gt;
                 editArticleId.value = '';
                 saveArticleBtn.textContent = 'Сохранить статью';
                 formMessage.style.display = 'none';
+                
+                // Очищаем визуальный редактор
+                visualEditorContent.innerHTML = `
+                    <h2>Заголовок статьи</h2>
+                    <p>Это пример содержимого статьи. Вы можете редактировать этот текст, используя кнопки выше.</p>
+                    
+                    <h3>Подзаголовок</h3>
+                    <p>Напишите здесь содержание вашей статьи. Вы можете использовать различные стили форматирования:</p>
+                    
+                    <ul>
+                        <li>Маркированные списки</li>
+                        <li>Нумерованные списки</li>
+                        <li><strong>Жирный текст</strong></li>
+                        <li><em>Курсивный текст</em></li>
+                    </ul>
+                    
+                    <h3>Пример кода SDK 0.4:</h3>
+                    <pre>[logic]
+active = walker
+[walker]
+path_walk = patrol_path
+team = stalkers</pre>
+                `;
+                
+                // Обновляем предпросмотр HTML
+                updateHtmlPreview();
+                
+                // Переключаемся на визуальный редактор
+                switchToVisualEditor();
+            }
+            
+            // Функция переключения на визуальный редактор
+            function switchToVisualEditor() {
+                // Активируем вкладку визуального редактора
+                editorTabs.forEach(tab => {
+                    if (tab.dataset.editor === 'visual') {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+                
+                // Показываем визуальный редактор, скрываем HTML редактор
+                visualEditor.classList.add('active');
+                htmlEditor.classList.remove('active');
+            }
+            
+            // Функция переключения на HTML редактор
+            function switchToHtmlEditor() {
+                // Активируем вкладку HTML редактора
+                editorTabs.forEach(tab => {
+                    if (tab.dataset.editor === 'html') {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+                
+                // Показываем HTML редактор, скрываем визуальный редактор
+                visualEditor.classList.remove('active');
+                htmlEditor.classList.add('active');
+                
+                // Копируем содержимое из визуального редактора в HTML редактор
+                articleContent.value = visualEditorContent.innerHTML;
+                
+                // Обновляем предпросмотр
+                updateHtmlPreview();
+            }
+            
+            // Функция обновления предпросмотра HTML
+            function updateHtmlPreview() {
+                htmlPreview.innerHTML = articleContent.value;
+            }
+            
+            // Функция вставки тега в визуальный редактор
+            function insertTag(tag, value = null) {
+                // Сохраняем выделение
+                const selection = window.getSelection();
+                const range = selection.getRangeAt(0);
+                
+                if (tag === 'formatBlock' && value) {
+                    // Для форматирования блоков (заголовки, абзацы)
+                    document.execCommand(tag, false, value);
+                } else if (tag === 'insertHTML' && value) {
+                    // Для вставки HTML-кода
+                    document.execCommand('insertHTML', false, value);
+                } else {
+                    // Для простых команд (жирный, курсив и т.д.)
+                    document.execCommand(tag, false, null);
+                }
+                
+                // Возвращаем фокус в редактор
+                visualEditorContent.focus();
+            }
+            
+            // Функция вставки кода
+            function insertCode() {
+                const code = prompt('Введите код:', '[logic]\nactive = walker');
+                if (code) {
+                    insertTag('insertHTML', `<code>${code}</code>`);
+                }
+            }
+            
+            // Функция вставки блока кода
+            function insertPre() {
+                const code = prompt('Введите код для блока:', '[logic]\nactive = walker\n[walker]\npath_walk = patrol_path');
+                if (code) {
+                    insertTag('insertHTML', `<pre>${code}</pre>`);
+                }
+            }
+            
+            // Функция вставки таблицы
+            function insertTable() {
+                const tableHtml = `<table>
+  <tr>
+    <th>Параметр</th>
+    <th>Значение</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>path_walk</td>
+    <td>patrol_path</td>
+    <td>Путь патрулирования</td>
+  </tr>
+  <tr>
+    <td>team</td>
+    <td>stalkers</td>
+    <td>Название команды</td>
+  </tr>
+</table>`;
+                insertTag('insertHTML', tableHtml);
+            }
+            
+            // Функция вставки цитаты
+            function insertBlockquote() {
+                insertTag('insertHTML', '<blockquote>Текст цитаты</blockquote>');
+            }
+            
+            // Функция вставки шаблона
+            function insertTemplate(templateType) {
+                let templateContent = '';
+                
+                switch(templateType) {
+                    case 'sdk':
+                        templateContent = `<h2>Новая схема LOGIC SDK 0.4</h2>
+<p>Краткое описание назначения схемы и её особенностей.</p>
+
+<h3>Основные параметры:</h3>
+<pre>[scheme_name]
+parameter1 = value1
+parameter2 = value2
+on_info = {+condition} next_scheme</pre>
+
+<h3>Пример использования:</h3>
+<pre>[logic]
+active = scheme_name
+
+[scheme_name]
+path_walk = custom_path
+team = my_team
+sound = sound_scheme</pre>
+
+<h3>Особенности:</h3>
+<ul>
+  <li><strong>Особенность 1:</strong> Подробное описание</li>
+  <li><strong>Особенность 2:</strong> Подробное описание</li>
+  <li><strong>Особенность 3:</strong> Подробное описание</li>
+</ul>`;
+                        break;
+                        
+                    case 'monster':
+                        templateContent = `<h2>Схема поведения монстра</h2>
+<p>Описание поведения монстра и его особенностей.</p>
+
+<h3>Базовые параметры mob_walker:</h3>
+<pre>[mob_walker]
+path_walk = monster_path
+path_look = monster_look
+home_min = 5000
+home_max = 10000</pre>
+
+<h3>Пример настройки монстра:</h3>
+<pre>[logic]
+active = mob_walker
+
+[mob_walker]
+path_walk = bloodsucker_path
+home_path = bloodsucker_home</pre>
+
+<h3>Типы поведения монстров:</h3>
+<table>
+  <tr>
+    <th>Схема</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <td>mob_walker</td>
+    <td>Перемещение по точкам</td>
+  </tr>
+  <tr>
+    <td>mob_combat</td>
+    <td>Боевое поведение</td>
+  </tr>
+  <tr>
+    <td>mob_home</td>
+    <td>Возвращение домой</td>
+  </tr>
+</table>`;
+                        break;
+                        
+                    case 'object':
+                        templateContent = `<h2>Настройка объекта в SDK 0.4</h2>
+<p>Описание объекта и его функциональности.</p>
+
+<h3>Базовые параметры:</h3>
+<pre>[object_type]
+parameter1 = value1
+parameter2 = value2
+on_info = {+condition} action</pre>
+
+<h3>Пример настройки прожектора:</h3>
+<pre>[searchlight]
+path = patrol_path
+color = yellow
+range = 100
+target = actor</pre>
+
+<h3>Важные замечания:</h3>
+<ol>
+  <li>Первый пункт</li>
+  <li>Второй пункт</li>
+  <li>Третий пункт</li>
+</ol>
+
+<h4>Примечание:</h4>
+<p>Дополнительная информация по настройке объекта.</p>`;
+                        break;
+                        
+                    case 'empty':
+                        templateContent = `<h2>Заголовок статьи</h2>
+<p>Начните писать свою статью здесь...</p>`;
+                        break;
+                }
+                
+                visualEditorContent.innerHTML = templateContent;
+                showMessage('Шаблон вставлен', 'success');
             }
             
             // Инициализация предпросмотра цветов
             updateColorPreview();
             updateShadowPreview();
             updateGlowPreview();
+            
+            // Инициализация визуального редактора
+            visualEditorContent.addEventListener('input', function() {
+                // При изменении в визуальном редакторе, обновляем HTML редактор
+                articleContent.value = visualEditorContent.innerHTML;
+                updateHtmlPreview();
+            });
+            
+            articleContent.addEventListener('input', updateHtmlPreview);
+            
+            // Обработчики для переключения редакторов
+            editorTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const editorType = this.dataset.editor;
+                    
+                    if (editorType === 'visual') {
+                        switchToVisualEditor();
+                    } else if (editorType === 'html') {
+                        switchToHtmlEditor();
+                    }
+                });
+            });
+            
+            // Обработчики для кнопок редактора
+            editorBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const command = this.dataset.command;
+                    const value = this.dataset.value;
+                    
+                    if (this.classList.contains('insert-code')) {
+                        insertCode();
+                    } else if (this.classList.contains('insert-pre')) {
+                        insertPre();
+                    } else if (this.classList.contains('insert-table')) {
+                        insertTable();
+                    } else if (this.classList.contains('insert-blockquote')) {
+                        insertBlockquote();
+                    } else if (command) {
+                        insertTag(command, value);
+                    }
+                });
+            });
+            
+            // Обработчики для шаблонов
+            templateBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const templateType = this.dataset.template;
+                    insertTemplate(templateType);
+                });
+            });
             
             // Обработчики для кастомного цвета акцента
             customR.addEventListener('input', updateColorPreview);
@@ -4257,7 +4909,7 @@ team = my_team&lt;/pre&gt;
             exportArticlesBtn.addEventListener('click', exportArticles);
             importArticlesBtn.addEventListener('click', importArticles);
             
-            // Обработчик для кнопки вставки шаблона
+            // Обработчик для кнопки вставки шаблона в HTML редактор
             insertTemplateBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 
@@ -4290,6 +4942,7 @@ sound = sound_scheme</pre>
 <p>Дополнительная информация или важные замечания по использованию.</p>`;
                 
                 articleContent.value = template;
+                updateHtmlPreview();
                 showMessage('Шаблон вставлен. Отредактируйте его под свою статью.', 'success');
             });
             
@@ -4458,6 +5111,12 @@ sound = sound_scheme</pre>
                 });
                 document.body.style.overflow = 'auto';
             }
+            
+            // Инициализация предпросмотра HTML
+            updateHtmlPreview();
+            
+            // Фокус на визуальном редакторе при открытии
+            visualEditorContent.focus();
         });
     </script>
 </body>
