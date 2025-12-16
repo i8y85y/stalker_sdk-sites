@@ -1930,6 +1930,337 @@
             box-shadow: var(--shadow-md);
         }
         
+        /* РАСШИРЕННЫЙ РЕДАКТОР - НОВЫЕ СТИЛИ */
+        .extended-editor-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .extended-editor-btn:hover {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 15px rgba(155, 89, 182, 0.4);
+        }
+        
+        /* Модальное окно расширенного редактора */
+        .extended-editor-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.98);
+            z-index: 3000;
+            overflow: hidden;
+        }
+        
+        .extended-editor-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card-bg);
+        }
+        
+        .extended-editor-header {
+            background-color: var(--primary-color);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+        
+        .extended-editor-header h2 {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .extended-editor-header h2 i {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--glow-color-lg);
+        }
+        
+        .extended-editor-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .extended-editor-toolbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .extended-editor-toolbar-group {
+            display: flex;
+            border-right: 1px solid var(--border-color);
+            padding-right: 8px;
+            margin-right: 8px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .extended-editor-toolbar-group:last-child {
+            border-right: none;
+            margin-right: 0;
+        }
+        
+        .extended-editor-btn-tool {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+            min-width: 40px;
+            justify-content: center;
+        }
+        
+        .extended-editor-btn-tool:hover {
+            background-color: rgba(231, 76, 60, 0.3);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-accent);
+        }
+        
+        .extended-editor-btn-tool.active {
+            background-color: rgba(231, 76, 60, 0.4);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .extended-editor-btn-tool i {
+            font-size: 0.9rem;
+        }
+        
+        .color-picker-btn {
+            position: relative;
+        }
+        
+        .color-picker {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 100;
+            display: none;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 200px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 5px;
+        }
+        
+        .color-picker.active {
+            display: flex;
+        }
+        
+        .color-option-small {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .color-option-small:hover {
+            transform: scale(1.1);
+            border-color: white;
+        }
+        
+        .icon-picker-btn {
+            position: relative;
+        }
+        
+        .icon-picker {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            z-index: 100;
+            display: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 400px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            margin-top: 5px;
+        }
+        
+        .icon-picker.active {
+            display: flex;
+        }
+        
+        .icon-option {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            font-size: 1.2rem;
+        }
+        
+        .icon-option:hover {
+            background-color: rgba(231, 76, 60, 0.2);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .extended-editor-body {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .extended-editor-textarea {
+            flex: 1;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            border: none;
+            outline: none;
+            resize: none;
+            overflow-y: auto;
+        }
+        
+        .extended-editor-preview {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-left: 1px solid var(--border-color);
+        }
+        
+        .extended-editor-preview h2 {
+            color: var(--light-color);
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--accent-color);
+            font-size: 1.8rem;
+        }
+        
+        .extended-editor-preview h3 {
+            color: var(--accent-secondary);
+            margin: 1.2rem 0 0.8rem;
+            font-size: 1.5rem;
+        }
+        
+        .extended-editor-preview h4 {
+            color: #e67e22;
+            margin: 1rem 0 0.6rem;
+            font-size: 1.3rem;
+        }
+        
+        .extended-editor-preview p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .extended-editor-preview ul, .extended-editor-preview ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .extended-editor-preview code {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffcc00;
+        }
+        
+        .extended-editor-preview pre {
+            background-color: #111;
+            color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .extended-editor-preview blockquote {
+            border-left: 3px solid var(--accent-secondary);
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .extended-editor-footer {
+            background-color: var(--primary-color);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .extended-editor-footer .btn-primary {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+        
+        .extended-editor-footer .btn-secondary {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .articles-grid {
@@ -1971,6 +2302,25 @@
             .editor-btn {
                 width: 100%;
                 justify-content: center;
+            }
+            
+            /* Адаптация расширенного редактора */
+            .extended-editor-toolbar {
+                max-height: 150px;
+            }
+            
+            .extended-editor-body {
+                flex-direction: column;
+            }
+            
+            .extended-editor-preview {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                max-height: 300px;
+            }
+            
+            .icon-picker {
+                width: 300px;
             }
         }
         
@@ -2052,6 +2402,44 @@
             .template-buttons {
                 flex-direction: column;
             }
+            
+            /* Адаптация расширенного редактора для мобильных */
+            .extended-editor-header {
+                padding: 10px 15px;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            
+            .extended-editor-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .extended-editor-toolbar {
+                padding: 8px;
+                gap: 5px;
+            }
+            
+            .extended-editor-toolbar-group {
+                padding-right: 5px;
+                margin-right: 5px;
+            }
+            
+            .extended-editor-btn-tool {
+                padding: 6px 8px;
+                font-size: 0.8rem;
+                min-width: 35px;
+            }
+            
+            .extended-editor-textarea, .extended-editor-preview {
+                padding: 15px;
+            }
+            
+            .icon-picker {
+                width: 250px;
+                max-height: 250px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -2092,6 +2480,52 @@
             .article-list-item .btn-small {
                 flex: 1;
             }
+            
+            /* Адаптация расширенного редактора для маленьких экранов */
+            .extended-editor-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                max-height: 200px;
+            }
+            
+            .extended-editor-toolbar-group {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 8px;
+                margin-bottom: 8px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .extended-editor-toolbar-group:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            
+            .extended-editor-btn-tool {
+                min-width: 40px;
+            }
+            
+            .icon-picker {
+                width: 200px;
+                max-height: 200px;
+            }
+            
+            .icon-option {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .extended-editor-footer {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+            
+            .extended-editor-footer button {
+                width: 100%;
+            }
         }
         
         /* Scrollbar styling */
@@ -2112,7 +2546,7 @@
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #c0392b, var(--accent-color);
+            background: linear-gradient(to bottom, #c0392b, var(--accent-color));
             box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 0 10px var(--glow-color);
         }
         
@@ -2432,6 +2866,12 @@
                     <input type="text" id="articleTag" placeholder="Например: Логика, Монстры, Секции">
                 </div>
                 
+                <!-- Кнопка расширенного редактора -->
+                <button class="extended-editor-btn" id="openExtendedEditorBtn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    Открыть расширенный редактор
+                </button>
+                
                 <!-- Переключатель редактора -->
                 <div class="editor-switch">
                     <div class="editor-tab active" data-editor="visual">Визуальный редактор</div>
@@ -2580,6 +3020,219 @@ team = stalkers</code></pre>
                 <p>LOGIC SDK 0.4 Версия 0.3</p>
                 <p>Полное руководство по настройкам логики STALKER с возможностью создания статей</p>
                 <p>Основано на материалах GSC Game World</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Расширенный редактор (полноэкранный) -->
+    <div class="extended-editor-modal" id="extendedEditorModal">
+        <div class="extended-editor-content">
+            <div class="extended-editor-header">
+                <h2><i class="fas fa-edit"></i> Расширенный редактор статей</h2>
+                <div class="extended-editor-controls">
+                    <button class="btn-secondary" id="closeExtendedEditorBtn">
+                        <i class="fas fa-times"></i> Закрыть
+                    </button>
+                </div>
+            </div>
+            
+            <div class="extended-editor-toolbar" id="extendedEditorToolbar">
+                <!-- Группа форматирования текста -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" data-command="h2" title="Заголовок 2">
+                        <i class="fas fa-heading"></i> H2
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="h3" title="Заголовок 3">
+                        <i class="fas fa-heading"></i> H3
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="h4" title="Заголовок 4">
+                        <i class="fas fa-heading"></i> H4
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="p" title="Абзац">
+                        <i class="fas fa-paragraph"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа стилей текста -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" data-command="bold" title="Жирный">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="italic" title="Курсив">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="underline" title="Подчеркнутый">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="strikethrough" title="Зачеркнутый">
+                        <i class="fas fa-strikethrough"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа выравнивания -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" data-command="alignleft" title="Выровнять по левому краю">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="aligncenter" title="Выровнять по центру">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="alignright" title="Выровнять по правому краю">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="alignjustify" title="Выровнять по ширине">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа списков -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" data-command="ul" title="Маркированный список">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="ol" title="Нумерованный список">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" data-command="li" title="Элемент списка">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа вставки -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" id="insertLink" title="Вставить ссылку">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertImage" title="Вставить изображение">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertHorizontalRule" title="Горизонтальная линия">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа кода -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" id="insertCode" title="Вставить код">
+                        <i class="fas fa-code"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertPre" title="Вставить блок кода">
+                        <i class="fas fa-terminal"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertQuote" title="Вставить цитату">
+                        <i class="fas fa-quote-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа таблиц -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" id="insertTable" title="Вставить таблицу">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertTableRow" title="Добавить строку">
+                        <i class="fas fa-grip-lines"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertTableColumn" title="Добавить столбец">
+                        <i class="fas fa-grip-lines-vertical"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа цвета -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool color-picker-btn" id="textColorBtn" title="Цвет текста">
+                        <i class="fas fa-font"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                    <div class="color-picker" id="textColorPicker">
+                        <div class="color-option-small" style="background-color: #e74c3c;" data-color="#e74c3c"></div>
+                        <div class="color-option-small" style="background-color: #3498db;" data-color="#3498db"></div>
+                        <div class="color-option-small" style="background-color: #2ecc71;" data-color="#2ecc71"></div>
+                        <div class="color-option-small" style="background-color: #f1c40f;" data-color="#f1c40f"></div>
+                        <div class="color-option-small" style="background-color: #9b59b6;" data-color="#9b59b6"></div>
+                        <div class="color-option-small" style="background-color: #1abc9c;" data-color="#1abc9c"></div>
+                        <div class="color-option-small" style="background-color: #e67e22;" data-color="#e67e22"></div>
+                        <div class="color-option-small" style="background-color: #e84393;" data-color="#e84393"></div>
+                        <div class="color-option-small" style="background-color: #ffffff;" data-color="#ffffff"></div>
+                        <div class="color-option-small" style="background-color: #cccccc;" data-color="#cccccc"></div>
+                        <div class="color-option-small" style="background-color: #999999;" data-color="#999999"></div>
+                        <div class="color-option-small" style="background-color: #666666;" data-color="#666666"></div>
+                        <div class="color-option-small" style="background-color: #333333;" data-color="#333333"></div>
+                        <div class="color-option-small" style="background-color: #000000;" data-color="#000000"></div>
+                    </div>
+                    
+                    <button class="extended-editor-btn-tool color-picker-btn" id="backgroundColorBtn" title="Цвет фона">
+                        <i class="fas fa-fill-drip"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                    <div class="color-picker" id="backgroundColorPicker">
+                        <div class="color-option-small" style="background-color: rgba(231, 76, 60, 0.1);" data-color="rgba(231, 76, 60, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(52, 152, 219, 0.1);" data-color="rgba(52, 152, 219, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(46, 204, 113, 0.1);" data-color="rgba(46, 204, 113, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(241, 196, 15, 0.1);" data-color="rgba(241, 196, 15, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(155, 89, 182, 0.1);" data-color="rgba(155, 89, 182, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(26, 188, 156, 0.1);" data-color="rgba(26, 188, 156, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(0, 0, 0, 0.1);" data-color="rgba(0, 0, 0, 0.1)"></div>
+                        <div class="color-option-small" style="background-color: rgba(0, 0, 0, 0.2);" data-color="rgba(0, 0, 0, 0.2)"></div>
+                        <div class="color-option-small" style="background-color: rgba(0, 0, 0, 0.3);" data-color="rgba(0, 0, 0, 0.3)"></div>
+                    </div>
+                </div>
+                
+                <!-- Группа иконок -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool icon-picker-btn" id="iconPickerBtn" title="Вставить иконку">
+                        <i class="fas fa-icons"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                    <div class="icon-picker" id="iconPicker">
+                        <!-- Иконки будут добавлены через JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Группа специальных символов -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" id="insertSpecialChar" title="Специальные символы">
+                        <i class="fas fa-at"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="insertEmoji" title="Эмодзи">
+                        <i class="fas fa-smile"></i>
+                    </button>
+                </div>
+                
+                <!-- Группа отмены/повтора -->
+                <div class="extended-editor-toolbar-group">
+                    <button class="extended-editor-btn-tool" id="undoBtn" title="Отменить">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="redoBtn" title="Повторить">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button class="extended-editor-btn-tool" id="clearFormatting" title="Очистить форматирование">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="extended-editor-body">
+                <textarea class="extended-editor-textarea" id="extendedEditorTextarea" placeholder="Начните писать вашу статью здесь..."></textarea>
+                <div class="extended-editor-preview" id="extendedEditorPreview">
+                    <h2>Предпросмотр</h2>
+                    <p>Здесь будет отображаться предпросмотр вашей статьи.</p>
+                    <p>Начните писать в поле слева, чтобы увидеть результат здесь.</p>
+                </div>
+            </div>
+            
+            <div class="extended-editor-footer">
+                <div>
+                    <button class="btn-secondary" id="extendedEditorCancelBtn">
+                        <i class="fas fa-times"></i> Отмена
+                    </button>
+                    <button class="btn-primary" id="extendedEditorSaveBtn">
+                        <i class="fas fa-save"></i> Сохранить в редактор
+                    </button>
+                </div>
+                <div>
+                    <span id="extendedEditorStats">Символов: 0 | Слов: 0</span>
+                </div>
             </div>
         </div>
     </div>
@@ -3848,6 +4501,14 @@ team = my_team&lt;/code&gt;&lt;/pre&gt;
             const createArticleBtnFooter = document.getElementById('createArticleBtnFooter');
             const htmlHelpBtn = document.getElementById('htmlHelpBtn');
             const insertTemplateBtn = document.getElementById('insertTemplateBtn');
+            const openExtendedEditorBtn = document.getElementById('openExtendedEditorBtn');
+            const closeExtendedEditorBtn = document.getElementById('closeExtendedEditorBtn');
+            const extendedEditorModal = document.getElementById('extendedEditorModal');
+            const extendedEditorCancelBtn = document.getElementById('extendedEditorCancelBtn');
+            const extendedEditorSaveBtn = document.getElementById('extendedEditorSaveBtn');
+            const extendedEditorTextarea = document.getElementById('extendedEditorTextarea');
+            const extendedEditorPreview = document.getElementById('extendedEditorPreview');
+            const extendedEditorStats = document.getElementById('extendedEditorStats');
             
             // Элементы для кастомного цвета акцента
             const applyCustomColorBtn = document.getElementById('applyCustomColor');
@@ -3904,6 +4565,15 @@ team = my_team&lt;/code&gt;&lt;/pre&gt;
             const articlesGrid = document.getElementById('articlesGrid');
             const tocList = document.getElementById('tocList');
             const customModalsContainer = document.getElementById('customModalsContainer');
+            
+            // Элементы расширенного редактора
+            const extendedEditorToolbar = document.getElementById('extendedEditorToolbar');
+            const textColorBtn = document.getElementById('textColorBtn');
+            const textColorPicker = document.getElementById('textColorPicker');
+            const backgroundColorBtn = document.getElementById('backgroundColorBtn');
+            const backgroundColorPicker = document.getElementById('backgroundColorPicker');
+            const iconPickerBtn = document.getElementById('iconPickerBtn');
+            const iconPicker = document.getElementById('iconPicker');
             
             // Ключ для localStorage
             const CUSTOM_ARTICLES_KEY = 'logicSdkCustomArticles';
@@ -4840,6 +5510,222 @@ target = actor</code></pre>
                 showMessage('Шаблон вставлен', 'success');
             }
             
+            // ФУНКЦИИ ДЛЯ РАСШИРЕННОГО РЕДАКТОРА
+            
+            // Инициализация расширенного редактора
+            function initExtendedEditor() {
+                // Загружаем содержимое из визуального редактора
+                extendedEditorTextarea.value = visualEditorContent.innerHTML;
+                
+                // Обновляем предпросмотр
+                updateExtendedEditorPreview();
+                
+                // Обновляем статистику
+                updateExtendedEditorStats();
+                
+                // Заполняем палитру иконок
+                populateIconPicker();
+            }
+            
+            // Обновление предпросмотра в расширенном редакторе
+            function updateExtendedEditorPreview() {
+                extendedEditorPreview.innerHTML = extendedEditorTextarea.value;
+                wrapCodeBlocks(extendedEditorPreview);
+                hljs.highlightAll();
+            }
+            
+            // Обновление статистики в расширенном редакторе
+            function updateExtendedEditorStats() {
+                const text = extendedEditorTextarea.value;
+                const charCount = text.length;
+                const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+                
+                extendedEditorStats.textContent = `Символов: ${charCount} | Слов: ${wordCount}`;
+            }
+            
+            // Заполнение палитры иконок
+            function populateIconPicker() {
+                const icons = [
+                    'fa-code', 'fa-cogs', 'fa-route', 'fa-user-friends', 'fa-skull-crossbones',
+                    'fa-slash', 'fa-ghost', 'fa-campfire', 'fa-code-branch', 'fa-terminal',
+                    'fa-lightbulb', 'fa-book', 'fa-wrench', 'fa-gamepad', 'fa-map',
+                    'fa-database', 'fa-bug', 'fa-tools', 'fa-bolt', 'fa-fire',
+                    'fa-shield-alt', 'fa-crosshairs', 'fa-search', 'fa-eye', 'fa-eye-slash',
+                    'fa-lock', 'fa-unlock', 'fa-key', 'fa-door-open', 'fa-door-closed',
+                    'fa-flag', 'fa-flag-checkered', 'fa-exclamation-triangle', 'fa-radiation',
+                    'fa-radiation-alt', 'fa-skull', 'fa-biohazard', 'fa-poo', 'fa-cloud',
+                    'fa-moon', 'fa-sun', 'fa-star', 'fa-atom', 'fa-microchip',
+                    'fa-server', 'fa-desktop', 'fa-laptop', 'fa-mobile-alt', 'fa-tablet-alt',
+                    'fa-camera', 'fa-video', 'fa-microphone', 'fa-headphones', 'fa-volume-up',
+                    'fa-music', 'fa-film', 'fa-image', 'fa-paint-brush', 'fa-palette',
+                    'fa-edit', 'fa-font', 'fa-bold', 'fa-italic', 'fa-underline',
+                    'fa-strikethrough', 'fa-list', 'fa-list-ol', 'fa-list-ul', 'fa-table',
+                    'fa-th', 'fa-th-large', 'fa-columns', 'fa-grip-horizontal', 'fa-grip-vertical',
+                    'fa-align-left', 'fa-align-center', 'fa-align-right', 'fa-align-justify',
+                    'fa-indent', 'fa-outdent', 'fa-quote-right', 'fa-code', 'fa-terminal',
+                    'fa-link', 'fa-unlink', 'fa-paperclip', 'fa-file', 'fa-file-alt',
+                    'fa-file-code', 'fa-folder', 'fa-folder-open', 'fa-save', 'fa-upload',
+                    'fa-download', 'fa-trash', 'fa-trash-alt', 'fa-undo', 'fa-redo',
+                    'fa-copy', 'fa-paste', 'fa-cut', 'fa-clone', 'fa-expand', 'fa-compress',
+                    'fa-search-plus', 'fa-search-minus', 'fa-arrows-alt', 'fa-expand-arrows-alt',
+                    'fa-external-link-alt', 'fa-share', 'fa-share-alt', 'fa-envelope', 'fa-inbox',
+                    'fa-paper-plane', 'fa-reply', 'fa-comment', 'fa-comments', 'fa-comment-alt',
+                    'fa-thumbs-up', 'fa-thumbs-down', 'fa-heart', 'fa-star', 'fa-star-half',
+                    'fa-certificate', 'fa-trophy', 'fa-medal', 'fa-award', 'fa-ribbon',
+                    'fa-gem', 'fa-crown', 'fa-coins', 'fa-money-bill', 'fa-credit-card',
+                    'fa-shopping-cart', 'fa-gift', 'fa-box', 'fa-box-open', 'fa-shipping-fast',
+                    'fa-truck', 'fa-car', 'fa-motorcycle', 'fa-bicycle', 'fa-plane',
+                    'fa-helicopter', 'fa-ship', 'fa-subway', 'fa-train', 'fa-bus',
+                    'fa-walking', 'fa-running', 'fa-hiking', 'fa-swimmer', 'fa-dumbbell',
+                    'fa-football-ball', 'fa-basketball-ball', 'fa-baseball-ball', 'fa-volleyball-ball',
+                    'fa-futbol', 'fa-golf-ball', 'fa-chess', 'fa-chess-board', 'fa-puzzle-piece',
+                    'fa-dice', 'fa-dice-six', 'fa-dice-five', 'fa-dice-four', 'fa-dice-three',
+                    'fa-dice-two', 'fa-dice-one', 'fa-chess-king', 'fa-chess-queen', 'fa-chess-rook',
+                    'fa-chess-bishop', 'fa-chess-knight', 'fa-chess-pawn'
+                ];
+                
+                iconPicker.innerHTML = '';
+                
+                icons.forEach(iconName => {
+                    const iconOption = document.createElement('div');
+                    iconOption.className = 'icon-option';
+                    iconOption.innerHTML = `<i class="fas ${iconName}"></i>`;
+                    iconOption.title = iconName;
+                    
+                    iconOption.addEventListener('click', function() {
+                        insertIconToExtendedEditor(`fas ${iconName}`);
+                        iconPicker.classList.remove('active');
+                    });
+                    
+                    iconPicker.appendChild(iconOption);
+                });
+            }
+            
+            // Вставка иконки в расширенный редактор
+            function insertIconToExtendedEditor(iconClass) {
+                const iconHtml = `<i class="${iconClass}"></i>`;
+                insertToExtendedEditor(iconHtml);
+            }
+            
+            // Вставка текста/HTML в расширенный редактор
+            function insertToExtendedEditor(content) {
+                const textarea = extendedEditorTextarea;
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                const text = textarea.value;
+                
+                textarea.value = text.substring(0, start) + content + text.substring(end);
+                
+                // Обновляем предпросмотр и статистику
+                updateExtendedEditorPreview();
+                updateExtendedEditorStats();
+                
+                // Устанавливаем курсор после вставленного контента
+                textarea.selectionStart = textarea.selectionEnd = start + content.length;
+                textarea.focus();
+            }
+            
+            // Функция для вставки тегов форматирования
+            function insertExtendedTag(tag, content = '') {
+                let html = '';
+                let placeholder = 'текст';
+                
+                switch(tag) {
+                    case 'h2':
+                        html = `<h2>${content || 'Заголовок 2 уровня'}</h2>`;
+                        break;
+                    case 'h3':
+                        html = `<h3>${content || 'Заголовок 3 уровня'}</h3>`;
+                        break;
+                    case 'h4':
+                        html = `<h4>${content || 'Заголовок 4 уровня'}</h4>`;
+                        break;
+                    case 'p':
+                        html = `<p>${content || 'Новый абзац текста'}</p>`;
+                        break;
+                    case 'bold':
+                        html = `<strong>${content || 'жирный текст'}</strong>`;
+                        break;
+                    case 'italic':
+                        html = `<em>${content || 'курсивный текст'}</em>`;
+                        break;
+                    case 'underline':
+                        html = `<u>${content || 'подчеркнутый текст'}</u>`;
+                        break;
+                    case 'strikethrough':
+                        html = `<s>${content || 'зачеркнутый текст'}</s>`;
+                        break;
+                    case 'alignleft':
+                        html = `<p style="text-align: left;">${content || 'текст выровненный по левому краю'}</p>`;
+                        break;
+                    case 'aligncenter':
+                        html = `<p style="text-align: center;">${content || 'текст выровненный по центру'}</p>`;
+                        break;
+                    case 'alignright':
+                        html = `<p style="text-align: right;">${content || 'текст выровненный по правому краю'}</p>`;
+                        break;
+                    case 'alignjustify':
+                        html = `<p style="text-align: justify;">${content || 'текст выровненный по ширине'}</p>`;
+                        break;
+                    case 'ul':
+                        html = `<ul>\n  <li>${content || 'Элемент списка'}</li>\n  <li>Еще один элемент</li>\n</ul>`;
+                        break;
+                    case 'ol':
+                        html = `<ol>\n  <li>${content || 'Первый элемент'}</li>\n  <li>Второй элемент</li>\n</ol>`;
+                        break;
+                    case 'li':
+                        html = `<li>${content || 'Элемент списка'}</li>`;
+                        break;
+                    default:
+                        html = content || '';
+                }
+                
+                if (html) {
+                    insertToExtendedEditor(html);
+                }
+            }
+            
+            // Открытие расширенного редактора
+            function openExtendedEditor() {
+                initExtendedEditor();
+                extendedEditorModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Фокус на текстовое поле
+                setTimeout(() => {
+                    extendedEditorTextarea.focus();
+                }, 100);
+            }
+            
+            // Закрытие расширенного редактора
+            function closeExtendedEditor() {
+                extendedEditorModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                
+                // Закрываем все выпадающие меню
+                textColorPicker.classList.remove('active');
+                backgroundColorPicker.classList.remove('active');
+                iconPicker.classList.remove('active');
+            }
+            
+            // Сохранение содержимого из расширенного редактора в основной редактор
+            function saveExtendedEditorContent() {
+                // Сохраняем содержимое в визуальный редактор
+                visualEditorContent.innerHTML = extendedEditorTextarea.value;
+                
+                // Сохраняем содержимое в HTML редактор
+                articleContent.value = extendedEditorTextarea.value;
+                
+                // Обновляем предпросмотр HTML
+                updateHtmlPreview();
+                
+                // Закрываем расширенный редактор
+                closeExtendedEditor();
+                
+                // Показываем сообщение
+                showMessage('Содержимое сохранено в редактор', 'success');
+            }
+            
             // Инициализация предпросмотра цветов
             updateColorPreview();
             updateShadowPreview();
@@ -4853,6 +5739,12 @@ target = actor</code></pre>
             });
             
             articleContent.addEventListener('input', updateHtmlPreview);
+            
+            // Инициализация расширенного редактора
+            extendedEditorTextarea.addEventListener('input', function() {
+                updateExtendedEditorPreview();
+                updateExtendedEditorStats();
+            });
             
             // Обработчики для переключения редакторов
             editorTabs.forEach(tab => {
@@ -4893,6 +5785,185 @@ target = actor</code></pre>
                     const templateType = this.dataset.template;
                     insertTemplate(templateType);
                 });
+            });
+            
+            // Обработчики для расширенного редактора
+            openExtendedEditorBtn.addEventListener('click', openExtendedEditor);
+            closeExtendedEditorBtn.addEventListener('click', closeExtendedEditor);
+            extendedEditorCancelBtn.addEventListener('click', closeExtendedEditor);
+            extendedEditorSaveBtn.addEventListener('click', saveExtendedEditorContent);
+            
+            // Обработчики для кнопок выбора цвета
+            textColorBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                textColorPicker.classList.toggle('active');
+                backgroundColorPicker.classList.remove('active');
+                iconPicker.classList.remove('active');
+            });
+            
+            backgroundColorBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                backgroundColorPicker.classList.toggle('active');
+                textColorPicker.classList.remove('active');
+                iconPicker.classList.remove('active');
+            });
+            
+            // Обработчики для выбора цвета
+            document.querySelectorAll('#textColorPicker .color-option-small').forEach(colorOption => {
+                colorOption.addEventListener('click', function() {
+                    const color = this.getAttribute('data-color');
+                    insertExtendedTag('span', `<span style="color: ${color};">текст с цветом</span>`);
+                    textColorPicker.classList.remove('active');
+                });
+            });
+            
+            document.querySelectorAll('#backgroundColorPicker .color-option-small').forEach(colorOption => {
+                colorOption.addEventListener('click', function() {
+                    const color = this.getAttribute('data-color');
+                    insertExtendedTag('span', `<span style="background-color: ${color};">текст с фоном</span>`);
+                    backgroundColorPicker.classList.remove('active');
+                });
+            });
+            
+            // Обработчик для иконок
+            iconPickerBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                iconPicker.classList.toggle('active');
+                textColorPicker.classList.remove('active');
+                backgroundColorPicker.classList.remove('active');
+            });
+            
+            // Закрытие выпадающих меню при клике вне их
+            document.addEventListener('click', function() {
+                textColorPicker.classList.remove('active');
+                backgroundColorPicker.classList.remove('active');
+                iconPicker.classList.remove('active');
+            });
+            
+            // Обработчики для кнопок расширенного редактора
+            extendedEditorToolbar.addEventListener('click', function(e) {
+                const target = e.target.closest('.extended-editor-btn-tool');
+                if (!target) return;
+                
+                e.preventDefault();
+                
+                const command = target.getAttribute('data-command');
+                
+                if (command) {
+                    insertExtendedTag(command);
+                }
+            });
+            
+            // Обработчики для специальных кнопок расширенного редактора
+            document.getElementById('insertLink').addEventListener('click', function() {
+                const url = prompt('Введите URL ссылки:', 'https://example.com');
+                const text = prompt('Введите текст ссылки:', 'Текст ссылки');
+                
+                if (url && text) {
+                    insertToExtendedEditor(`<a href="${url}" target="_blank">${text}</a>`);
+                }
+            });
+            
+            document.getElementById('insertImage').addEventListener('click', function() {
+                const url = prompt('Введите URL изображения:', 'https://via.placeholder.com/400x200');
+                const alt = prompt('Введите альтернативный текст:', 'Описание изображения');
+                
+                if (url) {
+                    insertToExtendedEditor(`<img src="${url}" alt="${alt || ''}" style="max-width: 100%; height: auto;">`);
+                }
+            });
+            
+            document.getElementById('insertHorizontalRule').addEventListener('click', function() {
+                insertToExtendedEditor('<hr>');
+            });
+            
+            document.getElementById('insertCode').addEventListener('click', function() {
+                const code = prompt('Введите код:', '[logic]\nactive = walker');
+                if (code) {
+                    insertToExtendedEditor(`<code class="language-lua">${code}</code>`);
+                }
+            });
+            
+            document.getElementById('insertPre').addEventListener('click', function() {
+                const code = prompt('Введите код для блока:', '[logic]\nactive = walker\n[walker]\npath_walk = patrol_path');
+                if (code) {
+                    insertToExtendedEditor(`<pre><code class="language-lua">${code}</code></pre>`);
+                }
+            });
+            
+            document.getElementById('insertQuote').addEventListener('click', function() {
+                insertToExtendedEditor('<blockquote>Текст цитаты</blockquote>');
+            });
+            
+            document.getElementById('insertTable').addEventListener('click', function() {
+                const tableHtml = `<table>
+  <tr>
+    <th>Заголовок 1</th>
+    <th>Заголовок 2</th>
+    <th>Заголовок 3</th>
+  </tr>
+  <tr>
+    <td>Данные 1</td>
+    <td>Данные 2</td>
+    <td>Данные 3</td>
+  </tr>
+  <tr>
+    <td>Данные 4</td>
+    <td>Данные 5</td>
+    <td>Данные 6</td>
+  </tr>
+</table>`;
+                insertToExtendedEditor(tableHtml);
+            });
+            
+            document.getElementById('insertTableRow').addEventListener('click', function() {
+                insertToExtendedEditor('<tr>\n  <td>Новая строка</td>\n  <td>Новая строка</td>\n  <td>Новая строка</td>\n</tr>');
+            });
+            
+            document.getElementById('insertTableColumn').addEventListener('click', function() {
+                insertToExtendedEditor('<td>Новый столбец</td>');
+            });
+            
+            document.getElementById('insertSpecialChar').addEventListener('click', function() {
+                const char = prompt('Введите специальный символ:', '© ® ™ ° ± × ÷ ≈ ≠ ≤ ≥ ∞ µ π ∑ √ ∂ ∫');
+                if (char) {
+                    insertToExtendedEditor(char);
+                }
+            });
+            
+            document.getElementById('insertEmoji').addEventListener('click', function() {
+                const emojis = ['😀', '😎', '🚀', '💡', '🔥', '⭐', '🎮', '💻', '📚', '🔧'];
+                let emojiList = 'Доступные эмодзи:\n\n';
+                emojis.forEach((emoji, index) => {
+                    emojiList += `${index + 1}. ${emoji}\n`;
+                });
+                
+                const choice = prompt(emojiList + '\nВведите номер эмодзи (1-10):', '1');
+                const index = parseInt(choice) - 1;
+                
+                if (index >= 0 && index < emojis.length) {
+                    insertToExtendedEditor(emojis[index]);
+                }
+            });
+            
+            document.getElementById('clearFormatting').addEventListener('click', function() {
+                if (confirm('Очистить все форматирование в тексте?')) {
+                    const text = extendedEditorTextarea.value;
+                    // Простая очистка HTML тегов (сохраняем только текст)
+                    const cleanedText = text.replace(/<[^>]*>/g, '');
+                    extendedEditorTextarea.value = cleanedText;
+                    updateExtendedEditorPreview();
+                    updateExtendedEditorStats();
+                }
+            });
+            
+            // Обработчики для кнопок отмены и повтора
+            document.getElementById('undoBtn').addEventListener('click', function() {
+                document.execCommand('undo');
+            });
+            
+            document.getElementById('redoBtn').addEventListener('click', function() {
+                document.execCommand('redo');
             });
             
             // Обработчики для кастомного цвета акцента
@@ -5146,6 +6217,7 @@ sound = sound_scheme</code></pre>
                 if (e.key === 'Escape') {
                     closeAllModals();
                     closeSettings();
+                    closeExtendedEditor();
                 }
             });
             
