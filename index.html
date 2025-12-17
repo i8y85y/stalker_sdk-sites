@@ -3,1783 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Переходник STALKER - Показывай свои моды всем сталкерам</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <title>Сайт не работает</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        :root {
-            --primary: #1a5f23;
-            --secondary: #2d2d2d;
-            --accent: #e3b23c;
-            --accent-glow: #ffd700;
-            --light: #f5f5f5;
-            --dark: #1a1a1a;
-            --gray: #7a7a7a;
-            --danger: #c33c3c;
-            --success: #3ca54c;
-        }
-        
+
         body {
-            background-color: #0a0a0a;
-            color: #ddd;
-            line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(26, 95, 35, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(227, 178, 60, 0.1) 0%, transparent 50%),
-                linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.95)),
-                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
             min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Шапка */
-        header {
-            background-color: rgba(10, 15, 10, 0.95);
-            padding: 15px 0;
-            border-bottom: 3px solid var(--accent);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(227, 178, 60, 0.2);
-        }
-        
-        .header-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            color: var(--accent);
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.7);
-        }
-        
-        .logo-text h1 {
-            color: var(--accent);
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 0 15px rgba(227, 178, 60, 0.8);
-        }
-        
-        .logo-text p {
-            color: var(--light);
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 5px 10px;
-            border-radius: 3px;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--accent);
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.7);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-glow));
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        .btn {
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-accent {
-            background: linear-gradient(135deg, var(--accent), #d19c2a);
-            color: var(--dark);
-            box-shadow: 0 5px 15px rgba(227, 178, 60, 0.4);
-        }
-        
-        .btn-accent:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(227, 178, 60, 0.6);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), #0f4a1a);
+            font-family: 'Arial', sans-serif;
             color: white;
-            box-shadow: 0 5px 15px rgba(26, 95, 35, 0.4);
+            overflow: hidden;
+            position: relative;
         }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(26, 95, 35, 0.6);
-        }
-        
-        /* Основной контент */
-        main {
-            padding: 40px 0;
-        }
-        
-        .hero {
+
+        /* Контейнер с эффектом стекла */
+        .error-container {
             text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 30px;
-            background-color: rgba(10, 15, 10, 0.8);
-            border-radius: 15px;
+            padding: 60px;
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 50, 50, 0.2);
+            box-shadow: 
+                0 20px 40px rgba(255, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            margin: 20px;
+            position: relative;
+            z-index: 2;
+            animation: containerFloat 8s ease-in-out infinite;
+        }
+
+        /* Анимация плавающего контейнера */
+        @keyframes containerFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-15px) rotate(0.5deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(-0.5deg);
+            }
+        }
+
+        /* Череп с неоновым свечением */
+        .skull {
+            font-size: 12rem;
+            margin-bottom: 40px;
+            animation: skullGlow 4s infinite alternate,
+                     skullRotate 20s linear infinite;
+            text-shadow: 
+                0 0 30px #ff3333,
+                0 0 60px #ff0000,
+                0 0 90px #ff0000,
+                0 0 120px rgba(255, 0, 0, 0.5);
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .skull:hover {
+            transform: scale(1.1);
+            text-shadow: 
+                0 0 40px #ff6666,
+                0 0 80px #ff3333,
+                0 0 120px #ff0000,
+                0 0 160px rgba(255, 0, 0, 0.8);
+        }
+
+        /* Анимация свечения черепа */
+        @keyframes skullGlow {
+            0% {
+                text-shadow: 
+                    0 0 30px #ff3333,
+                    0 0 60px #ff0000,
+                    0 0 90px #ff0000;
+                filter: brightness(1);
+            }
+            50% {
+                text-shadow: 
+                    0 0 40px #ff6666,
+                    0 0 80px #ff3333,
+                    0 0 120px #ff0000;
+                filter: brightness(1.2);
+            }
+            100% {
+                text-shadow: 
+                    0 0 35px #ff4444,
+                    0 0 70px #ff2222,
+                    0 0 105px #ff0000;
+                filter: brightness(1.1);
+            }
+        }
+
+        /* Медленное вращение */
+        @keyframes skullRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Основной текст ошибки */
+        .error-title {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ff0000, #ff5555, #ff0000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 
+                0 5px 15px rgba(255, 0, 0, 0.3);
+            letter-spacing: 3px;
+            animation: titleShake 0.5s ease-in-out infinite alternate;
+        }
+
+        /* Дрожание заголовка */
+        @keyframes titleShake {
+            0% {
+                transform: translateX(-2px);
+            }
+            100% {
+                transform: translateX(2px);
+            }
+        }
+
+        /* Информационный текст */
+        .error-info {
+            font-size: 1.6rem;
+            color: #ffaaaa;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 50, 50, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 
+                inset 0 0 20px rgba(255, 0, 0, 0.1),
+                0 0 30px rgba(255, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
-            box-shadow: 
-                0 0 40px rgba(227, 178, 60, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(227, 178, 60, 0.2);
         }
-        
-        .hero::before {
+
+        /* Пульсирующая рамка */
+        .error-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff0000, transparent);
+            animation: borderPulse 3s linear infinite;
+        }
+
+        @keyframes borderPulse {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Статус индикатор */
+        .status {
+            font-size: 1.8rem;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: rgba(255, 0, 0, 0.15);
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status::after {
             content: '';
             position: absolute;
             top: -50%;
-            left: -50%;
-            width: 200%;
+            left: -60%;
+            width: 20%;
             height: 200%;
-            background: radial-gradient(circle, rgba(227, 178, 60, 0.1) 0%, transparent 70%);
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            animation: statusShine 3s infinite;
         }
-        
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-            text-shadow: 
-                0 0 10px rgba(227, 178, 60, 0.7),
-                0 0 20px rgba(227, 178, 60, 0.4);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 900px;
-            margin: 0 auto 30px;
-            color: #eee;
-            line-height: 1.7;
-        }
-        
-        .highlight {
-            color: var(--accent);
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(227, 178, 60, 0.5);
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--accent);
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
-        }
-        
-        .section-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-        }
-        
-        .section-title i {
-            font-size: 1.8rem;
-            color: var(--accent-glow);
-        }
-        
-        /* Секция модов */
-        .mods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .mod-card {
-            background-color: rgba(20, 25, 20, 0.9);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s;
-            position: relative;
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(227, 178, 60, 0.1);
-        }
-        
-        .mod-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--primary), var(--accent));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .mod-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.7),
-                0 0 30px rgba(227, 178, 60, 0.3);
-            border-color: rgba(227, 178, 60, 0.3);
-        }
-        
-        .mod-card:hover::before {
-            opacity: 1;
-        }
-        
-        .mod-image {
-            height: 200px;
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .mod-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: linear-gradient(to top, rgba(20, 25, 20, 0.9), transparent);
-        }
-        
-        .mod-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s;
-        }
-        
-        .mod-image .placeholder {
-            font-size: 4rem;
-            color: var(--accent);
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
-        }
-        
-        .mod-card:hover .mod-image img {
-            transform: scale(1.1);
-        }
-        
-        .mod-content {
-            padding: 25px;
-            position: relative;
-        }
-        
-        .mod-title {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--accent);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-shadow: 0 0 5px rgba(227, 178, 60, 0.3);
-        }
-        
-        .mod-game {
-            background: linear-gradient(135deg, var(--primary), #0f4a1a);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(26, 95, 35, 0.3);
-        }
-        
-        .mod-description {
-            margin-bottom: 20px;
-            color: #ccc;
-            height: 90px;
-            overflow: hidden;
-            line-height: 1.5;
-        }
-        
-        .mod-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .author-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--dark);
-            box-shadow: 0 3px 10px rgba(26, 95, 35, 0.3);
-        }
-        
-        .mod-stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .mod-stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .mod-stat i {
-            color: var(--accent);
-        }
-        
-        .mod-action-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-            background: linear-gradient(135deg, var(--primary), #0f4a1a);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 5px 15px rgba(26, 95, 35, 0.3);
-        }
-        
-        .mod-action-btn:hover {
-            background: linear-gradient(135deg, #0f4a1a, var(--primary));
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(26, 95, 35, 0.5);
-        }
-        
-        /* Форма загрузки мода */
-        .upload-section {
-            background-color: rgba(20, 25, 20, 0.9);
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(227, 178, 60, 0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--accent);
-            text-shadow: 0 0 5px rgba(227, 178, 60, 0.3);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px 20px;
-            background-color: rgba(10, 15, 10, 0.8);
-            border: 1px solid rgba(227, 178, 60, 0.3);
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(227, 178, 60, 0.3);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Подвал */
-        footer {
-            background-color: rgba(10, 15, 10, 0.95);
-            padding: 50px 0 20px;
-            margin-top: 70px;
-            border-top: 3px solid var(--accent);
-            box-shadow: 0 -10px 30px rgba(227, 178, 60, 0.1);
-            position: relative;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--primary), var(--accent));
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            color: var(--accent);
-            margin-bottom: 25px;
-            font-size: 1.4rem;
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
+
+        @keyframes statusShine {
+            0% {
+                left: -60%;
             }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .mods-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .upload-section {
-                padding: 25px;
+            100% {
+                left: 140%;
             }
         }
-        
-        @media (max-width: 480px) {
-            .mods-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-        }
-        
-        .active {
-            color: var(--accent) !important;
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.7) !important;
-        }
-        
-        .active::after {
-            width: 100% !important;
-        }
-        
-        /* Модальное окно */
-        .modal {
-            display: none;
+
+        /* Фоновые элементы - частицы */
+        .particles {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1001;
-            overflow: auto;
-            backdrop-filter: blur(5px);
+            pointer-events: none;
+            z-index: 1;
         }
-        
-        .modal-content {
-            background-color: rgba(20, 25, 20, 0.97);
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            box-shadow: 
-                0 0 50px rgba(227, 178, 60, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(227, 178, 60, 0.3);
-            animation: modalAppear 0.5s ease-out;
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 50, 50, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
         }
-        
-        @keyframes modalAppear {
-            from {
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
                 opacity: 0;
-                transform: translateY(-50px);
             }
-            to {
+            10% {
                 opacity: 1;
-                transform: translateY(0);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
             }
         }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 2rem;
-            color: #aaa;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
-        .close-modal:hover {
-            color: var(--accent);
-            background-color: rgba(227, 178, 60, 0.1);
-            transform: rotate(90deg);
-        }
-        
-        /* Уведомление */
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 20px 30px;
-            background: linear-gradient(135deg, var(--primary), #0f4a1a);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(26, 95, 35, 0.5);
-            z-index: 1002;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transform: translateX(150%);
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
-        
-        .notification.success {
-            background: linear-gradient(135deg, var(--success), #2a8c3a);
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(60, 165, 76, 0.5);
-        }
-        
-        .notification.error {
-            background: linear-gradient(135deg, var(--danger), #a32c2c);
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(195, 60, 60, 0.5);
-        }
-        
-        /* Бейдж нового мода */
-        .new-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: linear-gradient(135deg, #ff3300, #ff6600);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(255, 51, 0, 0.4);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 5px 15px rgba(255, 51, 0, 0.4); }
-            50% { box-shadow: 0 5px 20px rgba(255, 51, 0, 0.7); }
-            100% { box-shadow: 0 5px 15px rgba(255, 51, 0, 0.4); }
-        }
-        
-        /* Бейдж настоящего мода */
-        .real-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, var(--success), #2a8c3a);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(60, 165, 76, 0.4);
-        }
-        
-        /* Заглушка для изображений */
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .image-placeholder i {
-            font-size: 3rem;
-            color: var(--accent);
-            text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
-        }
-        
-        /* Кнопка тестового мода */
-        .test-mod-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #ff6600, #ff3300);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .test-mod-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
-        }
-        
-        /* Индикатор загрузки */
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--accent);
-        }
-        
-        .loading i {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Статус подключения */
-        .connection-status {
+
+        /* Ошибка кода */
+        .error-code {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: rgba(255, 100, 100, 0.7);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #ff0000;
+            max-width: 300px;
+            line-height: 1.4;
+            animation: codeFlicker 2s infinite;
         }
-        
-        .connection-status.connected {
-            background: linear-gradient(135deg, var(--success), #2a8c3a);
-            color: white;
-            box-shadow: 0 5px 15px rgba(60, 165, 76, 0.4);
+
+        @keyframes codeFlicker {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
         }
-        
-        .connection-status.disconnected {
-            background: linear-gradient(135deg, var(--danger), #a32c2c);
-            color: white;
-            box-shadow: 0 5px 15px rgba(195, 60, 60, 0.4);
+
+        /* Эффект сканирования */
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 0, 0, 0.8), 
+                transparent
+            );
+            z-index: 3;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
         }
-        
-        .connection-status.connecting {
-            background: linear-gradient(135deg, var(--accent), #d19c2a);
-            color: var(--dark);
-            box-shadow: 0 5px 15px rgba(227, 178, 60, 0.4);
+
+        @keyframes scan {
+            0% {
+                top: 0;
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0.5;
+            }
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 40px 25px;
+                margin: 15px;
+            }
+            
+            .skull {
+                font-size: 8rem;
+                margin-bottom: 30px;
+            }
+            
+            .error-title {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .error-info {
+                font-size: 1.3rem;
+                padding: 20px;
+            }
+            
+            .status {
+                font-size: 1.5rem;
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skull {
+                font-size: 6rem;
+                margin-bottom: 25px;
+            }
+            
+            .error-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .error-info {
+                font-size: 1.1rem;
+                padding: 15px;
+                line-height: 1.6;
+            }
+            
+            .status {
+                font-size: 1.2rem;
+                padding: 10px 25px;
+            }
+            
+            .error-code {
+                font-size: 0.8rem;
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+
+        /* Эффект статики */
+        .static {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-radial-gradient(
+                    circle at 50% 50%,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 0, 0, 0.03) 3px,
+                    rgba(255, 0, 0, 0.03) 4px
+                );
+            z-index: 1;
+            pointer-events: none;
+            animation: staticMove 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes staticMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Статус подключения -->
-    <div id="connection-status" class="connection-status connecting">
-        <i class="fas fa-spinner fa-spin"></i>
-        <span>Подключение к базе...</span>
-    </div>
-
-    <!-- Шапка -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
-                <div class="logo-text">
-                    <h1>ПЕРЕХОДНИК STALKER</h1>
-                    <p>Показывай свои моды всем сталкерам</p>
-                </div>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#" class="active" id="home-link"><i class="fas fa-home"></i> Все моды</a></li>
-                    <li><a href="#" id="upload-link"><i class="fas fa-upload"></i> Показать мод</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <!-- Эффект статики -->
+    <div class="static"></div>
+    
+    <!-- Линия сканирования -->
+    <div class="scan-line"></div>
+    
+    <!-- Частицы на фоне -->
+    <div class="particles" id="particles"></div>
+    
     <!-- Основной контент -->
-    <main class="container">
-        <!-- Герой-секция -->
-        <section class="hero" id="hero-section">
-            <h2>Покажи свои моды всему сталкер-сообществу!</h2>
-            <p>Загрузи описание своего мода и он <span class="highlight">сразу станет виден всем</span> в списке ниже. 
-            <span class="highlight">Все увидят твой мод в реальном времени!</span></p>
-            
-            <div style="margin-top: 30px;">
-                <button class="btn btn-accent" onclick="showSection('upload'); setActiveNav(uploadLink);">
-                    <i class="fas fa-bolt"></i> ПОКАЗАТЬ СВОЙ МОД ВСЕМ
-                </button>
-                
-                <button class="test-mod-btn" onclick="addTestMod()" style="margin-left: 15px;">
-                    <i class="fas fa-vial"></i> Добавить тестовый мод
-                </button>
-            </div>
-        </section>
-
-        <!-- Секция всех модов -->
-        <section id="all-mods-section">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
-                <h2 class="section-title"><i class="fas fa-globe"></i> Все моды (<span id="total-mods-count">0</span>)</h2>
-                <div style="display: flex; gap: 15px;">
-                    <div style="font-size: 0.9rem; color: #aaa; background-color: rgba(20, 25, 20, 0.8); padding: 10px 20px; border-radius: 20px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <i class="fas fa-eye"></i> <span id="total-views">0</span> просмотров
-                    </div>
-                    <div style="font-size: 0.9rem; color: #aaa; background-color: rgba(20, 25, 20, 0.8); padding: 10px 20px; border-radius: 20px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <i class="fas fa-users"></i> <span id="online-count">0</span> онлайн
-                    </div>
-                    <button class="btn btn-primary" onclick="refreshMods()">
-                        <i class="fas fa-sync-alt"></i> Обновить
-                    </button>
-                </div>
-            </div>
-            
-            <div id="mods-loading" class="loading" style="display: none;">
-                <i class="fas fa-spinner"></i>
-                <p>Загрузка модов...</p>
-            </div>
-            
-            <div class="mods-grid" id="mods-container">
-                <!-- Моды загружаются через JavaScript -->
-            </div>
-            
-            <div id="no-mods-message" style="display: none; text-align: center; padding: 50px; background-color: rgba(20, 25, 20, 0.7); border-radius: 15px;">
-                <i class="fas fa-exclamation-circle" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 20px;"></i>
-                <h3 style="color: var(--accent); margin-bottom: 15px;">Модов пока нет</h3>
-                <p style="margin-bottom: 25px;">Загрузите первый мод и он сразу появится здесь!</p>
-                <button class="btn btn-accent" onclick="showSection('upload'); setActiveNav(uploadLink);">
-                    <i class="fas fa-upload"></i> Загрузить первый мод
-                </button>
-            </div>
-        </section>
-
-        <!-- Секция загрузки мода -->
-        <section id="upload-section" style="display: none;">
-            <h2 class="section-title"><i class="fas fa-upload"></i> Показать свой мод всем</h2>
-            
-            <div class="upload-section">
-                <div style="margin-bottom: 30px; padding: 20px; background-color: rgba(227, 178, 60, 0.1); border-radius: 10px; border-left: 4px solid var(--accent);">
-                    <i class="fas fa-info-circle"></i> 
-                    <strong>Ваш мод сразу увидят все сталкеры!</strong> После загрузки он появится вверху списка модов и будет виден всем пользователям в реальном времени.
-                </div>
-                
-                <form id="mod-upload-form">
-                    <div class="form-group">
-                        <label for="author-name">Твое имя или псевдоним *</label>
-                        <input type="text" id="author-name" class="form-control" placeholder="Например: Стрелок, Меченый" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mod-name">Название мода *</label>
-                        <input type="text" id="mod-name" class="form-control" placeholder="Например: 'Реалистичные аномалии'" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mod-game">Для какой игры *</label>
-                        <select id="mod-game" class="form-control" required>
-                            <option value="">Выберите игру</option>
-                            <option value="Тень Чернобыля">S.T.A.L.K.E.R.: Тень Чернобыля</option>
-                            <option value="Чистое Небо">S.T.A.L.K.E.R.: Чистое Небо</option>
-                            <option value="Зов Припяти">S.T.A.L.K.E.R.: Зов Припяти</option>
-                            <option value="АНТОЛОГИЯ">АНТОЛОГИЯ (все части)</option>
-                            <option value="Anomaly">Anomaly</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mod-description">Описание мода *</label>
-                        <textarea id="mod-description" class="form-control" placeholder="Подробно опишите что делает ваш мод, какие изменения вносит, особенности..." required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mod-version">Версия мода (необязательно)</label>
-                        <input type="text" id="mod-version" class="form-control" placeholder="Например: 1.0 или beta">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="download-link">Ссылка для скачивания (необязательно)</label>
-                        <input type="url" id="download-link" class="form-control" placeholder="https://... (можно добавить позже)">
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-accent" style="width: 100%; padding: 18px; font-size: 1.2rem; margin-top: 10px;">
-                            <i class="fas fa-broadcast-tower"></i> ПОКАЗАТЬ МОД ВСЕМ
-                        </button>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px; color: #aaa; font-size: 0.9rem;">
-                        <i class="fas fa-exclamation-circle"></i> Мод появится вверху списка и будет виден всем посетителям в реальном времени
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Подвал -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>ПЕРЕХОДНИК STALKER</h3>
-                    <p style="margin-bottom: 20px;">Показывайте свои модификации всему сталкер-сообществу. Загрузили мод — его уже видят все!</p>
-                    <p><i class="fas fa-database"></i> Данные хранятся в Firebase Realtime Database</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Как это работает</h3>
-                    <p><i class="fas fa-bolt"></i> 1. Загружаете описание мода</p>
-                    <p><i class="fas fa-cloud-upload-alt"></i> 2. Мод сохраняется в Firebase</p>
-                    <p><i class="fas fa-sync"></i> 3. Все пользователи видят ваш мод в реальном времени</p>
-                    <p><i class="fas fa-eye"></i> 4. Данные синхронизируются мгновенно</p>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2023 ПЕРЕХОДНИК STALKER. Все моды хранятся в Firebase Realtime Database.</p>
-                <p>Все права на игру S.T.A.L.K.E.R. принадлежат GSC Game World.</p>
-            </div>
+    <div class="error-container">
+        <div class="skull" onclick="skullClick()">💀</div>
+        
+        <h1 class="error-title">САЙТ НЕ РАБОТАЕТ</h1>
+        
+        <div class="error-info">
+            Системный сбой<br>
+            Технические работы<br>
+            Вернёмся в ближайшее время
         </div>
-    </footer>
-
-    <!-- Модальное окно информации о моде -->
-    <div id="mod-info-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-mod-info">&times;</span>
-            <div id="mod-info-content">
-                <!-- Информация о моде загружается через JavaScript -->
-            </div>
+        
+        <div class="status">
+            ● СИСТЕМА ОФФЛАЙН
         </div>
     </div>
-
-    <!-- Уведомление -->
-    <div id="notification" class="notification">
-        <i class="fas fa-check-circle"></i>
-        <span id="notification-text">Уведомление</span>
+    
+    <!-- Код ошибки -->
+    <div class="error-code">
+        ERROR_CODE: 0xDEADBEEF<br>
+        STATUS: SYSTEM_FAILURE<br>
+        TIMESTAMP: <span id="timestamp">--:--:--</span>
     </div>
 
     <script>
-        // Firebase конфигурация
-        const firebaseConfig = {
-            apiKey: "AIzaSyDS6V47RUQCbJGjLhRXpN2ZNUl8tOTJ3W0",
-            authDomain: "satlk-8aab6.firebaseapp.com",
-            projectId: "satlk-8aab6",
-            storageBucket: "satlk-8aab6.firebasestorage.app",
-            messagingSenderId: "74250323104",
-            appId: "1:74250323104:web:368ff457906615bb9635c5",
-            measurementId: "G-04WE32JTMS",
-            databaseURL: "https://satlk-8aab6-default-rtdb.firebaseio.com/"
-        };
-
-        // Глобальные переменные
-        let allModsData = [];
-        let totalViews = 0;
-        let onlineUsers = 0;
-        let userId = localStorage.getItem('stalkerUserId') || 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        let database = null;
-        let isFirebaseConnected = false;
-
-        // Сохраняем ID пользователя
-        if (!localStorage.getItem('stalkerUserId')) {
-            localStorage.setItem('stalkerUserId', userId);
-        }
-
-        // DOM элементы
-        const modsContainer = document.getElementById('mods-container');
-        const modUploadForm = document.getElementById('mod-upload-form');
-        const notification = document.getElementById('notification');
-        const notificationText = document.getElementById('notification-text');
-        const totalViewsSpan = document.getElementById('total-views');
-        const totalModsCountSpan = document.getElementById('total-mods-count');
-        const onlineCountSpan = document.getElementById('online-count');
-        const noModsMessage = document.getElementById('no-mods-message');
-        const modsLoading = document.getElementById('mods-loading');
-        const connectionStatus = document.getElementById('connection-status');
-
-        // Модальные окна
-        const modInfoModal = document.getElementById('mod-info-modal');
-        const closeModInfo = document.getElementById('close-mod-info');
-        const modInfoContent = document.getElementById('mod-info-content');
-
-        // Навигационные ссылки
-        const homeLink = document.getElementById('home-link');
-        const uploadLink = document.getElementById('upload-link');
-
-        // Секции
-        const heroSection = document.getElementById('hero-section');
-        const allModsSection = document.getElementById('all-mods-section');
-        const uploadSection = document.getElementById('upload-section');
-
-        // Инициализация при загрузке страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("Сайт загружается...");
-            initFirebase();
-            setupEventListeners();
-            setActiveNav(homeLink);
-            showSection('all');
+        // Создание частиц
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
             
-            // Показываем моды из localStorage сразу, пока грузится Firebase
-            setTimeout(() => {
-                loadModsFromStorage();
-            }, 100);
-        });
-
-        // Инициализация Firebase
-        function initFirebase() {
-            try {
-                // Проверяем, не инициализирован ли Firebase уже
-                if (!firebase.apps.length) {
-                    firebase.initializeApp(firebaseConfig);
-                    console.log("Firebase инициализирован");
-                } else {
-                    console.log("Firebase уже инициализирован");
-                }
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
                 
-                database = firebase.database();
-                isFirebaseConnected = true;
+                // Случайные параметры
+                const size = Math.random() * 6 + 2;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 10;
+                const color = Math.random() > 0.5 ? '#ff0000' : '#ff5555';
                 
-                connectionStatus.className = "connection-status connecting";
-                connectionStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Подключение к базе...</span>';
+                // Применение стилей
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.background = color;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.boxShadow = `0 0 ${size*3}px ${color}`;
                 
-                // Проверка подключения
-                const connectedRef = database.ref(".info/connected");
-                connectedRef.on("value", function(snap) {
-                    if (snap.val() === true) {
-                        connectionStatus.className = "connection-status connected";
-                        connectionStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Подключено к базе</span>';
-                        console.log("Подключено к Firebase");
-                        
-                        // После подключения загружаем данные
-                        loadModsFromFirebase();
-                        updateTotalViewsFromFirebase();
-                        
-                        // Обновляем онлайн счетчик
-                        updateOnlineCounter();
-                        
-                    } else {
-                        connectionStatus.className = "connection-status disconnected";
-                        connectionStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Нет подключения</span>';
-                        console.log("Нет подключения к Firebase");
-                        
-                        // Показываем моды из localStorage
-                        loadModsFromStorage();
-                    }
-                });
-                
-            } catch (error) {
-                console.error("Ошибка инициализации Firebase:", error);
-                connectionStatus.className = "connection-status disconnected";
-                connectionStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Ошибка подключения</span>';
-                isFirebaseConnected = false;
-                
-                // Показываем моды из localStorage
-                loadModsFromStorage();
+                particlesContainer.appendChild(particle);
             }
-        }
-
-        // Обновление счетчика онлайн пользователей
-        function updateOnlineCounter() {
-            if (!database) return;
-            
-            // Простой счетчик без сложной логики
-            onlineUsers = Math.floor(Math.random() * 10) + 1; // Для демонстрации
-            onlineCountSpan.textContent = onlineUsers;
-        }
-
-        // Загрузить моды из Firebase
-        function loadModsFromFirebase() {
-            console.log("Загрузка модов из Firebase...");
-            
-            if (!database) {
-                console.log("Firebase Database не доступен");
-                loadModsFromStorage();
-                return;
-            }
-            
-            modsLoading.style.display = 'block';
-            modsContainer.style.display = 'none';
-            
-            const modsRef = database.ref('mods');
-            
-            // Используем once для однократного получения данных
-            modsRef.once('value')
-                .then((snapshot) => {
-                    const data = snapshot.val();
-                    allModsData = [];
-                    
-                    if (data) {
-                        // Преобразуем объект в массив
-                        Object.keys(data).forEach(key => {
-                            allModsData.push({ 
-                                firebaseId: key,
-                                ...data[key] 
-                            });
-                        });
-                        
-                        console.log("Загружено модов из Firebase:", allModsData.length);
-                        
-                        // Сохраняем в localStorage как резервную копию
-                        localStorage.setItem('stalkerPortalMods', JSON.stringify(allModsData));
-                    } else {
-                        console.log("В Firebase нет модов, загружаем моды по умолчанию...");
-                        // Если нет данных, показываем моды из localStorage
-                        loadModsFromStorage();
-                    }
-                    
-                    // Обновляем отображение
-                    renderAllMods();
-                    
-                })
-                .catch((error) => {
-                    console.error("Ошибка загрузки из Firebase:", error);
-                    showNotification("Ошибка загрузки модов из Firebase", "error");
-                    
-                    // Загружаем из localStorage как fallback
-                    loadModsFromStorage();
-                })
-                .finally(() => {
-                    modsLoading.style.display = 'none';
-                    modsContainer.style.display = 'grid';
-                });
-                
-            // Также подписываемся на изменения в реальном времени
-            modsRef.on('value', (snapshot) => {
-                const data = snapshot.val();
-                allModsData = [];
-                
-                if (data) {
-                    Object.keys(data).forEach(key => {
-                        allModsData.push({ 
-                            firebaseId: key,
-                            ...data[key] 
-                        });
-                    });
-                    
-                    // Сохраняем в localStorage как резервную копию
-                    localStorage.setItem('stalkerPortalMods', JSON.stringify(allModsData));
-                    
-                    // Обновляем отображение
-                    renderAllMods();
-                }
-            });
-        }
-
-        // Загрузить моды из localStorage (fallback)
-        function loadModsFromStorage() {
-            console.log("Загрузка модов из localStorage...");
-            
-            try {
-                const storedMods = localStorage.getItem('stalkerPortalMods');
-                const storedViews = localStorage.getItem('stalkerPortalViews');
-                
-                if (storedMods) {
-                    allModsData = JSON.parse(storedMods);
-                    console.log("Загружено модов из localStorage:", allModsData.length);
-                } else {
-                    // Если в localStorage нет модов, создаем демо-моды
-                    createDemoMods();
-                }
-                
-                if (storedViews) {
-                    totalViews = parseInt(storedViews) || 0;
-                    totalViewsSpan.textContent = totalViews.toLocaleString();
-                }
-                
-                renderAllMods();
-                
-            } catch (e) {
-                console.error("Ошибка загрузки из localStorage:", e);
-                createDemoMods();
-            }
-            
-            modsLoading.style.display = 'none';
-        }
-
-        // Создание демо-модов
-        function createDemoMods() {
-            console.log("Создание демо-модов...");
-            
-            allModsData = [
-                {
-                    firebaseId: "demo1",
-                    title: "STALKER Anomaly 1.5.2",
-                    game: "АНТОЛОГИЯ",
-                    description: "Масштабный бесплатный мод на движке X-Ray 1.5, объединяющий все три части в открытом мире с улучшенной графикой, продвинутой системой выживания и сотнями заданий.",
-                    author: "Team Epic",
-                    version: "1.5.2",
-                    downloadLink: "https://www.moddb.com/mods/stalker-anomaly/downloads",
-                    date: new Date().toISOString(),
-                    views: 1287,
-                    isRealMod: true
-                },
-                {
-                    firebaseId: "demo2",
-                    title: "Call of Chernobyl",
-                    game: "Зов Припяти",
-                    description: "Мод, объединяющий все локации из трилогии в один огромный открытый мир с свободным перемещением между ними.",
-                    author: "TeamJelly",
-                    version: "1.4.22",
-                    downloadLink: "https://www.moddb.com/mods/call-of-chernobyl",
-                    date: new Date(Date.now() - 86400000).toISOString(),
-                    views: 845,
-                    isRealMod: true
-                },
-                {
-                    firebaseId: "demo3",
-                    title: "Gunslinger Mod",
-                    game: "Тень Чернобыля",
-                    description: "Продвинутый движок для Тени Чернобыля с поддержкой современных технологий и улучшенной графикой.",
-                    author: "OGSR Team",
-                    version: "0.9.0",
-                    downloadLink: "https://www.moddb.com/mods/gunslinger",
-                    date: new Date(Date.now() - 172800000).toISOString(),
-                    views: 932,
-                    isRealMod: true
-                },
-                {
-                    firebaseId: "demo4",
-                    title: "Dead Air",
-                    game: "Зов Припяти",
-                    description: "Хардкорный мод с упором на реализм, сложное выживание и атмосферу безысходности в Зоне.",
-                    author: "Артём Соляников",
-                    version: "1.0.1",
-                    downloadLink: "https://www.moddb.com/mods/dead-air",
-                    date: new Date(Date.now() - 259200000).toISOString(),
-                    views: 621,
-                    isRealMod: true
-                }
-            ];
-            
-            localStorage.setItem('stalkerPortalMods', JSON.stringify(allModsData));
-            console.log("Создано демо-модов:", allModsData.length);
-        }
-
-        // Обновить счетчик просмотров из Firebase
-        function updateTotalViewsFromFirebase() {
-            if (!database) return;
-            
-            const statsRef = database.ref('stats/totalViews');
-            statsRef.once('value')
-                .then((snapshot) => {
-                    const data = snapshot.val();
-                    totalViews = data || allModsData.reduce((sum, mod) => sum + (mod.views || 0), 0);
-                    totalViewsSpan.textContent = totalViews.toLocaleString();
-                })
-                .catch(() => {
-                    // Если ошибка, используем локальный счетчик
-                    totalViews = allModsData.reduce((sum, mod) => sum + (mod.views || 0), 0);
-                    totalViewsSpan.textContent = totalViews.toLocaleString();
-                });
-        }
-
-        // Увеличить счетчик просмотров
-        function incrementTotalViews() {
-            totalViews++;
-            totalViewsSpan.textContent = totalViews.toLocaleString();
-            
-            // Сохраняем в localStorage
-            localStorage.setItem('stalkerPortalViews', totalViews.toString());
-            
-            // Пытаемся сохранить в Firebase, если доступно
-            if (database && isFirebaseConnected) {
-                const statsRef = database.ref('stats/totalViews');
-                statsRef.set(totalViews).catch(() => {
-                    console.log("Не удалось обновить счетчик просмотров в Firebase");
-                });
-            }
-        }
-
-        // Рендеринг всех модов
-        function renderAllMods() {
-            console.log("Рендеринг модов... Количество модов:", allModsData.length);
-            
-            modsContainer.innerHTML = '';
-            totalModsCountSpan.textContent = allModsData.length;
-            
-            if (allModsData.length === 0) {
-                noModsMessage.style.display = 'block';
-                modsContainer.style.display = 'none';
-                return;
-            } else {
-                noModsMessage.style.display = 'none';
-                modsContainer.style.display = 'grid';
-            }
-            
-            // Сортируем по дате (новые сначала)
-            const sortedMods = [...allModsData].sort((a, b) => {
-                const dateA = new Date(a.date || 0);
-                const dateB = new Date(b.date || 0);
-                return dateB - dateA;
-            });
-            
-            // Определяем какие моды новые (последние 3 дня)
-            const threeDaysAgo = new Date();
-            threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-            
-            sortedMods.forEach(mod => {
-                const modDate = new Date(mod.date || new Date());
-                const isNew = modDate >= threeDaysAgo;
-                
-                const modCard = document.createElement('div');
-                modCard.className = 'mod-card';
-                modCard.innerHTML = `
-                    ${isNew ? '<div class="new-badge">НОВЫЙ</div>' : ''}
-                    ${mod.isRealMod ? '<div class="real-badge">НАСТОЯЩИЙ</div>' : ''}
-                    
-                    <div class="mod-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-${mod.isRealMod ? 'check-circle' : 'file-archive'}"></i>
-                            <span style="color: #aaa; font-size: 0.9rem;">${mod.isRealMod ? 'Настоящий мод' : 'Мод сообщества'}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mod-content">
-                        <div class="mod-title">
-                            <span>${mod.title || 'Без названия'}</span>
-                            <span class="mod-game">${mod.game || 'Не указана'}</span>
-                        </div>
-                        
-                        <div class="mod-author">
-                            <div class="author-avatar">${(mod.author || 'А').charAt(0)}</div>
-                            <span>${mod.author || 'Аноним'}</span>
-                            <span style="margin-left: auto; font-size: 0.8rem; color: #aaa;">
-                                <i class="fas fa-eye"></i> ${mod.views || 0}
-                            </span>
-                        </div>
-                        
-                        <p class="mod-description">${(mod.description || '').substring(0, 120)}${(mod.description || '').length > 120 ? '...' : ''}</p>
-                        
-                        <div style="margin: 15px 0;">
-                            ${mod.version ? `<span style="font-size: 0.9rem; color: var(--accent); background-color: rgba(227, 178, 60, 0.1); padding: 5px 10px; border-radius: 5px;">v${mod.version}</span>` : ''}
-                        </div>
-                        
-                        <div class="mod-stats">
-                            <div class="mod-stat">
-                                <i class="fas fa-calendar"></i>
-                                <span>${formatDate(mod.date)}</span>
-                            </div>
-                            <div class="mod-stat">
-                                <i class="fas fa-download"></i>
-                                <span>${mod.downloadLink ? 'Есть ссылка' : 'Без ссылки'}</span>
-                            </div>
-                        </div>
-                        
-                        <button class="mod-action-btn view-mod-details" data-mod-id="${mod.firebaseId || 'local_' + mod.title}">
-                            <i class="fas fa-info-circle"></i> Подробнее
-                        </button>
-                    </div>
-                `;
-                
-                modsContainer.appendChild(modCard);
-            });
-            
-            addDetailsButtonListeners();
-            console.log("Моды отрендерены успешно!");
-        }
-
-        // Добавить обработчики для кнопок "Подробнее"
-        function addDetailsButtonListeners() {
-            const detailsButtons = document.querySelectorAll('.view-mod-details');
-            detailsButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const modId = this.getAttribute('data-mod-id');
-                    showModInfo(modId);
-                });
-            });
-        }
-
-        // Форматирование даты
-        function formatDate(dateString) {
-            try {
-                if (!dateString) return 'Недавно';
-                
-                const date = new Date(dateString);
-                if (isNaN(date.getTime())) return 'Недавно';
-                
-                const now = new Date();
-                const diffTime = Math.abs(now - date);
-                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-                
-                if (diffDays === 0) {
-                    return 'Сегодня';
-                } else if (diffDays === 1) {
-                    return 'Вчера';
-                } else if (diffDays < 7) {
-                    return `${diffDays} дней назад`;
-                } else {
-                    return date.toLocaleDateString('ru-RU');
-                }
-            } catch (e) {
-                return 'Недавно';
-            }
-        }
-
-        // Показать информацию о моде
-        function showModInfo(modId) {
-            console.log("Показ информации о моде ID:", modId);
-            
-            const mod = allModsData.find(m => (m.firebaseId === modId) || ('local_' + m.title === modId));
-            if (!mod) {
-                showNotification("Мод не найден", "error");
-                return;
-            }
-            
-            // Увеличиваем счетчик просмотров
-            incrementModViews(mod);
-            
-            // Проверяем новый ли это мод
-            const threeDaysAgo = new Date();
-            threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-            const modDate = new Date(mod.date || new Date());
-            const isNew = modDate >= threeDaysAgo;
-            
-            modInfoContent.innerHTML = `
-                <h2 style="color: var(--accent); margin-bottom: 15px; text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);">${mod.title || 'Без названия'}</h2>
-                
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
-                    <span class="mod-game">${mod.game || 'Не указана'}</span>
-                    ${mod.isRealMod ? `
-                        <span style="background: linear-gradient(135deg, var(--success), #2a8c3a); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; box-shadow: 0 3px 10px rgba(60, 165, 76, 0.3);">
-                            <i class="fas fa-check-circle"></i> Настоящий мод
-                        </span>
-                    ` : ''}
-                    ${isNew ? `
-                        <span style="background: linear-gradient(135deg, #ff3300, #ff6600); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; box-shadow: 0 3px 10px rgba(255, 51, 0, 0.3);">
-                            <i class="fas fa-star"></i> НОВЫЙ
-                        </span>
-                    ` : ''}
-                </div>
-                
-                <div style="margin-bottom: 25px; padding: 25px; background-color: rgba(10, 15, 10, 0.8); border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                    <p style="font-size: 1.1rem; line-height: 1.6;">${mod.description || 'Нет описания'}</p>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                    <div style="background-color: rgba(10, 15, 10, 0.8); padding: 20px; border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 5px;">Автор</div>
-                        <div style="font-weight: bold; font-size: 1.2rem; color: var(--accent);">${mod.author || 'Аноним'}</div>
-                    </div>
-                    <div style="background-color: rgba(10, 15, 10, 0.8); padding: 20px; border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 5px;">Версия</div>
-                        <div style="font-weight: bold; font-size: 1.2rem; color: var(--accent);">${mod.version || '1.0'}</div>
-                    </div>
-                    <div style="background-color: rgba(10, 15, 10, 0.8); padding: 20px; border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 5px;">Дата публикации</div>
-                        <div style="font-weight: bold; font-size: 1.2rem; color: var(--accent);">${formatDate(mod.date)}</div>
-                    </div>
-                    <div style="background-color: rgba(10, 15, 10, 0.8); padding: 20px; border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2);">
-                        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 5px;">Просмотров</div>
-                        <div style="font-weight: bold; font-size: 1.2rem; color: var(--accent);">${mod.views || 0}</div>
-                    </div>
-                </div>
-                
-                ${mod.downloadLink ? `
-                    <div style="margin-bottom: 30px;">
-                        <h3 style="color: var(--accent); margin-bottom: 15px; text-shadow: 0 0 5px rgba(227, 178, 60, 0.3);">Ссылка для скачивания:</h3>
-                        <div style="background-color: rgba(10, 15, 10, 0.8); padding: 20px; border-radius: 10px; border: 1px solid rgba(227, 178, 60, 0.2); word-break: break-all;">
-                            <a href="${mod.downloadLink}" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.1rem;">
-                                <i class="fas fa-external-link-alt"></i> ${mod.downloadLink}
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; gap: 15px; margin-top: 30px;">
-                        <a href="${mod.downloadLink}" target="_blank" class="mod-action-btn" style="flex: 1; text-align: center;">
-                            <i class="fas fa-download"></i> Скачать мод
-                        </a>
-                        <button class="mod-action-btn" onclick="copyToClipboard('${mod.downloadLink}')" style="flex: 1; text-align: center; background: linear-gradient(135deg, var(--accent), #d19c2a);">
-                            <i class="fas fa-copy"></i> Копировать ссылку
-                        </button>
-                    </div>
-                ` : `
-                    <div style="margin-bottom: 30px; padding: 20px; background-color: rgba(20, 25, 20, 0.8); border-radius: 10px; border-left: 4px solid var(--accent);">
-                        <h3 style="color: var(--accent); margin-bottom: 10px; text-shadow: 0 0 5px rgba(227, 178, 60, 0.3);">
-                            <i class="fas fa-info-circle"></i> Без ссылки для скачивания
-                        </h3>
-                        <p>Автор пока не добавил ссылку для скачивания этого мода.</p>
-                    </div>
-                `}
-                
-                <div style="margin-top: 30px; padding: 20px; background-color: rgba(227, 178, 60, 0.1); border-radius: 10px; border-left: 4px solid var(--accent);">
-                    <strong style="color: var(--accent);"><i class="fas fa-eye"></i> Этот мод видят все сталкеры в реальном времени!</strong>
-                    <p style="margin-top: 10px; color: #ccc;">Мод отображается в общем списке и доступен всем посетителям сайта через Firebase.</p>
-                </div>
-            `;
-            
-            modInfoModal.style.display = 'block';
-            console.log("Модальное окно с информацией о моде показано");
-        }
-
-        // Увеличить счетчик просмотров мода
-        function incrementModViews(mod) {
-            incrementTotalViews();
-            
-            // Увеличиваем счетчик просмотров для этого мода
-            mod.views = (mod.views || 0) + 1;
-            
-            // Обновляем данные в массиве
-            const modIndex = allModsData.findIndex(m => 
-                (m.firebaseId === mod.firebaseId) || 
-                (m.title === mod.title && m.author === mod.author)
-            );
-            
-            if (modIndex !== -1) {
-                allModsData[modIndex] = mod;
-                
-                // Сохраняем в localStorage
-                localStorage.setItem('stalkerPortalMods', JSON.stringify(allModsData));
-                
-                // Пытаемся сохранить в Firebase, если доступно
-                if (database && isFirebaseConnected && mod.firebaseId && !mod.firebaseId.startsWith('demo') && !mod.firebaseId.startsWith('local_')) {
-                    const modRef = database.ref(`mods/${mod.firebaseId}/views`);
-                    modRef.set(mod.views).catch(() => {
-                        console.log("Не удалось обновить счетчик просмотров мода в Firebase");
-                    });
-                }
-            }
-        }
-
-        // Настройка обработчиков событий
-        function setupEventListeners() {
-            console.log("Настройка обработчиков событий...");
-            
-            // Навигация
-            homeLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log("Клик по 'Все моды'");
-                showSection('all');
-                setActiveNav(homeLink);
-            });
-            
-            uploadLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log("Клик по 'Показать мод'");
-                showSection('upload');
-                setActiveNav(uploadLink);
-            });
-            
-            // Форма загрузки мода
-            modUploadForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                console.log("Отправка формы загрузки мода");
-                
-                const authorName = document.getElementById('author-name').value.trim();
-                const modName = document.getElementById('mod-name').value.trim();
-                const modGame = document.getElementById('mod-game').value;
-                const modDescription = document.getElementById('mod-description').value.trim();
-                
-                // Валидация
-                if (!authorName || !modName || !modGame || !modDescription) {
-                    showNotification('Заполните все обязательные поля!', 'error');
-                    return;
-                }
-                
-                if (modDescription.length < 20) {
-                    showNotification('Описание мода должно быть не менее 20 символов!', 'error');
-                    return;
-                }
-                
-                // Создаем новый мод
-                const newMod = {
-                    title: modName,
-                    game: modGame,
-                    description: modDescription,
-                    author: authorName,
-                    version: document.getElementById('mod-version').value.trim() || '1.0',
-                    downloadLink: document.getElementById('download-link').value.trim() || null,
-                    date: new Date().toISOString(),
-                    views: 0,
-                    isRealMod: false,
-                    userId: userId
-                };
-                
-                console.log("Создан новый мод:", newMod);
-                
-                // Сохраняем мод
-                saveMod(newMod);
-                
-                // Очищаем форму
-                modUploadForm.reset();
-            });
-            
-            // Закрытие модального окна
-            closeModInfo.addEventListener('click', () => {
-                modInfoModal.style.display = 'none';
-            });
-            
-            // Закрытие модального окна при клике вне его
-            window.addEventListener('click', (e) => {
-                if (e.target === modInfoModal) {
-                    modInfoModal.style.display = 'none';
-                }
-            });
-            
-            console.log("Обработчики событий настроены");
-        }
-
-        // Сохранить мод
-        function saveMod(mod) {
-            // Добавляем временный ID для локального хранения
-            const localMod = { ...mod, firebaseId: 'local_' + Date.now() };
-            
-            // Добавляем в начало массива
-            allModsData.unshift(localMod);
-            
-            // Сохраняем в localStorage
-            localStorage.setItem('stalkerPortalMods', JSON.stringify(allModsData));
-            
-            // Обновляем отображение
-            renderAllMods();
-            
-            // Показываем уведомление
-            showNotification(`Мод "${mod.title}" добавлен!`, 'success');
-            
-            // Показываем секцию всех модов
-            showSection('all');
-            setActiveNav(homeLink);
-            
-            // Прокручиваем к началу списка
-            window.scrollTo(0, 0);
-            
-            // Пытаемся сохранить в Firebase
-            if (database && isFirebaseConnected) {
-                const modsRef = database.ref('mods');
-                modsRef.push(mod)
-                    .then(() => {
-                        console.log("Мод сохранен в Firebase");
-                        showNotification(`Мод "${mod.title}" теперь видят все сталкеры в реальном времени!`, 'success');
-                    })
-                    .catch((error) => {
-                        console.error("Ошибка сохранения мода в Firebase:", error);
-                        // Не показываем ошибку пользователю, т.к. мод уже сохранен локально
-                    });
-            }
-        }
-
-        // Показать определенную секцию
-        function showSection(section) {
-            console.log("Показ секции:", section);
-            
-            heroSection.style.display = 'none';
-            allModsSection.style.display = 'none';
-            uploadSection.style.display = 'none';
-            
-            switch(section) {
-                case 'all':
-                    heroSection.style.display = 'block';
-                    allModsSection.style.display = 'block';
-                    break;
-                case 'upload':
-                    uploadSection.style.display = 'block';
-                    break;
-            }
-        }
-
-        // Установка активной навигации
-        function setActiveNav(activeLink) {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            activeLink.classList.add('active');
-        }
-
-        // Вспомогательные функции
-        window.copyToClipboard = function(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification('Ссылка скопирована в буфер обмена!', 'success');
-            }).catch(err => {
-                console.error('Ошибка копирования: ', err);
-                showNotification('Не удалось скопировать ссылку', 'error');
-            });
-        };
-
-        // Добавить тестовый мод
-        window.addTestMod = function() {
-            console.log("Добавление тестового мода...");
-            
-            const testMod = {
-                title: "Тестовый мод - Улучшенная графика",
-                game: "Тень Чернобыля",
-                description: "Это тестовый мод для демонстрации работы сайта. Добавляет улучшенные текстуры, шейдеры и эффекты освещения.",
-                author: "Тестер",
-                version: "1.0",
-                downloadLink: "",
-                date: new Date().toISOString(),
-                views: 0,
-                isRealMod: false,
-                userId: userId
-            };
-            
-            saveMod(testMod);
-        };
-
-        // Обновить моды
-        window.refreshMods = function() {
-            console.log("Обновление списка модов...");
-            if (database && isFirebaseConnected) {
-                loadModsFromFirebase();
-            } else {
-                loadModsFromStorage();
-            }
-            showNotification('Список модов обновлен', 'success');
-        };
-
-        // Показать уведомление
-        function showNotification(text, type = 'success') {
-            console.log("Показ уведомления:", text, type);
-            
-            notificationText.textContent = text;
-            notification.className = `notification ${type}`;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
         }
         
-        // Обновляем онлайн счетчик каждые 30 секунд
-        setInterval(() => {
-            updateOnlineCounter();
-        }, 30000);
+        // Обновление временной метки
+        function updateTimestamp() {
+            const now = new Date();
+            const timestamp = document.getElementById('timestamp');
+            const timeString = now.toLocaleTimeString('ru-RU', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            timestamp.textContent = timeString;
+        }
+        
+        // Эффект при клике на череп
+        function skullClick() {
+            const skull = document.querySelector('.skull');
+            const container = document.querySelector('.error-container');
+            const title = document.querySelector('.error-title');
+            
+            // Встряхивание
+            skull.style.animation = 'none';
+            container.style.animation = 'none';
+            title.style.animation = 'none';
+            
+            setTimeout(() => {
+                skull.style.animation = 'skullGlow 4s infinite alternate, skullRotate 20s linear infinite';
+                container.style.animation = 'containerFloat 8s ease-in-out infinite';
+                title.style.animation = 'titleShake 0.5s ease-in-out infinite alternate';
+            }, 500);
+            
+            // Эффект вспышки
+            document.body.style.backgroundColor = '#ff0000';
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+                document.body.style.transition = 'background-color 0.3s ease';
+            }, 200);
+            
+            // Создание дополнительных частиц
+            for (let i = 0; i < 10; i++) {
+                createExplosionParticle(skull.getBoundingClientRect());
+            }
+        }
+        
+        // Частицы взрыва
+        function createExplosionParticle(rect) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 10px;
+                height: 10px;
+                background: #ff0000;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10;
+                left: ${rect.left + rect.width/2}px;
+                top: ${rect.top + rect.height/2}px;
+                box-shadow: 0 0 20px #ff0000;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            // Анимация разлета
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = 2 + Math.random() * 3;
+            const distance = 100 + Math.random() * 150;
+            
+            let x = 0;
+            let y = 0;
+            let opacity = 1;
+            
+            const animate = () => {
+                x += Math.cos(angle) * velocity;
+                y += Math.sin(angle) * velocity;
+                opacity -= 0.02;
+                
+                particle.style.transform = `translate(${x}px, ${y}px)`;
+                particle.style.opacity = opacity;
+                
+                if (opacity > 0 && Math.abs(x) < distance && Math.abs(y) < distance) {
+                    requestAnimationFrame(animate);
+                } else {
+                    particle.remove();
+                }
+            };
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Случайное изменение интенсивности свечения
+        function randomizeGlow() {
+            const skull = document.querySelector('.skull');
+            const intensities = [0.8, 1, 1.2, 1.5];
+            const randomIntensity = intensities[Math.floor(Math.random() * intensities.length)];
+            
+            skull.style.filter = `brightness(${randomIntensity}) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5))`;
+            
+            setTimeout(randomizeGlow, 2000 + Math.random() * 3000);
+        }
+        
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            updateTimestamp();
+            setInterval(updateTimestamp, 1000);
+            randomizeGlow();
+            
+            // Эффект появления
+            const elements = document.querySelectorAll('.error-container > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+        
+        // Изменение цвета при перемещении мыши
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            const hue = 0; // Красный
+            const saturation = 100;
+            const lightness = 40 + y * 20;
+            
+            document.documentElement.style.setProperty('--glow-color', `hsl(${hue}, ${saturation}%, ${lightness}%)`);
+        });
     </script>
 </body>
 </html>
