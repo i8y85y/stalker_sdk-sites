@@ -2561,7 +2561,7 @@
         #modal-article8 .modal-content:before { background: linear-gradient(90deg, #27ae60, #2ecc71); }
         #modal-article9 .modal-content:before { background: linear-gradient(90deg, #8e44ad, #3498db); }
         #modal-article10 .modal-content:before { background: linear-gradient(90deg, #16a085, #1abc9c); }
-        #modal-article11 .modal-content:before { background: linear-gradient(90deg, #FF6B35, #FF9F1C); }
+        #modal-article11 .modal-content:before { background: linear-gradient(90deg, #3498db, #2ecc71); }
         
         /* Для кастомных статей */
         .custom-modal .modal-content:before { background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary)); }
@@ -2663,6 +2663,7 @@
                     <li><a href="#toc"><i class="fas fa-list"></i> <span class="nav-text">Содержание</span></a></li>
                     <li><a href="#" class="open-article-link" data-article="5"><i class="fas fa-slash"></i> <span class="nav-text">Новые секции</span></a></li>
                     <li><a href="#" class="open-article-link" data-article="6"><i class="fas fa-ghost"></i> <span class="nav-text">Монстры</span></a></li>
+                    <li><a href="#" class="open-article-link" data-article="11"><i class="fas fa-desktop"></i> <span class="nav-text">GUI интерфейсы</span></a></li>
                     <li><a href="#" id="createArticleBtn"><i class="fas fa-plus-circle"></i> <span class="nav-text">Создать статью</span></a></li>
                 </ul>
             </nav>
@@ -2852,6 +2853,7 @@
                         <option value="fas fa-code-branch">Оверрайды</option>
                         <option value="fas fa-terminal">Синтаксис</option>
                         <option value="fas fa-lightbulb">Объекты</option>
+                        <option value="fas fa-desktop">GUI интерфейсы</option>
                         <option value="fas fa-book">Книга</option>
                         <option value="fas fa-wrench">Инструменты</option>
                         <option value="fas fa-gamepad">Геймплей</option>
@@ -2859,7 +2861,6 @@
                         <option value="fas fa-database">База данных</option>
                         <option value="fas fa-bug">Отладка</option>
                         <option value="fas fa-tools">Инструменты</option>
-                        <option value="fas fa-desktop">GUI</option>
                     </select>
                 </div>
                 
@@ -2965,6 +2966,7 @@ team = stalkers</code></pre>
                             <button type="button" class="template-btn" data-template="sdk">Шаблон SDK</button>
                             <button type="button" class="template-btn" data-template="monster">Шаблон монстра</button>
                             <button type="button" class="template-btn" data-template="object">Шаблон объекта</button>
+                            <button type="button" class="template-btn" data-template="gui">Шаблон GUI</button>
                             <button type="button" class="template-btn" data-template="empty">Пустой шаблон</button>
                         </div>
                     </div>
@@ -3312,7 +3314,7 @@ team = stalkers</code></pre>
                     <div class="toc-item">
                         <a href="#" class="toc-link open-article-link" data-article="11">
                             <i class="fas fa-desktop"></i>
-                            <span>11. GUI интерфейсы в STALKER</span>
+                            <span>11. GUI интерфейсы и их создание</span>
                         </a>
                     </div>
                 </div>
@@ -3524,7 +3526,7 @@ team = stalkers</code></pre>
                     </div>
                 </article>
                 
-                <!-- Article 11 - GUI интерфейсы -->
+                <!-- Article 11 - Новая статья про GUI интерфейсы -->
                 <article class="article-card">
                     <div class="article-icon-container">
                         <div class="article-icon">
@@ -3536,8 +3538,8 @@ team = stalkers</code></pre>
                             <span><i class="far fa-calendar"></i> Статья 11</span>
                             <span class="article-tag"><i class="fas fa-code"></i> GUI</span>
                         </div>
-                        <h3>GUI интерфейсы в STALKER</h3>
-                        <p>Полное руководство по созданию GUI интерфейсов в STALKER. Работа с UI Creator, XML разметкой, скриптами классов и всеми элементами интерфейса.</p>
+                        <h3>GUI интерфейсы и их создание</h3>
+                        <p>Полное руководство по созданию и настройке GUI интерфейсов для моддинга STALKER. Работа с UI Creator, создание классов и XML разметки, элементы управления.</p>
                         <button class="open-article-btn" data-article="11">
                             Открыть статью <i class="fas fa-external-link-alt"></i>
                         </button>
@@ -3556,11 +3558,11 @@ team = stalkers</code></pre>
                 <a href="#toc"><i class="fas fa-list"></i> Содержание</a>
                 <a href="#" class="open-article-link" data-article="5"><i class="fas fa-slash"></i> Новые секции</a>
                 <a href="#" class="open-article-link" data-article="6"><i class="fas fa-ghost"></i> Монстры</a>
+                <a href="#" class="open-article-link" data-article="11"><i class="fas fa-desktop"></i> GUI интерфейсы</a>
                 <a href="#" class="open-article-link" data-article="7"><i class="fas fa-campfire"></i> Истории</a>
                 <a href="#" class="open-article-link" data-article="8"><i class="fas fa-code-branch"></i> Оверрайды</a>
                 <a href="#" class="open-article-link" data-article="9"><i class="fas fa-terminal"></i> Синтаксис</a>
                 <a href="#" class="open-article-link" data-article="10"><i class="fas fa-lightbulb"></i> Объекты</a>
-                <a href="#" class="open-article-link" data-article="11"><i class="fas fa-desktop"></i> GUI</a>
                 <a href="#" id="createArticleBtnFooter"><i class="fas fa-plus-circle"></i> Создать статью</a>
             </div>
             <div class="copyright">
@@ -4291,22 +4293,23 @@ condition = условие_активации</code></pre>
         </div>
     </div>
     
-    <!-- Article 11 Modal - GUI интерфейсы -->
+    <!-- Article 11 Modal - Новая статья про GUI интерфейсы -->
     <div class="article-modal" id="modal-article11">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             
             <div class="modal-header">
-                <h1>11. GUI интерфейсы в STALKER - LOGIC SDK 0.4</h1>
+                <h1>11. GUI интерфейсы и их создание - LOGIC SDK 0.4</h1>
                 <div class="meta">
-                    <span><i class="far fa-clock"></i> Статья 11 | GUI и интерфейсы</span>
+                    <span><i class="far fa-clock"></i> Статья 11 | GUI интерфейсы</span>
                     <span class="sdk-badge">SDK 0.4</span>
                 </div>
             </div>
             
             <div class="modal-body">
-                <h2>Что такое GUI интерфейсы</h2>
-                <p>GUI интерфейсы в сфере моддинга на сталкер - это активные окна, запускаемые из скриптов. Внутри которых могут быть:</p>
+                <h2>Глава 1: Что такое GUI Интерфейсы</h2>
+                
+                <p>GUI Интерфейсы в сфере моддинга на сталкер - это активные окна, запускаемые из скриптов. Внутри которых могут быть:</p>
                 
                 <ol>
                     <li><strong>Кнопки</strong></li>
@@ -4322,70 +4325,60 @@ condition = условие_активации</code></pre>
                     <li><strong>Группы параметров</strong></li>
                 </ol>
                 
-                <p>GUI интерфейсы состоят из XML файла разметки и скрипта класса. Такие классы как классы инвентаря и ПДА зашиты в движок, и напрямую редактировать их без исходников не выйдет.</p>
+                <p>GUI интерфейсы состоят из XML файла разметки и скрипта класса.</p>
                 
-                <h2>Как создавать GUI интерфейсы</h2>
-                <p>На просторах интернета есть программа под названием <strong>UI Creator</strong>, которая позволяет создавать интерфейсы без дрочева с ручным написанием класса гуишки и XML файла.</p>
+                <p>Такие классы как классы инвентаря и ПДА зашиты в движок, и напрямую редактировать их без исходников не выйдет.</p>
                 
-                <p><strong>Ссылка на установку:</strong> <a href="https://www.playground.ru/stalker_shadow_of_chernobyl/file/s_t_a_l_k_e_r_ui_creator_programma_dlya_sozdaniya_okon-919712" target="_blank">UI Creator для STALKER</a></p>
+                <h2>Глава 2: Как создавать GUI интерфейсы</h2>
                 
-                <p>Внутри программы есть все категории GUI элементов, которые можно удобно размещать на экране. Так же программа после экспорта самостоятельно генерирует класс интерфейса и XML разметку.</p>
+                <p>На просторах интернета есть программа под названием UI Creator, которая позволяет создавать интерфейсы без дрочева с ручным написанием класса гуишки и XML файла.</p>
                 
-                <h3>Пример функции запуска GUI:</h3>
-                <pre><code class="language-lua">-- -*- mode: lua; coding: windows-1251-dos -*-
-function launch()
-    local hud = MYGUI(get_hud())  -- указываем на class (CUIScriptWnd)
-    level.start_stop_menu(hud, true)  -- открываем меню
+                <p><strong>Ссылка на установку:</strong> <a href="https://www.playground.ru/stalker_shadow_of_chernobyl/file/s_t_a_l_k_e_r_ui_creator_programma_dlya_sozdaniya_okon-919712" target="_blank">UI Creator программа для создания окон</a></p>
+                
+                <p>Внутри программы есть все категории гуи элементов, которые можно удобно размещать на экране.</p>
+                
+                <p>Так же программа после экспорта самостоятельно генерирует класс интерфейса и XML разметку.</p>
+                
+                <h3>Пример функции запуска GUI интерфейса:</h3>
+                
+                <pre><code class="language-lua">function launch()
+    local hud = MYGUI(get_hud()) -- указываем на class (CUIScriptWnd)
+    level.start_stop_menu(hud, true) -- открываем меню
 end</code></pre>
                 
                 <p>Эту функцию можно запускать откуда угодно, и окно откроется. Так же сюда можно добавить проверки:</p>
                 
                 <pre><code class="language-lua">function launch()
-    local hud = MYGUI(get_hud())  -- указываем на class (CUIScriptWnd)
+    local hud = MYGUI(get_hud()) -- указываем на class (CUIScriptWnd)
     if not level.main_input_receiver() then
-        level.start_stop_menu(hud, true)  -- открываем меню
+        level.start_stop_menu(hud, true) -- открываем меню
     end
 end</code></pre>
                 
-                <p><code>level.main_input_receiver()</code> - это активный GUI интерфейс который сейчас открыт. А эта проверка откроет GUI только если других интерфейсов не открыто.</p>
+                <p><code>level.main_input_receiver()</code> - это активный гуи интерфейс который сейчас открыт. А эта проверка откроет гуи только если других интерфейсов не открыто.</p>
                 
-                <h2>Разбор всех GUI элементов</h2>
+                <h2>Глава 3: Разбор всех GUI элементов</h2>
                 
                 <h3>1. Кнопки</h3>
-                <p>Просто кнопки, которым можно назначить любую текстуру. У кнопки есть 3 состояния:</p>
-                <ul>
-                    <li><strong>Статичная</strong> - обычное состояние</li>
-                    <li><strong>Навелись мышью</strong> - при наведении курсора</li>
-                    <li><strong>Нажали</strong> - при клике на кнопку</li>
-                </ul>
-                <p>Для каждого состояния можно назначить свою текстуру.</p>
+                <p>Просто кнопки, которым можно назначить любую текстуру.</p>
+                <p>У кнопки есть 3 состояния: статичная, навелись мышью, нажали. Для каждого состояния можно назначить свою текстуру.</p>
                 
                 <h3>2. Статичные изображения</h3>
-                <p>Статический элемент (текст, изображение, видео). Не взаимодействует с пользователем.</p>
+                <p>Статический элемент (текст, изображение, видео).</p>
                 
                 <h3>3. Листы</h3>
-                <p>Список, из которого пользователь может выбрать элементы. Предметы в лист добавляются скриптом, универсальную функцию добавления предмета создает UI Creator.</p>
+                <p>Список, из которого пользователь может выбрать элементы.</p>
+                <p>Предметы в лист добавляются скриптом, универсальную функцию добавления предмета создает UI Creator.</p>
+                <p>Чтобы в скриптах взаимодействовать с выбранными предметами, советую почитать lua help где есть нужные функции, вот самые главные:</p>
                 
-                <h4>Основные функции работы с листами:</h4>
-                <pre><code class="language-lua">-- Получаем номер выбранного предмета
-local sel_index = self.List1:GetSelectedItem()
-
--- Получаем предмет по номеру
-local sel_item = self.List1:GetItem(sel_index)
-
--- Получаем текст выбранного предмета
-local sel_text = sel_item.text_item:GetText()
-
--- Удаляем предмет из листа по номеру
-self.List1:RemoveItem(sel_index)
-
--- Удаляем все из листа
-self.List1:RemoveAll()</code></pre>
-                
-                <p>Чтобы в скриптах взаимодействовать с выбранными предметами, рекомендуется почитать lua help где есть нужные функции.</p>
+                <pre><code class="language-lua">local sel_index = self.List1:GetSelectedItem() -- получаем номер выбранного предмета
+local sel_item = self.List1:GetItem(sel_index) -- получаем предмет по номеру
+local sel_text = sel_item.text_item:GetText() -- получаем текст выбранного предмета
+self.List1:RemoveItem(sel_index) -- удаляем предмет из листа по номеру
+self.List1:RemoveAll() -- удаляем все из листа</code></pre>
                 
                 <h3>4. Текстовые поля</h3>
-                <p>Поле куда игрок может ввести все что угодно. Рекомендуется почитать lua help по этому классу.</p>
+                <p>Поле куда игрок может ввести все что угодно. Так же рекомендуется почитать lua help по этому классу.</p>
                 
                 <h3>5. Текст</h3>
                 <p>Создается с помощью статичных изображений.</p>
@@ -4394,7 +4387,8 @@ self.List1:RemoveAll()</code></pre>
                 <p>Позволяет пользователю включить/отключить соответствующий параметр.</p>
                 
                 <h3>7. Вкладки</h3>
-                <p>Коллекция вкладок, содержащих элементы. Очень удобный класс, внутри каждой вкладки можно так же привязать остальные элементы GUI.</p>
+                <p>Коллекция вкладок, содержащих элементы.</p>
+                <p>Очень удобный класс, внутри каждой вкладки можно так же привязать остальные элементы гуи.</p>
                 
                 <h3>8. Рамки</h3>
                 <p>Чем-то схоже на статичные изображения, но при растягивании не теряют качества.</p>
@@ -4407,205 +4401,9 @@ self.List1:RemoveAll()</code></pre>
                 
                 <h3>11. Группы параметров</h3>
                 <p>Позволяет пользователю выбрать определенный параметр из группы в комбинации с другими флаговыми кнопками.</p>
-                
-                <h2>Пример XML разметки GUI</h2>
-                <pre><code class="language-xml">&lt;?xml version="1.0" encoding="windows-1251"?&gt;
-&lt;wnd&gt;
-    &lt;main_wnd x="0" y="0" width="1024" height="768"&gt;
-        &lt;background x="0" y="0" width="1024" height="768"&gt;
-            &lt;texture&gt;ui\ui_mp_main_menu&lt;/texture&gt;
-        &lt;/background&gt;
-        
-        &lt;static x="100" y="100" width="200" height="30"&gt;
-            &lt;text align="c" vert_align="c" font="graffiti22" color="255,255,255"&gt;
-                &lt;text&gt;Приветствие&lt;/text&gt;
-            &lt;/text&gt;
-        &lt;/static&gt;
-        
-        &lt;button name="btn_ok" x="100" y="150" width="100" height="30"&gt;
-            &lt;texture_e&gt;ui_button_01&lt;/texture_e&gt;
-            &lt;texture_t&gt;ui_button_02&lt;/texture_t&gt;
-            &lt;texture_d&gt;ui_button_03&lt;/texture_d&gt;
-            &lt;text align="c" vert_align="c" font="graffiti22" color="255,255,255"&gt;
-                &lt;text&gt;OK&lt;/text&gt;
-            &lt;/text&gt;
-        &lt;/button&gt;
-    &lt;/main_wnd&gt;
-&lt;/wnd&gt;</code></pre>
-                
-                <h2>Пример класса GUI на Lua</h2>
-                <pre><code class="language-lua">-- -*- mode: lua; coding: windows-1251-dos -*-
-MYGUI = newclass(CUIScriptWnd)
-
-function MYGUI:Init()
-    -- Загружаем XML файл интерфейса
-    self:Init("my_gui.xml", "main_wnd")
-    
-    -- Получаем ссылки на элементы
-    self.btn_ok = self:FindItem("btn_ok")
-    
-    -- Назначаем обработчики событий
-    self.btn_ok:SetOnClickCallback(self.OnOkClick, self)
-end
-
-function MYGUI:OnOkClick()
-    -- Действие при нажатии кнопки OK
-    printf("Кнопка OK нажата!")
-    
-    -- Закрываем окно
-    level.start_stop_menu(self, false)
-end
-
-function MYGUI:OnKeyboardAction(dik, keyboard_action)
-    -- Обработка клавиатуры
-    if dik == DIK_keys.ESCAPE and keyboard_action == keyboard_action.PRESSED then
-        level.start_stop_menu(self, false)
-        return true
-    end
-    return false
-end</code></pre>
-                
-                <h2>Полезные советы по созданию GUI</h2>
-                <ol>
-                    <li>Всегда используйте программу UI Creator для создания базовой разметки</li>
-                    <li>Тестируйте интерфейсы на разных разрешениях экрана</li>
-                    <li>Используйте стандартные текстуры из игры для сохранения стиля</li>
-                    <li>Добавляйте обработку клавиши Escape для закрытия окон</li>
-                    <li>Проверяйте наличие открытых интерфейсов перед открытием новых</li>
-                    <li>Используйте локализацию для текстовых элементов</li>
-                </ol>
-                
-                <h2>Работа с листами (дополнительные функции)</h2>
-                <pre><code class="language-lua">-- Добавление элемента в лист
-function AddItemToList(list, text, data)
-    local item = list:AddItem(text)
-    if data then
-        item.data = data  -- Можно привязать данные к элементу
-    end
-    return item
-end
-
--- Получение данных выбранного элемента
-function GetSelectedItemData(list)
-    local index = list:GetSelectedItem()
-    if index &gt;= 0 then
-        local item = list:GetItem(index)
-        return item.data
-    end
-    return nil
-end
-
--- Поиск элемента по данным
-function FindItemByData(list, data)
-    for i = 0, list:GetSize() - 1 do
-        local item = list:GetItem(i)
-        if item.data == data then
-            return i, item
-        end
-    end
-    return -1, nil
-end</code></pre>
-                
-                <h2>Создание сложных интерфейсов</h2>
-                <p>Для создания сложных интерфейсов рекомендуется:</p>
-                <ol>
-                    <li>Разбивать интерфейс на логические блоки</li>
-                    <li>Использовать вкладки для организации контента</li>
-                    <li>Добавлять скроллинг для длинных списков</li>
-                    <li>Реализовывать поиск и фильтрацию в больших листах</li>
-                    <li>Использовать модальные окна для подтверждения действий</li>
-                    <li>Добавлять прогресс-бары для длительных операций</li>
-                </ol>
-                
-                <h2>Отладка GUI интерфейсов</h2>
-                <pre><code class="language-lua">-- Функция для отладки
-function DebugGUI(gui)
-    printf("=== Отладка GUI ===")
-    printf("Название: %s", gui:WindowName())
-    printf("Размеры: %d x %d", gui:GetWidth(), gui:GetHeight())
-    
-    -- Вывод всех дочерних элементов
-    local children = gui:GetChildren()
-    for i, child in ipairs(children) do
-        printf("Элемент %d: %s", i, child:WindowName())
-    end
-end
-
--- Использование в классе GUI
-function MYGUI:OnShow()
-    DebugGUI(self)  -- Отладка при открытии
-end</code></pre>
-                
-                <h2>Заключение</h2>
-                <p>Создание GUI интерфейсов в STALKER - мощный инструмент для моддинга, который позволяет создавать сложные системы взаимодействия с игроком. Используя UI Creator и знания Lua, можно создавать профессиональные интерфейсы, интегрированные в игровой процесс.</p>
-                
-                <p><strong>Важно помнить:</strong> Все интерфейсы должны соответствовать общему стилю игры и не нарушать игровой процесс. Тестируйте интерфейсы на различных разрешениях и с разными настройками графики.</p>
             </div>
         </div>
     </div>
-    
-    <!-- Модальное окно помощи по HTML -->
-    <div class="article-modal" id="htmlHelpModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            
-            <div class="modal-header">
-                <h1>Помощь по HTML для статей</h1>
-                <div class="meta">
-                    <span><i class="far fa-clock"></i> Справочная информация</span>
-                </div>
-            </div>
-            
-            <div class="modal-body">
-                <h2>Допустимые HTML-теги:</h2>
-                <p>Вы можете использовать следующие теги для форматирования вашей статьи:</p>
-                
-                <h3>Заголовки:</h3>
-                <pre><code class="language-html">&lt;h2&gt;Заголовок 2 уровня&lt;/h2&gt;
-&lt;h3&gt;Заголовок 3 уровня&lt;/h3&gt;
-&lt;h4&gt;Заголовок 4 уровня&lt;/h4&gt;</code></pre>
-                
-                <h3>Абзацы и текст:</h3>
-                <pre><code class="language-html">&lt;p&gt;Это абзац текста.&lt;/p&gt;
-&lt;strong&gt;Жирный текст&lt;/strong&gt;
-&lt;em&gt;Курсив&lt;/em&gt;
-&lt;u&gt;Подчеркнутый&lt;/u&gt;
-&lt;br&gt; - перенос строки</code></pre>
-                
-                <h3>Списки:</h3>
-                <pre><code class="language-html">&lt;ul&gt;
-  &lt;li&gt;Элемент ненумерованного списка&lt;/li&gt;
-  &lt;li&gt;Еще один элемент&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Элемент нумерованного списка&lt;/li&gt;
-  &lt;li&gt;Еще один элемент&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-                
-                <h3>Код и предформатированный текст:</h3>
-                <pre><code class="language-html">&lt;code&gt;Встроенный код&lt;/code&gt;
-
-&lt;pre&gt;
-// Блок кода
-function example() {
-  return "Hello World!";
-}
-&lt;/pre&gt;</code></pre>
-                
-                <h3>Таблицы:</h3>
-                <pre><code class="language-html">&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Заголовок 1&lt;/th&gt;
-    &lt;th&gt;Заголовок 2&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Данные 1&lt;/td&gt;
-    &lt;td&gt;Данные 2&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-                
-                <h2>Примеры статей для LOGIC SDK 0.4:</h2>
     
     <!-- Модальное окно помощи по HTML -->
     <div class="article-modal" id="htmlHelpModal">
@@ -4728,60 +4526,29 @@ on_info = {+enemy_spotted} combat@aggressive&lt;/code&gt;&lt;/pre&gt;
 on_info = {+hit_by_sniper} cover
 on_info = {+hit_normal} fight_back&lt;/code&gt;&lt;/pre&gt;</code></pre>
                 
-                <h3>Пример 3: Статья о монстрах</h3>
-                <pre><code class="language-html">&lt;h2&gt;Схемы поведения монстров&lt;/h2&gt;
-&lt;p&gt;Монстры в SDK 0.4 используют специальные схемы с префиксом mob_.&lt;/p&gt;
+                <h3>Пример 3: Статья о GUI интерфейсах</h3>
+                <pre><code class="language-html">&lt;h2&gt;Создание GUI интерфейсов для моддинга&lt;/h2&gt;
+&lt;p&gt;GUI интерфейсы позволяют создавать интерактивные окна для взаимодействия с игроком.&lt;/p&gt;
 
-&lt;h3&gt;mob_walker - перемещение монстра:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_walker]
-path_walk = monster_path
-path_look = monster_look
-home_min = 5000
-home_max = 10000&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;mob_combat - боевое поведение:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_combat]
-min_attack_distance = 2
-max_attack_distance = 10
-home_path = home_point&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;mob_fake_death - притворная смерть:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[mob_fake_death]
-anim = fake_death
-on_info = {+player_near} mob_attack
-on_info = {+player_far} mob_walker&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;Важно:&lt;/h4&gt;
-&lt;p&gt;Монстры не используют команды как сталкеры, их поведение более инстинктивное.&lt;/p&gt;</code></pre>
-                
-                <h3>Пример 4: Статья о смарттеррейнах</h3>
-                <pre><code class="language-html">&lt;h2&gt;Настройка смарттеррейнов&lt;/h2&gt;
-&lt;p&gt;Смарттеррейны - это зоны, где NPC живут своей жизнью, работают и отдыхают.&lt;/p&gt;
-
-&lt;h3&gt;Базовая конфигурация:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[smart_terrain]
-terrain_name = bar_smart
-max_population = 8
-enter_distance = 50
-exit_distance = 100
-
-; Рабочие места
-[job1]
-type = walker
-path_walk = bar_work1
-path_look = bar_look1
-
-[job2]
-type = remark
-anim = sit
-sound = dialogs\bar_talk.ogg&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Особенности:&lt;/h3&gt;
+&lt;h3&gt;Базовые элементы GUI:&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;NPC автоматически выбирают свободные рабочие места&lt;/li&gt;
-  &lt;li&gt;При атаке смарттеррейн переходит в режим обороны&lt;/li&gt;
-  &lt;li&gt;Можно настраивать дневной/ночной режимы работы&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+  &lt;li&gt;&lt;strong&gt;Кнопки:&lt;/strong&gt; Для выполнения действий&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Текстовые поля:&lt;/strong&gt; Для ввода информации&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Листы:&lt;/strong&gt; Для отображения списков&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Чекбоксы:&lt;/strong&gt; Для выбора опций&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Пример создания GUI:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-lua"&gt;-- Создание GUI интерфейса
+function create_gui()
+    local hud = MYGUI(get_hud())
+    if not level.main_input_receiver() then
+        level.start_stop_menu(hud, true)
+    end
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Рекомендации:&lt;/h3&gt;
+&lt;p&gt;Используйте программу UI Creator для быстрого прототипирования интерфейсов без ручного написания XML.&lt;/p&gt;</code></pre>
                 
                 <h2>Советы по оформлению:</h2>
                 <ul>
@@ -4793,32 +4560,6 @@ sound = dialogs\bar_talk.ogg&lt;/code&gt;&lt;/pre&gt;
                     <li>Списки используйте для перечисления свойств или возможностей</li>
                     <li>Не используйте теги <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;iframe&gt;</code> - они будут удалены</li>
                 </ul>
-                
-                <h3>Быстрые шаблоны:</h3>
-                <p>Скопируйте и измените под свою статью:</p>
-                
-                <h4>Шаблон для схемы поведения:</h4>
-                <pre><code class="language-html">&lt;h2&gt;Название схемы&lt;/h2&gt;
-&lt;p&gt;Краткое описание назначения схемы.&lt;/p&gt;
-
-&lt;h3&gt;Основные параметры:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[scheme_name]
-param1 = value1
-param2 = value2
-on_info = {+condition} next_scheme&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Пример использования:&lt;/h3&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;[logic]
-active = scheme_name
-[scheme_name]
-path_walk = custom_path
-team = my_team&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Дополнительные настройки:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Особенность 1:&lt;/strong&gt; Описание&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Особенность 2:&lt;/strong&gt; Описание&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
             </div>
         </div>
     </div>
@@ -5278,7 +5019,7 @@ team = my_team&lt;/code&gt;&lt;/pre&gt;
                 
                 // Добавляем кастомные статьи
                 customArticles.forEach((article, index) => {
-                    const articleNumber = 10 + index + 1; // Начинаем с 11
+                    const articleNumber = 11 + index + 1; // Начинаем с 12 (11 уже занята статьей про GUI)
                     
                     // Создаем карточку статьи
                     const articleCard = document.createElement('article');
@@ -5373,7 +5114,7 @@ team = my_team&lt;/code&gt;&lt;/pre&gt;
                     listItem.className = 'article-list-item';
                     listItem.dataset.articleId = article.id;
                     
-                    const articleNumber = customArticles.findIndex(a => a.id === article.id) + 11;
+                    const articleNumber = customArticles.findIndex(a => a.id === article.id) + 12;
                     
                     listItem.innerHTML = `
                         <div class="article-title">${articleNumber}. ${article.title}</div>
@@ -5845,6 +5586,35 @@ target = actor</code></pre>
 <p>Дополнительная информация по настройке объекта.</p>`;
                         break;
                         
+                    case 'gui':
+                        templateContent = `<h2>Создание GUI интерфейса</h2>
+<p>Руководство по созданию графических интерфейсов для моддинга STALKER.</p>
+
+<h3>Базовые элементы GUI:</h3>
+<ul>
+  <li><strong>Кнопки:</strong> Для выполнения действий</li>
+  <li><strong>Текстовые поля:</strong> Для ввода информации</li>
+  <li><strong>Листы:</strong> Для отображения списков</li>
+  <li><strong>Чекбоксы:</strong> Для выбора опций</li>
+</ul>
+
+<h3>Пример создания GUI класса:</h3>
+<pre><code class="language-lua">MYGUI = class(CUIScriptWnd)
+
+function MYGUI:Init()
+    self:Init("my_gui.xml", "my_gui")
+    self.btn_close = self:GetItem("btn_close")
+    self.btn_close:SetOnClickCallback(self.OnCloseClick, self)
+end
+
+function MYGUI:OnCloseClick()
+    level.start_stop_menu(self, false)
+end</code></pre>
+
+<h3>Инструменты:</h3>
+<p>Используйте UI Creator для быстрого прототипирования интерфейсов.</p>`;
+                        break;
+                        
                     case 'empty':
                         templateContent = `<h2>Заголовок статьи</h2>
 <p>Начните писать свою статью здесь...</p>`;
@@ -5893,7 +5663,7 @@ target = actor</code></pre>
                 const icons = [
                     'fa-code', 'fa-cogs', 'fa-route', 'fa-user-friends', 'fa-skull-crossbones',
                     'fa-slash', 'fa-ghost', 'fa-campfire', 'fa-code-branch', 'fa-terminal',
-                    'fa-lightbulb', 'fa-book', 'fa-wrench', 'fa-gamepad', 'fa-map',
+                    'fa-lightbulb', 'fa-desktop', 'fa-book', 'fa-wrench', 'fa-gamepad', 'fa-map',
                     'fa-database', 'fa-bug', 'fa-tools', 'fa-bolt', 'fa-fire',
                     'fa-shield-alt', 'fa-crosshairs', 'fa-search', 'fa-eye', 'fa-eye-slash',
                     'fa-lock', 'fa-unlock', 'fa-key', 'fa-door-open', 'fa-door-closed',
@@ -6660,7 +6430,6 @@ sound = sound_scheme</code></pre>
             // Фокус на визуальном редакторе при открытии
             visualEditorContent.focus();
         });
-</script>
+    </script>
 </body>
-</script>
 </html>
